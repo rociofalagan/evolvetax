@@ -1,0 +1,14 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Evolve Tax - Isotipo Completo (3 colores) -->
+  <!-- Bloque 1 - Base -->
+  <rect x="20" y="80" width="20" height="20" fill="#2563EB" rx="2"/>
+  
+  <!-- Bloque 2 - Medio -->
+  <rect x="45" y="60" width="20" height="40" fill="#2563EB" rx="2"/>
+  
+  <!-- Bloque 3 - Alto (con purple) -->
+  <rect x="70" y="40" width="20" height="60" fill="#7C3AED" rx="2"/>
+  
+  <!-- Flecha final (verde) -->
+  <path d="M 95 30 L 110 45 L 95 60 L 85 50 L 95 40 Z" fill="#10B981"/>
+</svg>

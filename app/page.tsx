@@ -4,9 +4,13 @@ export default function Home() {
       {/* Hero Section */}
       <section className="px-4 py-20 md:py-32">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-6">
-            Evolve<span className="text-blue-600">Tax</span>
-          </h1>
+          <div className="flex flex-col items-center justify-center mb-6">
+            <img
+              src="/logo.svg"
+              alt="EvolveTax Logo"
+              className="w-48 md:w-64 mb-4"
+            />
+          </div>
           <p className="text-xl md:text-2xl text-slate-600 mb-8 max-w-3xl mx-auto">
             International tax advisory for entrepreneurs and digital businesses
           </p>
@@ -195,9 +199,11 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-2xl font-bold text-white mb-4">
-                Evolve<span className="text-blue-400">Tax</span>
-              </h3>
+              <img
+                src="/logo.svg"
+                alt="EvolveTax Logo"
+                className="w-32 mb-4"
+              />
               <p className="text-slate-400">
                 International tax advisory specialized in Dubai and digital businesses.
               </p>
