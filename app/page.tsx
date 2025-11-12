@@ -8,23 +8,23 @@ export default function Home() {
             Evolve<span className="text-blue-600">Tax</span>
           </h1>
           <p className="text-xl md:text-2xl text-slate-600 mb-8 max-w-3xl mx-auto">
-            Asesoramiento fiscal internacional para emprendedores y negocios digitales
+            International tax advisory for entrepreneurs and digital businesses
           </p>
           <p className="text-lg md:text-xl text-slate-500 mb-12 max-w-2xl mx-auto">
-            Optimiza tu estructura fiscal y establece tu negocio en Dubai con expertos en fiscalidad internacional
+            Optimize your tax structure and establish your business in Dubai with international tax experts
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#contacto"
               className="px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors text-lg"
             >
-              Agenda una Consulta
+              Schedule a Consultation
             </a>
             <a
               href="#servicios"
               className="px-8 py-4 bg-white text-blue-600 border-2 border-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors text-lg"
             >
-              Nuestros Servicios
+              Our Services
             </a>
           </div>
         </div>
@@ -34,10 +34,10 @@ export default function Home() {
       <section id="servicios" className="px-4 py-20 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center text-slate-900 mb-4">
-            Nuestros Servicios
+            Our Services
           </h2>
           <p className="text-xl text-slate-600 text-center mb-16 max-w-2xl mx-auto">
-            Soluciones integrales de estructuración fiscal para negocios digitales
+            Comprehensive tax structuring solutions for digital businesses
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -48,10 +48,10 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                Estructuración Fiscal
+                Tax Structuring
               </h3>
               <p className="text-slate-600 leading-relaxed">
-                Diseñamos la estructura fiscal óptima para tu negocio, maximizando la eficiencia y el cumplimiento legal internacional.
+                We design the optimal tax structure for your business, maximizing efficiency and international legal compliance.
               </p>
             </div>
 
@@ -62,10 +62,10 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                Setup en Dubai
+                Dubai Setup
               </h3>
               <p className="text-slate-600 leading-relaxed">
-                Te acompañamos en todo el proceso de establecimiento de tu empresa en Dubai, desde la constitución hasta la operación.
+                We guide you through the entire process of establishing your company in Dubai, from incorporation to operation.
               </p>
             </div>
 
@@ -76,10 +76,10 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                Negocios Digitales
+                Digital Businesses
               </h3>
               <p className="text-slate-600 leading-relaxed">
-                Especialistas en la optimización fiscal de ecommerce, SaaS, marketing digital y otros modelos de negocio online.
+                Specialists in tax optimization for ecommerce, SaaS, digital marketing and other online business models.
               </p>
             </div>
           </div>
@@ -90,10 +90,10 @@ export default function Home() {
       <section className="px-4 py-20 bg-gradient-to-b from-slate-50 to-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center text-slate-900 mb-4">
-            ¿Por qué Dubai?
+            Why Dubai?
           </h2>
           <p className="text-xl text-slate-600 text-center mb-16 max-w-2xl mx-auto">
-            Ventajas competitivas para tu negocio internacional
+            Competitive advantages for your international business
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -104,8 +104,8 @@ export default function Home() {
                 </svg>
               </div>
               <div>
-                <h3 className="font-bold text-slate-900 text-lg mb-2">0% Impuesto sobre Sociedades</h3>
-                <p className="text-slate-600">Para ingresos hasta 375,000 AED en zonas francas</p>
+                <h3 className="font-bold text-slate-900 text-lg mb-2">0% Corporate Tax</h3>
+                <p className="text-slate-600">For income up to 375,000 AED in free zones</p>
               </div>
             </div>
 
@@ -116,8 +116,8 @@ export default function Home() {
                 </svg>
               </div>
               <div>
-                <h3 className="font-bold text-slate-900 text-lg mb-2">0% Impuesto sobre la Renta</h3>
-                <p className="text-slate-600">Sin impuestos personales para residentes</p>
+                <h3 className="font-bold text-slate-900 text-lg mb-2">0% Personal Income Tax</h3>
+                <p className="text-slate-600">No personal taxes for residents</p>
               </div>
             </div>
 
@@ -128,8 +128,8 @@ export default function Home() {
                 </svg>
               </div>
               <div>
-                <h3 className="font-bold text-slate-900 text-lg mb-2">Hub Internacional</h3>
-                <p className="text-slate-600">Acceso estratégico a mercados globales y talento internacional</p>
+                <h3 className="font-bold text-slate-900 text-lg mb-2">International Hub</h3>
+                <p className="text-slate-600">Strategic access to global markets and international talent</p>
               </div>
             </div>
 
@@ -140,8 +140,8 @@ export default function Home() {
                 </svg>
               </div>
               <div>
-                <h3 className="font-bold text-slate-900 text-lg mb-2">Infraestructura de Primera</h3>
-                <p className="text-slate-600">Tecnología avanzada, logística eficiente y calidad de vida excepcional</p>
+                <h3 className="font-bold text-slate-900 text-lg mb-2">World-Class Infrastructure</h3>
+                <p className="text-slate-600">Advanced technology, efficient logistics and exceptional quality of life</p>
               </div>
             </div>
 
@@ -152,8 +152,8 @@ export default function Home() {
                 </svg>
               </div>
               <div>
-                <h3 className="font-bold text-slate-900 text-lg mb-2">100% Propiedad Extranjera</h3>
-                <p className="text-slate-600">Control total de tu empresa sin necesidad de socios locales</p>
+                <h3 className="font-bold text-slate-900 text-lg mb-2">100% Foreign Ownership</h3>
+                <p className="text-slate-600">Full control of your company without the need for local partners</p>
               </div>
             </div>
 
@@ -164,8 +164,8 @@ export default function Home() {
                 </svg>
               </div>
               <div>
-                <h3 className="font-bold text-slate-900 text-lg mb-2">Residencia Flexible</h3>
-                <p className="text-slate-600">Opciones de visa de residencia para emprendedores e inversores</p>
+                <h3 className="font-bold text-slate-900 text-lg mb-2">Flexible Residency</h3>
+                <p className="text-slate-600">Residence visa options for entrepreneurs and investors</p>
               </div>
             </div>
           </div>
@@ -176,16 +176,16 @@ export default function Home() {
       <section id="contacto" className="px-4 py-20 bg-blue-600">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            ¿Listo para optimizar tu estructura fiscal?
+            Ready to optimize your tax structure?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Agenda una consulta gratuita y descubre cómo podemos ayudarte a establecer tu negocio en Dubai
+            Schedule a free consultation and discover how we can help you establish your business in Dubai
           </p>
           <a
             href="mailto:info@evolvetax.com"
             className="inline-block px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors text-lg"
           >
-            Contactar Ahora
+            Contact Now
           </a>
         </div>
       </section>
@@ -199,12 +199,12 @@ export default function Home() {
                 Evolve<span className="text-blue-400">Tax</span>
               </h3>
               <p className="text-slate-400">
-                Asesoramiento fiscal internacional especializado en Dubai y negocios digitales.
+                International tax advisory specialized in Dubai and digital businesses.
               </p>
             </div>
 
             <div>
-              <h4 className="text-white font-semibold mb-4">Contacto</h4>
+              <h4 className="text-white font-semibold mb-4">Contact</h4>
               <div className="space-y-2 text-slate-400">
                 <p>Email: info@evolvetax.com</p>
                 <p>WhatsApp: +971 XX XXX XXXX</p>
@@ -212,18 +212,18 @@ export default function Home() {
             </div>
 
             <div>
-              <h4 className="text-white font-semibold mb-4">Servicios</h4>
+              <h4 className="text-white font-semibold mb-4">Services</h4>
               <ul className="space-y-2 text-slate-400">
-                <li>Estructuración fiscal</li>
-                <li>Setup empresarial en Dubai</li>
-                <li>Consultoría para negocios digitales</li>
-                <li>Planificación internacional</li>
+                <li>Tax structuring</li>
+                <li>Dubai business setup</li>
+                <li>Digital business consulting</li>
+                <li>International planning</li>
               </ul>
             </div>
           </div>
 
           <div className="border-t border-slate-800 pt-8 text-center text-slate-400">
-            <p>&copy; 2024 EvolveTax. Todos los derechos reservados.</p>
+            <p>&copy; 2024 EvolveTax. All rights reserved.</p>
           </div>
         </div>
       </footer>
