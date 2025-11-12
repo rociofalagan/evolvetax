@@ -1,26 +1,59 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #eeede9;
+  --foreground: #1b1b1b;
+  --accent-navy: #1e3a8a;
+  --accent-teal: #78586F;
+  --accent-teal-dark: #78586F;
+  --accent-purple: #78586F;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-cream: #eeede9;
+  --color-dark: #1b1b1b;
+  --color-navy: #1e3a8a;
+  --color-teal: #78586F;
+  --color-teal-dark: #78586F;
+  --font-heading: var(--font-montserrat);
+  --font-body: var(--font-inter);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-montserrat), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 600;
+}
+
+p {
+  font-family: var(--font-inter), sans-serif;
+  line-height: 1.7;
+  letter-spacing: -0.011em;
 }
