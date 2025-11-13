@@ -66,88 +66,132 @@ export default function Services() {
 
   return (
     <div className="min-h-screen bg-[#eeede9]">
-      {/* Hero */}
-      <section className="px-6 py-20 md:py-32 max-w-7xl mx-auto">
-        <div className="text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-[#1b1b1b] mb-6">
+      <section className="px-6 py-20 md:py-24 bg-[#eeede9]">
+        <div className="max-w-7xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#1b1b1b] mb-16 text-center">
             Our Services
           </h1>
-          <p className="text-xl text-[#1b1b1b]/70 max-w-3xl mx-auto">
-            Comprehensive tax solutions designed for the modern global entrepreneur
-          </p>
-        </div>
-      </section>
-
-      {/* Services Grid */}
-      <section className="px-6 pb-24 max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div key={index} className="bg-white rounded-3xl p-8 shadow-sm border border-[#1b1b1b]/10 hover:shadow-lg transition-shadow">
-              <h3 className="text-2xl font-bold text-[#1b1b1b] mb-4">{service.title}</h3>
-              <p className="text-[#1b1b1b]/70 mb-6 leading-relaxed">{service.description}</p>
-              <ul className="space-y-2">
-                {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-[#1b1b1b]/70">
-                    <span className="text-[#78586F] mt-1">•</span>
-                    <span>{feature}</span>
-                  </li>
-                ))}
+          <div className="grid md:grid-cols-3 gap-12">
+            {/* Service 01: International Tax Structuring */}
+            <div>
+              <p className="text-lg font-bold text-[#6B2C2C] mb-2">01</p>
+              <h3 className="text-xl font-bold text-[#1b1b1b] mb-2">
+                International Tax Structuring
+              </h3>
+              <p className="text-lg font-semibold text-[#1b1b1b] mb-4">
+                Strategy Before Setup
+              </p>
+              <p className="text-[#1b1b1b]/70 text-base leading-relaxed mb-6">
+                We analyze your business model, revenue streams, and personal goals to design your most tax-efficient international structure.
+              </p>
+              <h4 className="text-base font-bold text-[#1b1b1b] mb-3">What we deliver:</h4>
+              <ul className="space-y-2 text-[#1b1b1b]/70 text-sm mb-6">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#6B2C2C] mt-1">•</span>
+                  <span>Comprehensive business and income analysis</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#6B2C2C] mt-1">•</span>
+                  <span>Jurisdiction comparison tailored to your specific case</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#6B2C2C] mt-1">•</span>
+                  <span>Entity structure design (single or multi-company)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#6B2C2C] mt-1">•</span>
+                  <span>Personal tax residency planning</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#6B2C2C] mt-1">•</span>
+                  <span>Substance requirements roadmap</span>
+                </li>
               </ul>
+              <p className="text-[#1b1b1b] font-semibold text-sm">
+                <span className="text-[#6B2C2C]">The outcome:</span> A clear, compliant structure that maximizes your tax efficiency.
+              </p>
             </div>
-          ))}
-        </div>
-      </section>
 
-      {/* Process Section */}
-      <section className="px-6 py-24 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#1b1b1b] mb-6">
-              Your Journey to Dubai
-            </h2>
-            <p className="text-xl text-[#1b1b1b]/70 max-w-3xl mx-auto">
-              A transparent, streamlined 8-step process from first contact to full operation
-            </p>
+            {/* Service 02: Structure Implementation */}
+            <div>
+              <p className="text-lg font-bold text-[#6B2C2C] mb-2">02</p>
+              <h3 className="text-xl font-bold text-[#1b1b1b] mb-2">
+                Structure Implementation
+              </h3>
+              <p className="text-lg font-semibold text-[#1b1b1b] mb-4">
+                From Plan to Reality
+              </p>
+              <p className="text-[#1b1b1b]/70 text-base leading-relaxed mb-6">
+                Once your strategy is defined, we handle the complete implementation—whether in the UAE or through our trusted international partners.
+              </p>
+              <h4 className="text-base font-bold text-[#1b1b1b] mb-3">UAE Setup (We Manage In-House):</h4>
+              <ul className="space-y-2 text-[#1b1b1b]/70 text-sm mb-6">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#6B2C2C] mt-1">•</span>
+                  <span>Free zone selection and license application</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#6B2C2C] mt-1">•</span>
+                  <span>Company incorporation and trade license</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#6B2C2C] mt-1">•</span>
+                  <span>UAE residence visa and Emirates ID processing</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#6B2C2C] mt-1">•</span>
+                  <span>Bank account opening coordination</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#6B2C2C] mt-1">•</span>
+                  <span>Office and PRO services</span>
+                </li>
+              </ul>
+              <h4 className="text-base font-bold text-[#1b1b1b] mb-3">Other Jurisdictions:</h4>
+              <p className="text-[#1b1b1b]/70 text-sm leading-relaxed mb-6">
+                We coordinate with vetted partners for setups in Estonia, Singapore, US, and other jurisdictions.
+              </p>
+              <p className="text-[#1b1b1b] font-semibold text-sm">
+                <span className="text-[#6B2C2C]">The result:</span> Your company operational and compliant, hassle-free.
+              </p>
+            </div>
+
+            {/* Service 03: Ongoing Tax Advisory & Compliance */}
+            <div>
+              <p className="text-lg font-bold text-[#6B2C2C] mb-2">03</p>
+              <h3 className="text-xl font-bold text-[#1b1b1b] mb-2">
+                Ongoing Tax Advisory & Compliance
+              </h3>
+              <p className="text-lg font-semibold text-[#1b1b1b] mb-4">
+                Run Your Business, We'll Handle the Rest
+              </p>
+              <p className="text-[#1b1b1b]/70 text-base leading-relaxed mb-6">
+                Focus on growth while we manage your tax and accounting obligations.
+              </p>
+              <h4 className="text-base font-bold text-[#1b1b1b] mb-3">Our services:</h4>
+              <ul className="space-y-2 text-[#1b1b1b]/70 text-sm mb-6">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#6B2C2C] mt-1">•</span>
+                  <span><strong className="text-[#1b1b1b]">Tax compliance:</strong> UAE Corporate Tax and VAT registration, filings, and optimization</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#6B2C2C] mt-1">•</span>
+                  <span><strong className="text-[#1b1b1b]">Monthly bookkeeping:</strong> Real-time, organized financial records</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#6B2C2C] mt-1">•</span>
+                  <span><strong className="text-[#1b1b1b]">Financial statements:</strong> Annual report preparation to UAE standards</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#6B2C2C] mt-1">•</span>
+                  <span><strong className="text-[#1b1b1b]">Proactive advisory:</strong> Quarterly reviews and year-round support</span>
+                </li>
+              </ul>
+              <p className="text-[#1b1b1b] font-semibold text-sm">
+                <span className="text-[#6B2C2C]">The peace of mind:</span> Always compliant, always optimized.
+              </p>
+            </div>
           </div>
-
-          <div className="grid md:grid-cols-4 gap-8">
-            {[
-              { step: '01', title: 'Initial Contact', desc: 'Free consultation to understand your needs' },
-              { step: '02', title: 'Custom Quote', desc: 'Tailored proposal for your business' },
-              { step: '03', title: 'Company Name', desc: 'Reserve your preferred company name' },
-              { step: '04', title: 'Documentation', desc: 'Prepare and verify all required documents' },
-              { step: '05', title: 'Legal Process', desc: 'Handle all legal incorporation procedures' },
-              { step: '06', title: 'Company Ready', desc: 'Your Dubai company is officially registered' },
-              { step: '07', title: 'Bank Accounts', desc: 'Set up business banking accounts' },
-              { step: '08', title: 'Launch', desc: 'Your business is ready to operate' }
-            ].map((item, index) => (
-              <div key={index} className="relative">
-                <div className="mb-6">
-                  <span className="text-6xl font-bold text-[#78586F]/30">{item.step}</span>
-                </div>
-                <h3 className="text-xl font-bold text-[#1b1b1b] mb-3">{item.title}</h3>
-                <p className="text-[#1b1b1b]/70 leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="px-6 py-24 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1b1b1b]">
-            Ready to Get Started?
-          </h2>
-          <p className="text-xl text-[#1b1b1b]/70 mb-10">
-            Let's discuss which service is right for your business
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block px-12 py-5 bg-[#78586F] text-[#eeede9] rounded-full font-bold text-lg hover:bg-[#78586F]/90 transition-all"
-          >
-            Contact Us Today
-          </Link>
         </div>
       </section>
     </div>

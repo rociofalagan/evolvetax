@@ -31,14 +31,14 @@ export default function Navigation() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-[#1b1b1b] hover:text-[#78586F] font-medium transition-colors text-base"
+                className="text-[#1b1b1b] hover:text-[#6B2C2C] font-medium transition-colors text-sm"
               >
                 {item.name}
               </Link>
             ))}
             <Link
               href="/contact"
-              className="px-6 py-3 bg-[#78586F] text-[#eeede9] rounded-full font-semibold hover:bg-[#78586F]/90 transition-all"
+              className="px-6 py-3 bg-[#6B2C2C] text-[#eeede9] rounded-full font-semibold hover:bg-[#eeede9] hover:text-[#6B2C2C] border-2 border-[#6B2C2C] transition-all text-sm"
             >
               Contact
             </Link>
@@ -76,7 +76,7 @@ export default function Navigation() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-[#1b1b1b] hover:text-[#78586F] font-medium transition-colors text-lg py-2"
+                  className="text-[#1b1b1b] hover:text-[#6B2C2C] font-medium transition-colors text-base py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -84,7 +84,7 @@ export default function Navigation() {
               ))}
               <Link
                 href="/contact"
-                className="mt-4 px-6 py-3 bg-[#78586F] text-[#eeede9] rounded-full font-semibold hover:bg-[#78586F]/90 transition-all text-center"
+                className="mt-4 px-6 py-3 bg-[#6B2C2C] text-[#eeede9] rounded-full font-semibold hover:bg-[#eeede9] hover:text-[#6B2C2C] border-2 border-[#6B2C2C] transition-all text-center text-sm"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact

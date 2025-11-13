@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Inter } from "next/font/google";
+import { Montserrat, Inter, Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
@@ -17,6 +17,13 @@ const inter = Inter({
   display: "swap",
 });
 
+const beVietnam = Be_Vietnam_Pro({
+  variable: "--font-be-vietnam",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
+});
+
 export const metadata: Metadata = {
   title: "EvolveTax - International Tax Advisory for Digital Businesses",
   description: "Expert tax structuring and Dubai business setup for entrepreneurs and digital businesses. Optimize your international tax structure with EvolveTax.",
@@ -30,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} ${inter.variable} antialiased`}
+        className={`${montserrat.variable} ${inter.variable} ${beVietnam.variable} antialiased`}
       >
         <Navigation />
         {children}
