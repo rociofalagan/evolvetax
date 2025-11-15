@@ -30,8 +30,8 @@ export default function Home() {
             <span className="block italic font-normal text-[32px] md:text-[56px] -mt-2 md:-mt-3" style={{ fontFamily: '"Times New Roman", Times, serif' }}>Your tax strategy should too</span>
           </h1>
 
-          <p className="text-[17px] md:text-[19px] text-[#1b1b1b]/60 mb-8 font-light leading-tight italic" style={{ fontFamily: '"Times New Roman", Times, serif' }}>
-            International tax advisory and Dubai company formation to power your global business ambitions
+          <p className="text-[19px] md:text-[21px] text-[#1b1b1b]/60 mb-8 font-light leading-tight italic" style={{ fontFamily: '"Times New Roman", Times, serif' }}>
+            International tax advisory to power your global business ambitions
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center">
@@ -133,95 +133,58 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="px-6 py-24 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1b1b1b] mb-6">
-            What Our Clients Say
-          </h2>
-          <p className="text-xl text-[#1b1b1b]/70 max-w-3xl mx-auto">
-            Success stories from entrepreneurs who transformed their businesses
-          </p>
-        </div>
+      {/* Jurisdictions Section */}
+      <section className="px-6 pt-24 pb-12 bg-[#eeede9]">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-5xl mx-auto mb-12">
+            <hr className="border-t border-[#1b1b1b]/10" />
+          </div>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#1b1b1b] mb-6">
+              Jurisdictions we work with
+            </h2>
+            <p className="text-lg text-[#1b1b1b]/70 max-w-3xl mx-auto mb-8">
+              Through our strategic alliances with different partners accross the world, we cover the following jurisdictions:
+            </p>
+            <div className="w-full max-w-5xl mx-auto">
+              <img
+                src="/Mapa mundo - granate.svg"
+                alt="World map showing jurisdictions"
+                className="w-full h-auto"
+              />
+            </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-white rounded-3xl p-8 shadow-sm border border-[#1b1b1b]/10">
-            <div className="flex items-center gap-1 mb-4">
-              {[...Array(5)].map((_, i) => (
-                <svg key={i} className="w-5 h-5 text-[#6B2C2C]" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
+            {/* Countries list */}
+            <div className="mt-2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-4xl mx-auto">
+              {['Spain', 'Portugal', 'Cyprus', 'Malta', 'Estonia', 'United States', 'United Arab Emirates', 'Hong Kong', 'Paraguay', 'Panama'].map((country) => (
+                <div key={country} className="flex items-center gap-2 justify-center">
+                  <div className="w-2 h-2 bg-[#6B2C2C] rounded-full flex-shrink-0"></div>
+                  <span className="text-lg text-[#1b1b1b]/70 whitespace-nowrap">{country}</span>
+                </div>
               ))}
             </div>
-            <p className="text-[#1b1b1b]/70 leading-relaxed mb-6">
-              "EvolveTax made setting up our SaaS company in Dubai incredibly smooth. The tax savings are significant and the team was professional throughout."
-            </p>
-            <div>
-              <p className="font-bold text-[#1b1b1b]">Sarah Mitchell</p>
-              <p className="text-sm text-[#1b1b1b]/60">Founder, TechFlow SaaS</p>
-            </div>
           </div>
-
-          <div className="bg-white rounded-3xl p-8 shadow-sm border border-[#1b1b1b]/10">
-            <div className="flex items-center gap-1 mb-4">
-              {[...Array(5)].map((_, i) => (
-                <svg key={i} className="w-5 h-5 text-[#6B2C2C]" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              ))}
-            </div>
-            <p className="text-[#1b1b1b]/70 leading-relaxed mb-6">
-              "The expertise and attention to detail from EvolveTax gave us confidence in our international expansion. Highly recommended!"
-            </p>
-            <div>
-              <p className="font-bold text-[#1b1b1b]">Marcus Chen</p>
-              <p className="text-sm text-[#1b1b1b]/60">CEO, Global Ventures Ltd</p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-3xl p-8 shadow-sm border border-[#1b1b1b]/10">
-            <div className="flex items-center gap-1 mb-4">
-              {[...Array(5)].map((_, i) => (
-                <svg key={i} className="w-5 h-5 text-[#6B2C2C]" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              ))}
-            </div>
-            <p className="text-[#1b1b1b]/70 leading-relaxed mb-6">
-              "Professional, efficient, and knowledgeable. EvolveTax helped us save over $200K in taxes in the first year alone."
-            </p>
-            <div>
-              <p className="font-bold text-[#1b1b1b]">Elena Rodriguez</p>
-              <p className="text-sm text-[#1b1b1b]/60">Director, Digital Marketing Agency</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="text-center mt-12">
-          <Link
-            href="/clients"
-            className="inline-block text-[#6B2C2C] font-semibold text-lg hover:underline"
-          >
-            View More Success Stories →
-          </Link>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-24 bg-white">
+      <section className="px-6 pt-4 pb-24 bg-[#eeede9]">
+        <div className="max-w-5xl mx-auto mb-12">
+          <hr className="border-t border-[#1b1b1b]/10" />
+        </div>
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-[#1b1b1b] mb-6">
-            Ready to Optimize Your Tax Structure?
+            Ready to take action?
           </h2>
-          <p className="text-xl text-[#1b1b1b]/70 mb-10">
-            Schedule a free consultation and discover how we can help you establish your business in Dubai
+          <p className="text-lg text-[#1b1b1b]/70 mb-10">
+            Leave us your details and we'll personally reach out to assess your case and guide you forward.
           </p>
-          <Link
-            href="/contact"
+          <button
+            onClick={() => setIsModalOpen(true)}
             className="inline-block px-12 py-5 bg-[#6B2C2C] text-[#eeede9] rounded-full font-bold text-lg hover:bg-[#6B2C2C]/90 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
           >
             Get Started Today
-          </Link>
+          </button>
         </div>
       </section>
 

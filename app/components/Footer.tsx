@@ -2,89 +2,48 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="px-6 py-16 bg-[#1B1B1B]">
+    <footer className="px-6 pt-8 pb-12 bg-[#6B2C2C]">
       <div className="max-w-7xl mx-auto">
-        {/* Logo and Tagline */}
-        <div className="mb-12">
-          <div className="flex items-center gap-3 mb-2">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          {/* Left side - Logo */}
+          <div className="flex items-center gap-3">
             <img
               src="/transparente.svg"
               alt="EvolveTax Logo"
-              className="w-12 h-12 brightness-0 invert"
+              className="w-40 h-40 brightness-0 invert"
             />
-            <h3 className="text-2xl font-bold text-[#EEEDE9]">EVOLVE TAX</h3>
           </div>
-          <p className="text-[#EEEDE9]/70 text-lg ml-15">Tax, Simplified</p>
-        </div>
 
-        {/* Three Columns */}
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
-          {/* Services */}
+          {/* Right side - Contact */}
           <div>
-            <h4 className="text-[#EEEDE9] font-bold text-lg mb-4">Services</h4>
+            <h4 className="text-white font-bold text-base mb-3 text-left">Contact</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/services#tax-advisory" className="text-[#EEEDE9]/70 hover:text-[#EEEDE9] transition-colors flex items-start gap-2">
-                  <span>•</span>
-                  <span>Tax Advisory</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#dubai-setup" className="text-[#EEEDE9]/70 hover:text-[#EEEDE9] transition-colors flex items-start gap-2">
-                  <span>•</span>
-                  <span>Dubai Setup</span>
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* About */}
-          <div>
-            <h4 className="text-[#EEEDE9] font-bold text-lg mb-4">About</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/about#team" className="text-[#EEEDE9]/70 hover:text-[#EEEDE9] transition-colors flex items-start gap-2">
-                  <span>•</span>
-                  <span>Team</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/about#approach" className="text-[#EEEDE9]/70 hover:text-[#EEEDE9] transition-colors flex items-start gap-2">
-                  <span>•</span>
-                  <span>Approach</span>
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="text-[#EEEDE9] font-bold text-lg mb-4">Contact</h4>
-            <ul className="space-y-2 text-[#EEEDE9]/70">
-              <li>
-                <a href="mailto:info@evolvetax.com" className="hover:text-[#EEEDE9] transition-colors">
-                  Email
+                <a
+                  href="mailto:hello@evolvetaxdubai.com"
+                  className="flex items-center gap-2 text-white hover:text-white/80 transition-colors text-sm"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <span>hello@evolvetaxdubai.com</span>
                 </a>
               </li>
               <li>
-                <a href="tel:+971XXXXXXXX" className="hover:text-[#EEEDE9] transition-colors">
-                  Phone
-                </a>
-              </li>
-              <li>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#EEEDE9] transition-colors">
-                  LinkedIn
+                <a
+                  href="https://www.linkedin.com/company/evolvetaxdubai/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-white hover:text-white/80 transition-colors text-sm"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                  <span>LinkedIn</span>
                 </a>
               </li>
             </ul>
           </div>
-        </div>
-
-        {/* Copyright */}
-        <div className="pt-8 border-t border-[#EEEDE9]/10">
-          <p className="text-[#EEEDE9]/60 text-center">
-            © 2025 Evolve Tax. Dubai & EU.
-          </p>
         </div>
       </div>
     </footer>
