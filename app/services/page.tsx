@@ -1,196 +1,156 @@
 import Link from 'next/link';
 
 export default function Services() {
-  const services = [
-    {
-      title: "Tax Advisory",
-      description: "Expert guidance on complex tax matters for individuals and businesses operating internationally.",
-      features: [
-        "International tax planning",
-        "Cross-border tax strategy",
-        "Compliance advisory",
-        "Tax risk management"
-      ]
-    },
-    {
-      title: "Tax Declaration",
-      description: "Comprehensive tax filing services ensuring accuracy and compliance with local and international regulations.",
-      features: [
-        "Corporate tax returns",
-        "Individual tax filings",
-        "VAT declarations",
-        "Quarterly reporting"
-      ]
-    },
-    {
-      title: "Tax Planning",
-      description: "Strategic tax planning to optimize your financial structure and minimize tax liabilities legally.",
-      features: [
-        "Long-term tax strategy",
-        "Structure optimization",
-        "Investment tax planning",
-        "Succession planning"
-      ]
-    },
-    {
-      title: "Audit & Compliance",
-      description: "Ensure your business meets all regulatory requirements with our comprehensive audit services.",
-      features: [
-        "Tax compliance audits",
-        "Regulatory compliance",
-        "Internal controls review",
-        "Risk assessment"
-      ]
-    },
-    {
-      title: "Business Consultation",
-      description: "Tailored tax solutions for businesses of all sizes, from startups to established enterprises.",
-      features: [
-        "Business structure planning",
-        "Dubai company setup",
-        "Free zone registration",
-        "Ongoing business support"
-      ]
-    },
-    {
-      title: "Individual Consultation",
-      description: "Personalized tax advice for high-net-worth individuals and digital nomads.",
-      features: [
-        "Personal tax optimization",
-        "Residency planning",
-        "Investment structuring",
-        "Wealth management"
-      ]
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-[#eeede9]">
-      <section className="px-6 py-20 md:py-24 bg-[#eeede9]">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#1b1b1b] mb-16 text-center">
-            Our Services
+      {/* Hero Section */}
+      <section className="px-6 py-20 md:py-24">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1b1b1b] mb-6">
+            Comprehensive Tax Solutions for Digital Entrepreneurs
           </h1>
-          <div className="grid md:grid-cols-3 gap-12">
-            {/* Service 01: International Tax Structuring */}
-            <div>
-              <p className="text-lg font-bold text-[#6B2C2C] mb-2">01</p>
-              <h3 className="text-xl font-bold text-[#1b1b1b] mb-2">
-                International Tax Structuring
-              </h3>
-              <p className="text-lg font-semibold text-[#1b1b1b] mb-4">
-                Strategy Before Setup
-              </p>
-              <p className="text-[#1b1b1b]/70 text-base leading-relaxed mb-6">
-                We analyze your business model, revenue streams, and personal goals to design your most tax-efficient international structure.
-              </p>
-              <h4 className="text-base font-bold text-[#1b1b1b] mb-3">What we deliver:</h4>
-              <ul className="space-y-2 text-[#1b1b1b]/70 text-sm mb-6">
-                <li className="flex items-start gap-2">
-                  <span className="text-[#6B2C2C] mt-1">•</span>
-                  <span>Comprehensive business and income analysis</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#6B2C2C] mt-1">•</span>
-                  <span>Jurisdiction comparison tailored to your specific case</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#6B2C2C] mt-1">•</span>
-                  <span>Entity structure design (single or multi-company)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#6B2C2C] mt-1">•</span>
-                  <span>Personal tax residency planning</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#6B2C2C] mt-1">•</span>
-                  <span>Substance requirements roadmap</span>
-                </li>
-              </ul>
-              <p className="text-[#1b1b1b] font-semibold text-sm">
-                <span className="text-[#6B2C2C]">The outcome:</span> A clear, compliant structure that maximizes your tax efficiency.
-              </p>
+          <p className="text-xl text-[#1b1b1b]/70 max-w-3xl mx-auto">
+            From initial strategy to full implementation and ongoing management. Everything you need to structure your business intelligently and stay compliant.
+          </p>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="px-6 pb-24">
+        <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-6">
+
+          {/* Service 1: Strategic Tax Planning */}
+          <div className="bg-white rounded-3xl p-8 shadow-lg text-center">
+            <div className="w-12 h-12 mx-auto mb-6">
+              <svg className="w-12 h-12 text-[#6B2C2C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
             </div>
 
-            {/* Service 02: Structure Implementation */}
+            <h2 className="text-2xl font-bold text-[#1b1b1b] mb-6">
+              Strategic Tax Planning
+            </h2>
+
+            <p className="text-base text-[#1b1b1b]/70 mb-6 leading-relaxed">
+              This is where everything begins. Before you incorporate anything or move anywhere, you need a clear strategy.
+            </p>
+
             <div>
-              <p className="text-lg font-bold text-[#6B2C2C] mb-2">02</p>
-              <h3 className="text-xl font-bold text-[#1b1b1b] mb-2">
-                Structure Implementation
-              </h3>
-              <p className="text-lg font-semibold text-[#1b1b1b] mb-4">
-                From Plan to Reality
-              </p>
-              <p className="text-[#1b1b1b]/70 text-base leading-relaxed mb-6">
-                Once your strategy is defined, we handle the complete implementation—whether in the UAE or through our trusted international partners.
-              </p>
-              <h4 className="text-base font-bold text-[#1b1b1b] mb-3">UAE Setup (We Manage In-House):</h4>
-              <ul className="space-y-2 text-[#1b1b1b]/70 text-sm mb-6">
-                <li className="flex items-start gap-2">
-                  <span className="text-[#6B2C2C] mt-1">•</span>
-                  <span>Free zone selection and license application</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#6B2C2C] mt-1">•</span>
-                  <span>Company incorporation and trade license</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#6B2C2C] mt-1">•</span>
-                  <span>UAE residence visa and Emirates ID processing</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#6B2C2C] mt-1">•</span>
-                  <span>Bank account opening coordination</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#6B2C2C] mt-1">•</span>
-                  <span>Office and PRO services</span>
-                </li>
+              <h3 className="text-base font-bold text-[#1b1b1b] mb-4">What's included:</h3>
+              <ul className="space-y-2 text-sm text-[#1b1b1b]/70">
+                <li>✓ Deep-dive analysis of your current business structure and tax situation</li>
+                <li>✓ Custom tax optimization strategy tailored to your business model and goals</li>
+                <li>✓ Jurisdiction comparison (Dubai vs. alternatives) based on your specific needs</li>
+                <li>✓ Risk assessment and compliance roadmap</li>
+                <li>✓ Clear implementation plan with timeline and next steps</li>
               </ul>
-              <h4 className="text-base font-bold text-[#1b1b1b] mb-3">Other Jurisdictions:</h4>
-              <p className="text-[#1b1b1b]/70 text-sm leading-relaxed mb-6">
-                We coordinate with vetted partners for setups in Estonia, Singapore, US, and other jurisdictions.
-              </p>
-              <p className="text-[#1b1b1b] font-semibold text-sm">
-                <span className="text-[#6B2C2C]">The result:</span> Your company operational and compliant, hassle-free.
-              </p>
+            </div>
+          </div>
+
+          {/* Service 2: Full Implementation */}
+          <div className="bg-white rounded-3xl p-8 shadow-lg text-center">
+            <div className="w-12 h-12 mx-auto mb-6">
+              <svg className="w-12 h-12 text-[#6B2C2C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
             </div>
 
-            {/* Service 03: Ongoing Tax Advisory & Compliance */}
+            <h2 className="text-2xl font-bold text-[#1b1b1b] mb-6">
+              Full Implementation
+            </h2>
+
+            <p className="text-base text-[#1b1b1b]/70 mb-6 leading-relaxed">
+              You've got the plan. Now it's time to execute.
+            </p>
+
             <div>
-              <p className="text-lg font-bold text-[#6B2C2C] mb-2">03</p>
-              <h3 className="text-xl font-bold text-[#1b1b1b] mb-2">
-                Ongoing Tax Advisory & Compliance
-              </h3>
-              <p className="text-lg font-semibold text-[#1b1b1b] mb-4">
-                Run Your Business, We'll Handle the Rest
-              </p>
-              <p className="text-[#1b1b1b]/70 text-base leading-relaxed mb-6">
-                Focus on growth while we manage your tax and accounting obligations.
-              </p>
-              <h4 className="text-base font-bold text-[#1b1b1b] mb-3">Our services:</h4>
-              <ul className="space-y-2 text-[#1b1b1b]/70 text-sm mb-6">
-                <li className="flex items-start gap-2">
-                  <span className="text-[#6B2C2C] mt-1">•</span>
-                  <span><strong className="text-[#1b1b1b]">Tax compliance:</strong> UAE Corporate Tax and VAT registration, filings, and optimization</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#6B2C2C] mt-1">•</span>
-                  <span><strong className="text-[#1b1b1b]">Monthly bookkeeping:</strong> Real-time, organized financial records</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#6B2C2C] mt-1">•</span>
-                  <span><strong className="text-[#1b1b1b]">Financial statements:</strong> Annual report preparation to UAE standards</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#6B2C2C] mt-1">•</span>
-                  <span><strong className="text-[#1b1b1b]">Proactive advisory:</strong> Quarterly reviews and year-round support</span>
-                </li>
+              <h3 className="text-base font-bold text-[#1b1b1b] mb-4">What's included:</h3>
+              <ul className="space-y-2 text-sm text-[#1b1b1b]/70">
+                <li>✓ Company incorporation in Dubai (or your chosen jurisdiction)</li>
+                <li>✓ Tax residency planning and setup</li>
+                <li>✓ Business licensing and regulatory approvals</li>
+                <li>✓ Banking relationships and account opening support</li>
+                <li>✓ Compliance framework setup (accounting systems, reporting structures)</li>
+                <li>✓ Documentation and legal paperwork management</li>
+                <li>✓ Hand-holding through every step until your structure is fully operational</li>
               </ul>
-              <p className="text-[#1b1b1b] font-semibold text-sm">
-                <span className="text-[#6B2C2C]">The peace of mind:</span> Always compliant, always optimized.
-              </p>
             </div>
+          </div>
+
+          {/* Service 3: Ongoing Management */}
+          <div className="bg-white rounded-3xl p-8 shadow-lg text-center">
+            <div className="w-12 h-12 mx-auto mb-6">
+              <svg className="w-12 h-12 text-[#6B2C2C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+            </div>
+
+            <h2 className="text-2xl font-bold text-[#1b1b1b] mb-6">
+              Ongoing Management
+            </h2>
+
+            <p className="text-base text-[#1b1b1b]/70 mb-6 leading-relaxed">
+              Your structure is set up. Now what? We handle everything so you can focus on what actually makes you money: running your business.
+            </p>
+
+            <div>
+              <h3 className="text-base font-bold text-[#1b1b1b] mb-4">What's included:</h3>
+              <ul className="space-y-2 text-sm text-[#1b1b1b]/70">
+                <li>✓ Monthly bookkeeping and accounting</li>
+                <li>✓ Quarterly and annual tax filings (UAE, Spain, and other jurisdictions as needed)</li>
+                <li>✓ Compliance monitoring to ensure you're always up to date</li>
+                <li>✓ Financial reporting so you know where your business stands</li>
+                <li>✓ Tax optimization review to ensure your structure continues to work as your business evolves</li>
+                <li>✓ Direct access to me for questions and ongoing support</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Service 4: Ad-hoc Tax Advisory */}
+          <div className="bg-white rounded-3xl p-8 shadow-lg text-center">
+            <div className="w-12 h-12 mx-auto mb-6">
+              <svg className="w-12 h-12 text-[#6B2C2C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+
+            <h2 className="text-2xl font-bold text-[#1b1b1b] mb-6">
+              Ad-hoc Tax Advisory
+            </h2>
+
+            <p className="text-base text-[#1b1b1b]/70 mb-6 leading-relaxed">
+              Sometimes you don't need a full restructuring or ongoing management. You just need a clear answer to a specific question.
+            </p>
+
+            <div>
+              <h3 className="text-base font-bold text-[#1b1b1b] mb-4">What's included:</h3>
+              <ul className="space-y-2 text-sm text-[#1b1b1b]/70">
+                <li>✓ Specific tax questions answered by an expert</li>
+                <li>✓ Quick structure reviews and second opinions</li>
+                <li>✓ Transaction-specific advice (asset sales, business acquisitions, etc.)</li>
+                <li>✓ Scenario planning for business decisions with tax implications</li>
+                <li>✓ Compliance clarifications</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="px-6 pb-24">
+        <div className="max-w-5xl mx-auto">
+          <hr className="border-t border-[#1b1b1b]/10 mb-12" />
+          <div className="text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1b1b1b] mb-6">
+              Ready to take the next step?
+            </h2>
+            <p className="text-lg text-[#1b1b1b]/70 mb-8">
+              Let's discuss your specific situation and find the right solution for your business.
+            </p>
+            <Link href="/contact" className="inline-block px-10 py-5 bg-[#6B2C2C] text-[#eeede9] rounded-full font-bold text-lg hover:bg-[#6B2C2C]/90 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+              Start Your Journey Here
+            </Link>
           </div>
         </div>
       </section>

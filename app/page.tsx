@@ -11,13 +11,44 @@ export default function Home() {
     email: '',
     comments: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Aquí puedes añadir la lógica para enviar el formulario
-    setIsModalOpen(false);
-    setFormData({ name: '', phone: '', email: '', comments: '' });
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send email');
+      }
+
+      setSubmitStatus('success');
+      setFormData({ name: '', phone: '', email: '', comments: '' });
+
+      // Cerrar el modal después de 2 segundos
+      setTimeout(() => {
+        setIsModalOpen(false);
+        setSubmitStatus('idle');
+      }, 2000);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+      setErrorMessage('There was an error sending your message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -30,8 +61,8 @@ export default function Home() {
             <span className="block italic font-normal text-[32px] md:text-[56px] -mt-2 md:-mt-3" style={{ fontFamily: '"Times New Roman", Times, serif' }}>Your tax strategy should too</span>
           </h1>
 
-          <p className="text-[19px] md:text-[21px] text-[#1b1b1b]/60 mb-8 font-light leading-tight italic" style={{ fontFamily: '"Times New Roman", Times, serif' }}>
-            International tax advisory to power your global business ambitions
+          <p className="text-[19px] md:text-[21px] text-[#1b1b1b]/60 mb-8 font-light leading-[0.9] italic" style={{ fontFamily: '"Times New Roman", Times, serif' }}>
+            International tax advisory for digital entrepreneurs ready to optimize their structure
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center">
@@ -45,7 +76,7 @@ export default function Home() {
               onClick={() => setIsModalOpen(true)}
               className="inline-block px-8 py-3 bg-transparent text-[#1b1b1b] border-2 border-[#1b1b1b] rounded-full font-semibold hover:bg-[#6B2C2C] hover:text-[#eeede9] hover:border-[#6B2C2C] transition-all text-base"
             >
-              Get Started
+              Start your Journey here
             </button>
           </div>
         </div>
@@ -60,76 +91,80 @@ export default function Home() {
       </section>
 
       {/* Services Overview */}
-      <section className="px-6 py-24 max-w-7xl mx-auto">
+      <section className="px-6 pt-24 pb-12 max-w-7xl mx-auto">
+        <div className="max-w-5xl mx-auto mb-12">
+          <hr className="border-t border-[#1b1b1b]/10" />
+        </div>
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#1b1b1b] mb-6">
             Our Services
           </h2>
-          <p className="text-xl text-[#1b1b1b]/70 max-w-3xl mx-auto">
-            Comprehensive tax solutions tailored for modern businesses
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-10">
-          <div className="bg-white rounded-3xl p-10 shadow-sm border border-[#1b1b1b]/10 hover:shadow-lg transition-shadow">
-            <div className="w-16 h-16 bg-[#1b1b1b] rounded-2xl flex items-center justify-center mb-6">
-              <svg className="w-8 h-8 text-[#6B2C2C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
-            </div>
-            <h3 className="text-2xl font-bold text-[#1b1b1b] mb-4">
-              Tax Structuring
-            </h3>
-            <p className="text-[#1b1b1b]/70 leading-relaxed mb-6">
-              Optimal tax structure design maximizing efficiency and international legal compliance.
+          <div className="text-lg text-[#1b1b1b]/60 max-w-6xl mx-auto space-y-3">
+            <p>
+              At Evolve Tax, we specialize in one thing: helping digital entrepreneurs structure their businesses intelligently from a tax perspective.
             </p>
-            <Link href="/services" className="text-[#6B2C2C] font-semibold hover:underline">
-              Learn more →
-            </Link>
-          </div>
-
-          <div className="bg-white rounded-3xl p-10 shadow-sm border border-[#1b1b1b]/10 hover:shadow-lg transition-shadow">
-            <div className="w-16 h-16 bg-[#1b1b1b] rounded-2xl flex items-center justify-center mb-6">
-              <svg className="w-8 h-8 text-[#6B2C2C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-              </svg>
-            </div>
-            <h3 className="text-2xl font-bold text-[#1b1b1b] mb-4">
-              Dubai Setup
-            </h3>
-            <p className="text-[#1b1b1b]/70 leading-relaxed mb-6">
-              Complete guidance through establishing your company in Dubai from start to finish.
+            <p>
+              We don't just give you advice. We implement, manage, and support your structure so you can focus on what you do best: running your business.
             </p>
-            <Link href="/services" className="text-[#6B2C2C] font-semibold hover:underline">
-              Learn more →
-            </Link>
-          </div>
-
-          <div className="bg-white rounded-3xl p-10 shadow-sm border border-[#1b1b1b]/10 hover:shadow-lg transition-shadow">
-            <div className="w-16 h-16 bg-[#1b1b1b] rounded-2xl flex items-center justify-center mb-6">
-              <svg className="w-8 h-8 text-[#6B2C2C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
-            <h3 className="text-2xl font-bold text-[#1b1b1b] mb-4">
-              Tax Advisory
-            </h3>
-            <p className="text-[#1b1b1b]/70 leading-relaxed mb-6">
-              Ongoing tax consultation and strategic planning for sustainable business growth.
-            </p>
-            <Link href="/services" className="text-[#6B2C2C] font-semibold hover:underline">
-              Learn more →
-            </Link>
           </div>
         </div>
 
-        <div className="text-center mt-12">
-          <Link
-            href="/services"
-            className="inline-block px-10 py-4 bg-[#6B2C2C] text-[#eeede9] rounded-full font-semibold hover:bg-[#6B2C2C]/90 transition-all"
-          >
-            View All Services
-          </Link>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="bg-white rounded-3xl p-8 shadow-md hover:shadow-xl transition-shadow">
+            <div className="w-12 h-12 mx-auto mb-5">
+              <svg className="w-12 h-12 text-[#6B2C2C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-bold text-[#1b1b1b] mb-3 text-center">
+              Strategic Tax Planning
+            </h3>
+            <p className="text-[#1b1b1b]/70 leading-relaxed text-sm text-center">
+              We analyze your business and design the optimal international tax structure for you.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-3xl p-8 shadow-md hover:shadow-xl transition-shadow">
+            <div className="w-12 h-12 mx-auto mb-5">
+              <svg className="w-12 h-12 text-[#6B2C2C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-bold text-[#1b1b1b] mb-3 text-center">
+              Full Implementation
+            </h3>
+            <p className="text-[#1b1b1b]/70 leading-relaxed text-sm text-center">
+              We guide you through every step: company incorporation, tax residency, banking, and compliance setup.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-3xl p-8 shadow-md hover:shadow-xl transition-shadow">
+            <div className="w-12 h-12 mx-auto mb-5">
+              <svg className="w-12 h-12 text-[#6B2C2C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-bold text-[#1b1b1b] mb-3 text-center">
+              Ongoing Management
+            </h3>
+            <p className="text-[#1b1b1b]/70 leading-relaxed text-sm text-center">
+              We manage your accounting and tax filings while you focus on growth.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-3xl p-8 shadow-md hover:shadow-xl transition-shadow">
+            <div className="w-12 h-12 mx-auto mb-5">
+              <svg className="w-12 h-12 text-[#6B2C2C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-bold text-[#1b1b1b] mb-3 text-center">
+              Ad-hoc Tax Advisory
+            </h3>
+            <p className="text-[#1b1b1b]/70 leading-relaxed text-sm text-center">
+              Book a consultation with our team to address specific tax queries.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -143,10 +178,10 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold text-[#1b1b1b] mb-6">
               Jurisdictions we work with
             </h2>
-            <p className="text-lg text-[#1b1b1b]/70 max-w-3xl mx-auto mb-8">
+            <p className="text-lg text-[#1b1b1b]/70 max-w-5xl mx-auto mb-8">
               Through our strategic alliances with different partners accross the world, we cover the following jurisdictions:
             </p>
-            <div className="w-full max-w-5xl mx-auto">
+            <div className="w-full max-w-3xl mx-auto">
               <img
                 src="/Mapa mundo - granate.svg"
                 alt="World map showing jurisdictions"
@@ -155,11 +190,27 @@ export default function Home() {
             </div>
 
             {/* Countries list */}
-            <div className="mt-2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-4xl mx-auto">
-              {['Spain', 'Portugal', 'Cyprus', 'Malta', 'Estonia', 'United States', 'United Arab Emirates', 'Hong Kong', 'Paraguay', 'Panama'].map((country) => (
-                <div key={country} className="flex items-center gap-2 justify-center">
-                  <div className="w-2 h-2 bg-[#6B2C2C] rounded-full flex-shrink-0"></div>
-                  <span className="text-lg text-[#1b1b1b]/70 whitespace-nowrap">{country}</span>
+            <div className="mt-8 flex flex-wrap justify-center gap-3 max-w-5xl mx-auto">
+              {[
+                { name: 'Spain', flag: '🇪🇸' },
+                { name: 'Portugal', flag: '🇵🇹' },
+                { name: 'Cyprus', flag: '🇨🇾' },
+                { name: 'Malta', flag: '🇲🇹' },
+                { name: 'Estonia', flag: '🇪🇪' },
+                { name: 'United States', flag: '🇺🇸' },
+                { name: 'United Arab Emirates', flag: '🇦🇪' },
+                { name: 'Hong Kong', flag: '🇭🇰' },
+                { name: 'Paraguay', flag: '🇵🇾' },
+                { name: 'Panama', flag: '🇵🇦' }
+              ].map((country) => (
+                <div
+                  key={country.name}
+                  className="bg-white px-6 py-3 rounded-full shadow-md hover:shadow-lg hover:bg-[#6B2C2C] transition-all hover:-translate-y-0.5 cursor-default group"
+                >
+                  <span className="text-base font-semibold text-[#1b1b1b] group-hover:text-[#eeede9] transition-colors flex items-center gap-2">
+                    <span className="text-xl">{country.flag}</span>
+                    {country.name}
+                  </span>
                 </div>
               ))}
             </div>
@@ -266,9 +317,10 @@ export default function Home() {
               <div className="flex gap-3 pt-3">
                 <button
                   type="submit"
-                  className="flex-1 px-6 py-2.5 text-sm bg-[#6B2C2C] text-[#eeede9] rounded-lg font-semibold hover:bg-[#4D1F1F] transition-all shadow-lg"
+                  disabled={isSubmitting}
+                  className="flex-1 px-6 py-2.5 text-sm bg-[#6B2C2C] text-[#eeede9] rounded-lg font-semibold hover:bg-[#4D1F1F] transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Submit
+                  {isSubmitting ? 'Sending...' : 'Submit'}
                 </button>
                 <button
                   type="button"
@@ -278,6 +330,20 @@ export default function Home() {
                   Cancel
                 </button>
               </div>
+
+              {/* Success Message */}
+              {submitStatus === 'success' && (
+                <div className="mt-4 p-3 bg-green-100 border border-green-400 text-green-700 rounded-lg text-sm">
+                  Thank you! Your message has been sent successfully. We'll get back to you soon.
+                </div>
+              )}
+
+              {/* Error Message */}
+              {submitStatus === 'error' && (
+                <div className="mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg text-sm">
+                  {errorMessage}
+                </div>
+              )}
             </form>
           </div>
         </div>
