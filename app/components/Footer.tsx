@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="px-6 pt-8 pb-12 bg-[#6B2C2C]">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
           {/* Left side - Logo */}
           <div className="flex items-center gap-3">
             <img
@@ -14,9 +14,56 @@ export default function Footer() {
             />
           </div>
 
+          {/* Center - Legal Links */}
+          <div className="flex-1">
+            <h4 className="text-white font-bold text-base mb-3">Legal</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/privacy-policy"
+                  className="text-white hover:text-white/80 transition-colors text-sm"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/terms-and-conditions"
+                  className="text-white hover:text-white/80 transition-colors text-sm"
+                >
+                  Terms & Conditions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/cookie-policy"
+                  className="text-white hover:text-white/80 transition-colors text-sm"
+                >
+                  Cookie Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/disclaimer"
+                  className="text-white hover:text-white/80 transition-colors text-sm"
+                >
+                  Disclaimer
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/data-protection"
+                  className="text-white hover:text-white/80 transition-colors text-sm"
+                >
+                  Data Protection Notice
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* Right side - Contact */}
           <div>
-            <h4 className="text-white font-bold text-base mb-3 text-left">Contact</h4>
+            <h4 className="text-white font-bold text-base mb-3">Contact</h4>
             <ul className="space-y-2">
               <li>
                 <a

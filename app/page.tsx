@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -14,6 +14,62 @@ export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
+
+  useEffect(() => {
+    // Trigger animations after component mounts
+    setTimeout(() => setIsLoaded(true), 100);
+
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleSections((prev) => new Set(prev).add(entry.target.id));
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    // Observe all sections
+    const sections = document.querySelectorAll('[data-animate]');
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
+  const services = [
+    {
+      icon: (
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+      ),
+      title: 'Strategic Tax Planning',
+      description: 'We analyze your business and design the optimal international tax structure for you.'
+    },
+    {
+      icon: (
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      ),
+      title: 'Full Implementation',
+      description: 'We guide you through every step: company incorporation, tax residency, banking, and compliance setup.'
+    },
+    {
+      icon: (
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+      ),
+      title: 'Ongoing Management',
+      description: 'We manage your accounting and tax filings while you focus on growth.'
+    },
+    {
+      icon: (
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      ),
+      title: 'Ad-hoc Tax Advisory',
+      description: 'Book a consultation with our team to address specific tax queries.'
+    }
+  ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -52,136 +108,189 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#eeede9]">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="pt-20 md:pt-32 pb-0">
+      <section className="pt-20 md:pt-32 pb-0 overflow-hidden bg-gradient-to-b from-white to-[#eeede9]">
         <div className="max-w-4xl mx-auto px-6 text-center mb-12 md:mb-16">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-[#1b1b1b] mb-6 leading-[0.75] tracking-tight">
-            <span className="block" style={{ fontFamily: 'var(--font-be-vietnam)' }}>Your Business Evolves.</span>
-            <span className="block italic font-normal text-[32px] md:text-[56px] -mt-2 md:-mt-3" style={{ fontFamily: '"Times New Roman", Times, serif' }}>Your tax strategy should too</span>
+            <span
+              className={`block transition-all duration-1000 ${
+                isLoaded
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-8'
+              }`}
+              style={{
+                fontFamily: 'var(--font-be-vietnam)',
+                transitionDelay: '200ms'
+              }}
+            >
+              Your Business Evolves.
+            </span>
+            <span
+              className={`block italic font-normal text-[32px] md:text-[56px] -mt-2 md:-mt-3 transition-all duration-1000 ${
+                isLoaded
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-8'
+              }`}
+              style={{
+                fontFamily: '"Times New Roman", Times, serif',
+                transitionDelay: '400ms'
+              }}
+            >
+              Your tax strategy should too
+            </span>
           </h1>
 
-          <p className="text-[19px] md:text-[21px] text-[#1b1b1b]/60 mb-8 font-light leading-[0.9] italic" style={{ fontFamily: '"Times New Roman", Times, serif' }}>
+          <p
+            className={`text-[19px] md:text-[21px] text-[#1b1b1b]/60 mb-8 font-light leading-[0.9] italic transition-all duration-1000 ${
+              isLoaded
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-8'
+            }`}
+            style={{
+              fontFamily: '"Times New Roman", Times, serif',
+              transitionDelay: '600ms'
+            }}
+          >
             International tax advisory for digital entrepreneurs ready to optimize their structure
           </p>
 
-          <div className="flex flex-wrap gap-4 justify-center">
+          <div
+            className={`flex flex-wrap gap-4 justify-center transition-all duration-1000 ${
+              isLoaded
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-8'
+            }`}
+            style={{ transitionDelay: '800ms' }}
+          >
             <Link
               href="/services"
-              className="inline-block px-8 py-3 bg-transparent text-[#1b1b1b] border-2 border-[#1b1b1b] rounded-full font-semibold hover:bg-[#6B2C2C] hover:text-[#eeede9] hover:border-[#6B2C2C] transition-all text-base"
+              className="inline-block px-8 py-3 bg-transparent text-[#1b1b1b] border-2 border-[#1b1b1b] rounded-full font-semibold hover:bg-[#6B2C2C] hover:text-[#eeede9] hover:border-[#6B2C2C] hover:scale-105 transition-all duration-300 text-base shadow-sm hover:shadow-lg"
             >
               Explore Our Services
             </Link>
             <button
               onClick={() => setIsModalOpen(true)}
-              className="inline-block px-8 py-3 bg-transparent text-[#1b1b1b] border-2 border-[#1b1b1b] rounded-full font-semibold hover:bg-[#6B2C2C] hover:text-[#eeede9] hover:border-[#6B2C2C] transition-all text-base"
+              className="inline-block px-8 py-3 bg-transparent text-[#1b1b1b] border-2 border-[#1b1b1b] rounded-full font-semibold hover:bg-[#6B2C2C] hover:text-[#eeede9] hover:border-[#6B2C2C] hover:scale-105 transition-all duration-300 text-base shadow-sm hover:shadow-lg"
             >
               Start your Journey here
             </button>
           </div>
         </div>
 
-        <div className="w-full h-[300px] md:h-[400px] lg:h-[500px]">
+        <div
+          className={`w-full h-[300px] md:h-[400px] lg:h-[500px] transition-all duration-1200 ${
+            isLoaded
+              ? 'opacity-100 scale-100'
+              : 'opacity-0 scale-95'
+          }`}
+          style={{ transitionDelay: '1000ms' }}
+        >
           <img
             src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1920&auto=format&fit=crop&q=80"
             alt="City skyline"
-            className="w-full h-full object-cover grayscale"
+            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
           />
         </div>
       </section>
 
       {/* Services Overview */}
-      <section className="px-6 pt-24 pb-12 max-w-7xl mx-auto">
-        <div className="max-w-5xl mx-auto mb-12">
-          <hr className="border-t border-[#1b1b1b]/10" />
-        </div>
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1b1b1b] mb-6">
-            Our Services
-          </h2>
-          <div className="text-lg text-[#1b1b1b]/60 max-w-6xl mx-auto space-y-3">
-            <p>
-              At Evolve Tax, we specialize in one thing: helping digital entrepreneurs structure their businesses intelligently from a tax perspective.
-            </p>
-            <p>
-              We don't just give you advice. We implement, manage, and support your structure so you can focus on what you do best: running your business.
-            </p>
+      <section id="services" data-animate className="px-6 pt-24 pb-24 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-5xl mx-auto mb-12">
+            <hr className="border-t border-[#1b1b1b]/10" />
           </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="bg-white rounded-3xl p-8 shadow-md hover:shadow-xl transition-shadow">
-            <div className="w-12 h-12 mx-auto mb-5">
-              <svg className="w-12 h-12 text-[#6B2C2C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-              </svg>
+          <div
+            className={`text-center mb-16 transition-all duration-1000 ${
+              visibleSections.has('services')
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-12'
+            }`}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-[#1b1b1b] mb-6">
+              Our Services
+            </h2>
+            <div className="text-lg text-[#1b1b1b]/60 max-w-6xl mx-auto space-y-3">
+              <p>
+                At Evolve Tax, we specialize in one thing: helping digital entrepreneurs structure their businesses intelligently from a tax perspective.
+              </p>
+              <p>
+                We don't just give you advice. We implement, manage, and support your structure so you can focus on what you do best: running your business.
+              </p>
             </div>
-            <h3 className="text-lg font-bold text-[#1b1b1b] mb-3 text-center">
-              Strategic Tax Planning
-            </h3>
-            <p className="text-[#1b1b1b]/70 leading-relaxed text-sm text-center">
-              We analyze your business and design the optimal international tax structure for you.
-            </p>
           </div>
 
-          <div className="bg-white rounded-3xl p-8 shadow-md hover:shadow-xl transition-shadow">
-            <div className="w-12 h-12 mx-auto mb-5">
-              <svg className="w-12 h-12 text-[#6B2C2C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
+          {/* Services Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className={`bg-[#eeede9] rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-110 transition-all ${
+                visibleSections.has('services')
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-12'
+              }`}
+              style={{
+                transitionDelay: visibleSections.has('services') ? `${200 + index * 200}ms` : '0ms',
+                transitionDuration: visibleSections.has('services') ? '700ms' : '75ms'
+              }}
+            >
+              <div className="w-12 h-12 mx-auto mb-5">
+                <svg
+                  className="w-12 h-12 text-[#6B2C2C]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  {service.icon}
+                </svg>
+              </div>
+              <h3 className="text-lg font-bold text-[#1b1b1b] mb-3 text-center">
+                {service.title}
+              </h3>
+              <p className="text-[#1b1b1b]/70 leading-relaxed text-sm text-center">
+                {service.description}
+              </p>
             </div>
-            <h3 className="text-lg font-bold text-[#1b1b1b] mb-3 text-center">
-              Full Implementation
-            </h3>
-            <p className="text-[#1b1b1b]/70 leading-relaxed text-sm text-center">
-              We guide you through every step: company incorporation, tax residency, banking, and compliance setup.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-3xl p-8 shadow-md hover:shadow-xl transition-shadow">
-            <div className="w-12 h-12 mx-auto mb-5">
-              <svg className="w-12 h-12 text-[#6B2C2C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-              </svg>
-            </div>
-            <h3 className="text-lg font-bold text-[#1b1b1b] mb-3 text-center">
-              Ongoing Management
-            </h3>
-            <p className="text-[#1b1b1b]/70 leading-relaxed text-sm text-center">
-              We manage your accounting and tax filings while you focus on growth.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-3xl p-8 shadow-md hover:shadow-xl transition-shadow">
-            <div className="w-12 h-12 mx-auto mb-5">
-              <svg className="w-12 h-12 text-[#6B2C2C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <h3 className="text-lg font-bold text-[#1b1b1b] mb-3 text-center">
-              Ad-hoc Tax Advisory
-            </h3>
-            <p className="text-[#1b1b1b]/70 leading-relaxed text-sm text-center">
-              Book a consultation with our team to address specific tax queries.
-            </p>
+          ))}
           </div>
         </div>
       </section>
 
       {/* Jurisdictions Section */}
-      <section className="px-6 pt-24 pb-12 bg-[#eeede9]">
+      <section id="jurisdictions" data-animate className="px-6 pt-24 pb-24 bg-[#f5f3ef]">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-5xl mx-auto mb-12">
             <hr className="border-t border-[#1b1b1b]/10" />
           </div>
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#1b1b1b] mb-6">
+            <h2
+              className={`text-4xl md:text-5xl font-bold text-[#1b1b1b] mb-6 transition-all duration-1000 ${
+                visibleSections.has('jurisdictions')
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-12'
+              }`}
+            >
               Jurisdictions we work with
             </h2>
-            <p className="text-lg text-[#1b1b1b]/70 max-w-5xl mx-auto mb-8">
+            <p
+              className={`text-lg text-[#1b1b1b]/70 max-w-5xl mx-auto mb-8 transition-all duration-1000 ${
+                visibleSections.has('jurisdictions')
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-12'
+              }`}
+              style={{ transitionDelay: visibleSections.has('jurisdictions') ? '200ms' : '0ms' }}
+            >
               Through our strategic alliances with different partners accross the world, we cover the following jurisdictions:
             </p>
-            <div className="w-full max-w-3xl mx-auto">
+            <div
+              className={`w-full max-w-3xl mx-auto transition-all duration-1200 ${
+                visibleSections.has('jurisdictions')
+                  ? 'opacity-100 scale-100'
+                  : 'opacity-0 scale-95'
+              }`}
+              style={{ transitionDelay: visibleSections.has('jurisdictions') ? '400ms' : '0ms' }}
+            >
               <img
                 src="/Mapa mundo - granate.svg"
                 alt="World map showing jurisdictions"
@@ -202,10 +311,20 @@ export default function Home() {
                 { name: 'Hong Kong', flag: '🇭🇰' },
                 { name: 'Paraguay', flag: '🇵🇾' },
                 { name: 'Panama', flag: '🇵🇦' }
-              ].map((country) => (
+              ].map((country, index) => (
                 <div
                   key={country.name}
-                  className="bg-white px-6 py-3 rounded-full shadow-md hover:shadow-lg hover:bg-[#6B2C2C] transition-all hover:-translate-y-0.5 cursor-default group"
+                  className={`bg-white px-6 py-3 rounded-full shadow-md hover:shadow-lg hover:bg-[#6B2C2C] transition-all hover:-translate-y-0.5 hover:scale-110 cursor-default group ${
+                    visibleSections.has('jurisdictions')
+                      ? 'opacity-100 translate-y-0'
+                      : 'opacity-0 translate-y-8'
+                  }`}
+                  style={{
+                    transitionDelay: visibleSections.has('jurisdictions')
+                      ? `${600 + index * 100}ms`
+                      : '0ms',
+                    transitionDuration: '700ms'
+                  }}
                 >
                   <span className="text-base font-semibold text-[#1b1b1b] group-hover:text-[#eeede9] transition-colors flex items-center gap-2">
                     <span className="text-xl">{country.flag}</span>
@@ -219,20 +338,41 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 pt-4 pb-24 bg-[#eeede9]">
+      <section id="cta" data-animate className="px-6 pt-4 pb-24 bg-gradient-to-b from-white to-[#eeede9]">
         <div className="max-w-5xl mx-auto mb-12">
           <hr className="border-t border-[#1b1b1b]/10" />
         </div>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1b1b1b] mb-6">
+          <h2
+            className={`text-4xl md:text-5xl font-bold text-[#1b1b1b] mb-6 transition-all duration-1000 ${
+              visibleSections.has('cta')
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-12'
+            }`}
+          >
             Ready to take action?
           </h2>
-          <p className="text-lg text-[#1b1b1b]/70 mb-10">
+          <p
+            className={`text-lg text-[#1b1b1b]/70 mb-10 transition-all duration-1000 ${
+              visibleSections.has('cta')
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-12'
+            }`}
+            style={{ transitionDelay: visibleSections.has('cta') ? '200ms' : '0ms' }}
+          >
             Leave us your details and we'll personally reach out to assess your case and guide you forward.
           </p>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="inline-block px-12 py-5 bg-[#6B2C2C] text-[#eeede9] rounded-full font-bold text-lg hover:bg-[#6B2C2C]/90 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+            className={`inline-block px-12 py-5 bg-[#6B2C2C] text-[#eeede9] rounded-full font-bold text-lg hover:bg-[#6B2C2C]/90 transition-all shadow-lg hover:shadow-xl hover:scale-110 transform hover:-translate-y-1 ${
+              visibleSections.has('cta')
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-12'
+            }`}
+            style={{
+              transitionDelay: visibleSections.has('cta') ? '400ms' : '0ms',
+              transitionDuration: '1000ms'
+            }}
           >
             Get Started Today
           </button>

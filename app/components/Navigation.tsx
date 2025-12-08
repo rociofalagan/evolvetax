@@ -1,10 +1,21 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 50;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { name: 'Home', href: '/' },
@@ -12,15 +23,24 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#eeede9]/95 backdrop-blur-sm border-b border-[#1b1b1b]/10">
+    <nav className={`sticky top-0 z-50 transition-all duration-300 ${
+      scrolled
+        ? 'bg-white shadow-lg border-b border-[#1b1b1b]/10'
+        : 'bg-transparent border-b border-transparent'
+    }`}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center transition-all duration-300">
             <img
               src="/transparente.svg"
               alt="EvolveTax Logo"
-              className="h-16 md:h-20 w-auto"
+              className={`h-16 md:h-20 w-auto transition-all duration-300 ${
+                scrolled ? 'opacity-90 saturate-150' : 'opacity-100'
+              }`}
+              style={{
+                filter: scrolled ? 'brightness(0.4) saturate(2) hue-rotate(-10deg)' : 'none'
+              }}
             />
           </Link>
 
@@ -69,7 +89,9 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-6 border-t border-[#1b1b1b]/10">
+          <div className={`md:hidden py-6 border-t border-[#1b1b1b]/10 ${
+            scrolled ? 'bg-white' : 'bg-[#eeede9]/95 backdrop-blur-sm'
+          }`}>
             <div className="flex flex-col gap-4">
               {navItems.map((item) => (
                 <Link
