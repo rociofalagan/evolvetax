@@ -16,6 +16,7 @@ export default function Home() {
   const [errorMessage, setErrorMessage] = useState('');
   const [isLoaded, setIsLoaded] = useState(false);
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
+  const [isHeroHovered, setIsHeroHovered] = useState(false);
 
   useEffect(() => {
     // Trigger animations after component mounts
@@ -46,28 +47,28 @@ export default function Home() {
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
       ),
       title: 'Strategic Tax Planning',
-      description: 'We analyze your business and design the optimal international tax structure for you.'
+      description: 'We analyze your business and personal situation to design a customized international tax structure that fits your specific needs and goals.'
     },
     {
       icon: (
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
       ),
-      title: 'Full Implementation',
-      description: 'We guide you through every step: company incorporation, tax residency, banking, and compliance setup.'
+      title: 'Full Implementation Support',
+      description: 'We guide you through every step: company incorporation, tax residency setup, banking arrangements, and all compliance requirements.'
     },
     {
       icon: (
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
       ),
-      title: 'Ongoing Management',
-      description: 'We manage your accounting and tax filings while you focus on growth.'
+      title: 'Ongoing Tax & Accounting',
+      description: 'We manage your bookkeeping, tax filings, and compliance obligations so you can focus on growing your business, not paperwork.'
     },
     {
       icon: (
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       ),
-      title: 'Ad-hoc Tax Advisory',
-      description: 'Book a consultation with our team to address specific tax queries.'
+      title: 'One-Time Tax Consultation',
+      description: 'Have a specific question about your tax structure? Book a consultation with our team to get expert guidance on your particular situation.'
     }
   ];
 
@@ -109,97 +110,145 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="pt-20 md:pt-32 pb-0 overflow-hidden bg-gradient-to-b from-white to-[#eeede9]">
-        <div className="max-w-4xl mx-auto px-6 text-center mb-12 md:mb-16">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-[#1b1b1b] mb-6 leading-[0.75] tracking-tight">
-            <span
-              className={`block transition-all duration-1000 ${
-                isLoaded
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-8'
+      {/* Hero Section with City Image */}
+      <section
+        className="relative h-screen overflow-hidden cursor-pointer"
+        onMouseEnter={() => setIsHeroHovered(true)}
+        onMouseLeave={() => setIsHeroHovered(false)}
+      >
+        {/* City Background Image with Grayscale Effect */}
+        <div
+          className="absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-out"
+          style={{
+            backgroundImage: 'url(https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=2400)',
+            filter: isHeroHovered ? 'grayscale(0%) brightness(0.8)' : 'grayscale(100%) brightness(0.5)',
+            transform: isHeroHovered ? 'scale(1.05)' : 'scale(1)',
+          }}
+        />
+
+        {/* Dark Overlay */}
+        <div
+          className="absolute inset-0 transition-all duration-1000"
+          style={{
+            background: isHeroHovered
+              ? 'linear-gradient(to bottom, rgba(107, 44, 44, 0.3), rgba(27, 27, 27, 0.6))'
+              : 'linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7))'
+          }}
+        />
+
+        {/* Content */}
+        <div className="relative h-full flex items-center justify-center px-6">
+          <div className="text-center max-w-5xl">
+            {/* Main Headline */}
+            <h1
+              className={`text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-[0.95] transition-all duration-1000 ${
+                isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
               style={{
                 fontFamily: 'var(--font-be-vietnam)',
-                transitionDelay: '200ms'
+                transitionDelay: '200ms',
+                textShadow: '0 4px 20px rgba(0,0,0,0.5)'
               }}
             >
-              Your Business Evolves.
-            </span>
-            <span
-              className={`block italic font-normal text-[32px] md:text-[56px] -mt-2 md:-mt-3 transition-all duration-1000 ${
-                isLoaded
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-8'
+              Expert Tax Advisory<br />
+              <span className={`transition-all duration-1000 ${isHeroHovered ? 'text-[#d4a5a5]' : 'text-white/90'}`}>
+                for Digital Entrepreneurs
+              </span>
+            </h1>
+
+            {/* Subheadline */}
+            <p
+              className={`text-xl md:text-2xl text-white/90 mb-12 leading-relaxed max-w-3xl mx-auto transition-all duration-1000 ${
+                isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
               style={{
-                fontFamily: '"Times New Roman", Times, serif',
-                transitionDelay: '400ms'
+                transitionDelay: '400ms',
+                textShadow: '0 2px 10px rgba(0,0,0,0.5)'
               }}
             >
-              Your tax strategy should too
-            </span>
-          </h1>
+              Strategic tax structures for entrepreneurs who think global
+            </p>
 
-          <p
-            className={`text-[19px] md:text-[21px] text-[#1b1b1b]/60 mb-8 font-light leading-[0.9] italic transition-all duration-1000 ${
-              isLoaded
-                ? 'opacity-100 translate-y-0'
-                : 'opacity-0 translate-y-8'
-            }`}
-            style={{
-              fontFamily: '"Times New Roman", Times, serif',
-              transitionDelay: '600ms'
-            }}
-          >
-            International tax advisory for digital entrepreneurs ready to optimize their structure
-          </p>
+            {/* CTAs */}
+            <div
+              className={`flex flex-col sm:flex-row gap-5 justify-center transition-all duration-1000 ${
+                isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+              }`}
+              style={{ transitionDelay: '600ms' }}
+            >
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="px-12 py-5 bg-white text-[#1b1b1b] rounded-full font-bold hover:bg-[#6B2C2C] hover:text-white hover:scale-105 hover:shadow-2xl transition-all duration-300 text-lg shadow-xl"
+              >
+                Get Started
+              </button>
+              <Link
+                href="/services"
+                className="px-12 py-5 bg-transparent text-white border-2 border-white rounded-full font-bold hover:bg-white hover:text-[#1b1b1b] hover:scale-105 transition-all duration-300 text-lg shadow-xl text-center"
+              >
+                Our Services
+              </Link>
+            </div>
 
-          <div
-            className={`flex flex-wrap gap-4 justify-center transition-all duration-1000 ${
-              isLoaded
-                ? 'opacity-100 translate-y-0'
-                : 'opacity-0 translate-y-8'
-            }`}
-            style={{ transitionDelay: '800ms' }}
-          >
-            <Link
-              href="/services"
-              className="inline-block px-8 py-3 bg-transparent text-[#1b1b1b] border-2 border-[#1b1b1b] rounded-full font-semibold hover:bg-[#6B2C2C] hover:text-[#eeede9] hover:border-[#6B2C2C] hover:scale-105 transition-all duration-300 text-base shadow-sm hover:shadow-lg"
+            {/* Scroll Indicator */}
+            <div
+              className={`absolute bottom-12 left-1/2 transform -translate-x-1/2 transition-all duration-1000 ${
+                isLoaded ? 'opacity-100' : 'opacity-0'
+              }`}
+              style={{ transitionDelay: '1000ms' }}
             >
-              Explore Our Services
-            </Link>
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="inline-block px-8 py-3 bg-transparent text-[#1b1b1b] border-2 border-[#1b1b1b] rounded-full font-semibold hover:bg-[#6B2C2C] hover:text-[#eeede9] hover:border-[#6B2C2C] hover:scale-105 transition-all duration-300 text-base shadow-sm hover:shadow-lg"
-            >
-              Start your Journey here
-            </button>
+              <div className="flex flex-col items-center gap-2 text-white/70">
+                <span className="text-sm uppercase tracking-wider">Scroll to explore</span>
+                <svg
+                  className="w-6 h-6 animate-bounce"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div
-          className={`w-full h-[300px] md:h-[400px] lg:h-[500px] transition-all duration-1200 ${
-            isLoaded
-              ? 'opacity-100 scale-100'
-              : 'opacity-0 scale-95'
-          }`}
-          style={{ transitionDelay: '1000ms' }}
-        >
-          <img
-            src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1920&auto=format&fit=crop&q=80"
-            alt="City skyline"
-            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-          />
         </div>
       </section>
 
-      {/* Services Overview */}
-      <section id="services" data-animate className="px-6 pt-24 pb-24 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-5xl mx-auto mb-12">
-            <hr className="border-t border-[#1b1b1b]/10" />
-          </div>
+      {/* Services Overview - LexFlow Style */}
+      <section id="services" data-animate className="relative px-6 py-32 overflow-hidden">
+        {/* Gradient Background - smooth transition */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(to bottom, #f5f3ef 0%, #ffffff 30%, #f8f6f3 100%)'
+          }}
+        />
+
+        {/* Subtle dot pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.15]"
+          style={{
+            backgroundImage: 'radial-gradient(circle, #6B2C2C 1px, transparent 1px)',
+            backgroundSize: '32px 32px'
+          }}
+        />
+
+        {/* Smooth wave transition from hero */}
+        <div className="absolute top-0 left-0 right-0 h-32">
+          <svg
+            className="absolute w-full h-full"
+            viewBox="0 0 1440 120"
+            preserveAspectRatio="none"
+            fill="none"
+          >
+            <path
+              d="M0,0 L0,40 Q360,80 720,60 T1440,50 L1440,0 Z"
+              fill="#1b1b1b"
+            />
+          </svg>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto">
+          {/* Badge + Header */}
           <div
             className={`text-center mb-16 transition-all duration-1000 ${
               visibleSections.has('services')
@@ -207,164 +256,228 @@ export default function Home() {
                 : 'opacity-0 translate-y-12'
             }`}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#1b1b1b] mb-6">
-              Our Services
-            </h2>
-            <div className="text-lg text-[#1b1b1b]/60 max-w-6xl mx-auto space-y-3">
-              <p>
-                At Evolve Tax, we specialize in one thing: helping digital entrepreneurs structure their businesses intelligently from a tax perspective.
-              </p>
-              <p>
-                We don't just give you advice. We implement, manage, and support your structure so you can focus on what you do best: running your business.
-              </p>
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#6B2C2C] hover:bg-white rounded-full mb-6 transition-all duration-300 border-2 border-[#6B2C2C] cursor-default group">
+              <span className="text-sm font-semibold text-white group-hover:text-[#6B2C2C] tracking-wide transition-colors duration-300">
+                How we can help
+              </span>
             </div>
+
+            {/* Title */}
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1b1b1b] mb-6 tracking-tight leading-tight">
+              Build smart tax structures<br />that scale with your business
+            </h2>
           </div>
 
-          {/* Services Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className={`bg-[#eeede9] rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-110 transition-all ${
-                visibleSections.has('services')
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-12'
-              }`}
-              style={{
-                transitionDelay: visibleSections.has('services') ? `${200 + index * 200}ms` : '0ms',
-                transitionDuration: visibleSections.has('services') ? '700ms' : '75ms'
-              }}
-            >
-              <div className="w-12 h-12 mx-auto mb-5">
-                <svg
-                  className="w-12 h-12 text-[#6B2C2C]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+          {/* Clean 4 Column Grid - LexFlow Style */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className={`group transition-all duration-500 ${
+                  visibleSections.has('services')
+                    ? 'opacity-100 translate-y-0'
+                    : 'opacity-0 translate-y-12'
+                }`}
+                style={{
+                  transitionDelay: visibleSections.has('services') ? `${index * 100}ms` : '0ms',
+                }}
+              >
+                {/* Icon */}
+                <div className="w-12 h-12 mb-6 rounded-xl bg-[#eeede9] flex items-center justify-center group-hover:bg-[#6B2C2C] transition-colors duration-300">
+                  <svg
+                    className="w-6 h-6 text-[#6B2C2C] group-hover:text-white transition-colors duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2}
+                  >
+                    {service.icon}
+                  </svg>
+                </div>
+
+                {/* Title */}
+                <h3 className="text-xl font-bold text-[#1b1b1b] mb-3 tracking-tight">
+                  {service.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-[#1b1b1b]/60 leading-relaxed mb-4 text-sm">
+                  {service.description}
+                </p>
+
+                {/* Learn more link */}
+                <Link
+                  href="/services"
+                  className="inline-flex items-center gap-2 text-[#6B2C2C] hover:gap-3 transition-all duration-300 text-sm font-semibold group"
                 >
-                  {service.icon}
-                </svg>
+                  <span>Learn more</span>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
               </div>
-              <h3 className="text-lg font-bold text-[#1b1b1b] mb-3 text-center">
-                {service.title}
-              </h3>
-              <p className="text-[#1b1b1b]/70 leading-relaxed text-sm text-center">
-                {service.description}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Explore Services Button - Centered */}
+          <div
+            className={`text-center pt-8 transition-all duration-1000 ${
+              visibleSections.has('services')
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-12'
+            }`}
+            style={{ transitionDelay: '600ms' }}
+          >
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-[#1b1b1b] text-white rounded-full font-semibold hover:bg-[#6B2C2C] transition-all duration-300 group"
+            >
+              Explore all services
+              <svg
+                className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Jurisdictions Section */}
-      <section id="jurisdictions" data-animate className="px-6 pt-24 pb-24 bg-[#f5f3ef]">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-5xl mx-auto mb-12">
-            <hr className="border-t border-[#1b1b1b]/10" />
-          </div>
-          <div className="text-center mb-16">
-            <h2
-              className={`text-4xl md:text-5xl font-bold text-[#1b1b1b] mb-6 transition-all duration-1000 ${
-                visibleSections.has('jurisdictions')
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-12'
-              }`}
-            >
-              Jurisdictions we work with
+      {/* Jurisdictions Section - Redesigned */}
+      <section id="jurisdictions" data-animate className="relative px-6 py-40 overflow-hidden">
+        {/* Gradient Background with granate accents */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(to bottom, #f8f6f3 0%, #faf8f5 20%, #f5eae8 50%, #faf8f5 80%, #eeede9 100%)'
+          }}
+        />
+
+        {/* Subtle dot pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.08]"
+          style={{
+            backgroundImage: 'radial-gradient(circle, #6B2C2C 1px, transparent 1px)',
+            backgroundSize: '40px 40px'
+          }}
+        />
+
+        {/* Granate orb accents for depth */}
+        <div
+          className="absolute top-20 left-1/4 w-[600px] h-[600px] rounded-full opacity-[0.08] blur-3xl"
+          style={{
+            background: 'radial-gradient(circle, #6B2C2C 0%, transparent 70%)'
+          }}
+        />
+        <div
+          className="absolute bottom-20 right-1/4 w-[500px] h-[500px] rounded-full opacity-[0.06] blur-3xl"
+          style={{
+            background: 'radial-gradient(circle, #8B3C3C 0%, transparent 70%)'
+          }}
+        />
+
+        <div className="relative max-w-7xl mx-auto">
+          {/* Header */}
+          <div
+            className={`text-center mb-16 transition-all duration-1000 ${
+              visibleSections.has('jurisdictions')
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-12'
+            }`}
+          >
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1b1b1b] mb-6 tracking-tight">
+              Global presence
             </h2>
-            <p
-              className={`text-lg text-[#1b1b1b]/70 max-w-5xl mx-auto mb-8 transition-all duration-1000 ${
-                visibleSections.has('jurisdictions')
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-12'
-              }`}
-              style={{ transitionDelay: visibleSections.has('jurisdictions') ? '200ms' : '0ms' }}
-            >
-              Through our strategic alliances with different partners accross the world, we cover the following jurisdictions:
+            <p className="text-lg md:text-xl text-[#1b1b1b]/70 max-w-4xl mx-auto leading-relaxed">
+              Through strategic partnerships across the globe, we provide tax solutions and company formation services in these key jurisdictions
             </p>
-            <div
-              className={`w-full max-w-3xl mx-auto transition-all duration-1200 ${
-                visibleSections.has('jurisdictions')
-                  ? 'opacity-100 scale-100'
-                  : 'opacity-0 scale-95'
-              }`}
-              style={{ transitionDelay: visibleSections.has('jurisdictions') ? '400ms' : '0ms' }}
-            >
+          </div>
+
+          {/* World Map */}
+          <div
+            className={`mb-16 flex justify-center transition-all duration-1000 ${
+              visibleSections.has('jurisdictions')
+                ? 'opacity-100 scale-100'
+                : 'opacity-0 scale-95'
+            }`}
+            style={{ transitionDelay: visibleSections.has('jurisdictions') ? '200ms' : '0ms' }}
+          >
+            <div className="w-full max-w-4xl">
               <img
                 src="/Mapa mundo - granate.svg"
-                alt="World map showing jurisdictions"
-                className="w-full h-auto"
+                alt="World map showing our global presence"
+                className="w-full h-auto opacity-80"
               />
             </div>
+          </div>
 
-            {/* Countries list */}
-            <div className="mt-8 flex flex-wrap justify-center gap-3 max-w-5xl mx-auto">
-              {[
-                { name: 'Spain', flag: '🇪🇸' },
-                { name: 'Portugal', flag: '🇵🇹' },
-                { name: 'Cyprus', flag: '🇨🇾' },
-                { name: 'Malta', flag: '🇲🇹' },
-                { name: 'Estonia', flag: '🇪🇪' },
-                { name: 'United States', flag: '🇺🇸' },
-                { name: 'United Arab Emirates', flag: '🇦🇪' },
-                { name: 'Hong Kong', flag: '🇭🇰' },
-                { name: 'Paraguay', flag: '🇵🇾' },
-                { name: 'Panama', flag: '🇵🇦' }
-              ].map((country, index) => (
-                <div
-                  key={country.name}
-                  className={`bg-white px-6 py-3 rounded-full shadow-md hover:shadow-lg hover:bg-[#6B2C2C] transition-all hover:-translate-y-0.5 hover:scale-110 cursor-default group ${
-                    visibleSections.has('jurisdictions')
-                      ? 'opacity-100 translate-y-0'
-                      : 'opacity-0 translate-y-8'
-                  }`}
-                  style={{
-                    transitionDelay: visibleSections.has('jurisdictions')
-                      ? `${600 + index * 100}ms`
-                      : '0ms',
-                    transitionDuration: '700ms'
-                  }}
-                >
-                  <span className="text-base font-semibold text-[#1b1b1b] group-hover:text-[#eeede9] transition-colors flex items-center gap-2">
-                    <span className="text-xl">{country.flag}</span>
-                    {country.name}
-                  </span>
-                </div>
-              ))}
-            </div>
+          {/* Countries pills */}
+          <div className="flex flex-wrap justify-center gap-3 max-w-6xl mx-auto">
+            {[
+              { name: 'Spain', flag: '🇪🇸' },
+              { name: 'Portugal', flag: '🇵🇹' },
+              { name: 'Cyprus', flag: '🇨🇾' },
+              { name: 'Malta', flag: '🇲🇹' },
+              { name: 'Estonia', flag: '🇪🇪' },
+              { name: 'United States', flag: '🇺🇸' },
+              { name: 'United Arab Emirates', flag: '🇦🇪' },
+              { name: 'Hong Kong', flag: '🇭🇰' },
+              { name: 'Paraguay', flag: '🇵🇾' },
+              { name: 'Panama', flag: '🇵🇦' }
+            ].map((country, index) => (
+              <div
+                key={country.name}
+                className={`bg-white/80 backdrop-blur-sm px-6 py-3.5 rounded-full border-2 border-[#1b1b1b]/5 hover:border-[#6B2C2C] hover:bg-white transition-all duration-300 hover:scale-105 cursor-default group shadow-sm ${
+                  visibleSections.has('jurisdictions')
+                    ? 'opacity-100 translate-y-0'
+                    : 'opacity-0 translate-y-8'
+                }`}
+                style={{
+                  transitionDelay: visibleSections.has('jurisdictions')
+                    ? `${400 + index * 50}ms`
+                    : '0ms',
+                  transitionDuration: '600ms'
+                }}
+              >
+                <span className="text-sm font-semibold text-[#1b1b1b] group-hover:text-[#6B2C2C] flex items-center gap-2 transition-colors">
+                  <span className="text-lg">{country.flag}</span>
+                  {country.name}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section id="cta" data-animate className="px-6 pt-4 pb-24 bg-gradient-to-b from-white to-[#eeede9]">
-        <div className="max-w-5xl mx-auto mb-12">
-          <hr className="border-t border-[#1b1b1b]/10" />
-        </div>
-        <div className="max-w-4xl mx-auto text-center">
+      <section id="cta" data-animate className="px-6 py-40 bg-[#eeede9] relative overflow-hidden">
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2
-            className={`text-4xl md:text-5xl font-bold text-[#1b1b1b] mb-6 transition-all duration-1000 ${
+            className={`text-5xl md:text-6xl lg:text-7xl font-semibold text-[#1b1b1b] mb-8 tracking-tight transition-all duration-1000 ${
               visibleSections.has('cta')
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-12'
             }`}
           >
-            Ready to take action?
+            Ready to evolve?
           </h2>
           <p
-            className={`text-lg text-[#1b1b1b]/70 mb-10 transition-all duration-1000 ${
+            className={`text-xl md:text-2xl text-[#1b1b1b]/60 mb-14 max-w-2xl mx-auto leading-relaxed transition-all duration-1000 ${
               visibleSections.has('cta')
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-12'
             }`}
             style={{ transitionDelay: visibleSections.has('cta') ? '200ms' : '0ms' }}
           >
-            Leave us your details and we'll personally reach out to assess your case and guide you forward.
+            Share your details and we'll design the optimal tax structure for your business
           </p>
           <button
             onClick={() => setIsModalOpen(true)}
-            className={`inline-block px-12 py-5 bg-[#6B2C2C] text-[#eeede9] rounded-full font-bold text-lg hover:bg-[#6B2C2C]/90 transition-all shadow-lg hover:shadow-xl hover:scale-110 transform hover:-translate-y-1 ${
+            className={`inline-flex items-center gap-2 px-12 py-5 bg-[#1b1b1b] text-white rounded-full font-semibold text-lg hover:bg-[#6B2C2C] transition-all duration-500 shadow-lg hover:shadow-xl hover:scale-105 ${
               visibleSections.has('cta')
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-12'
@@ -374,19 +487,23 @@ export default function Home() {
               transitionDuration: '1000ms'
             }}
           >
-            Get Started Today
+            Get started
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
           </button>
         </div>
       </section>
 
-      {/* Contact Modal */}
+      {/* Contact Modal - Apple Style */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 overflow-y-auto" onClick={() => setIsModalOpen(false)}>
-          <div className="bg-[#eeede9] rounded-2xl p-6 md:p-8 max-w-lg w-full shadow-2xl my-8" onClick={(e) => e.stopPropagation()}>
-            <div className="flex justify-end mb-2">
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4 overflow-y-auto animate-in fade-in duration-300" onClick={() => setIsModalOpen(false)}>
+          <div className="bg-white rounded-3xl p-8 md:p-10 max-w-md w-full shadow-2xl my-8 animate-in zoom-in-95 duration-300" onClick={(e) => e.stopPropagation()}>
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-2xl font-semibold text-[#1b1b1b] tracking-tight">Get in touch</h3>
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="text-[#1b1b1b] hover:text-[#6B2C2C] transition-colors -mt-2"
+                className="p-2 text-[#1b1b1b]/60 hover:text-[#1b1b1b] hover:bg-black/5 rounded-full transition-all"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -394,10 +511,10 @@ export default function Home() {
               </button>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label htmlFor="name" className="block text-[#1b1b1b] text-sm font-semibold mb-1.5">
-                  Name *
+                <label htmlFor="name" className="block text-[#1b1b1b] text-sm font-medium mb-2">
+                  Name
                 </label>
                 <input
                   type="text"
@@ -405,14 +522,14 @@ export default function Home() {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-3 py-2 text-sm rounded-lg bg-white border-2 border-[#DED9D3] focus:border-[#6B2C2C] focus:outline-none transition-colors"
-                  placeholder="Your full name"
+                  className="w-full px-4 py-3 rounded-xl bg-[#f5f5f7] border-0 focus:bg-white focus:ring-2 focus:ring-[#6B2C2C] focus:outline-none transition-all"
+                  placeholder="John Doe"
                 />
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-[#1b1b1b] text-sm font-semibold mb-1.5">
-                  Phone *
+                <label htmlFor="phone" className="block text-[#1b1b1b] text-sm font-medium mb-2">
+                  Phone
                 </label>
                 <input
                   type="tel"
@@ -420,14 +537,14 @@ export default function Home() {
                   required
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-3 py-2 text-sm rounded-lg bg-white border-2 border-[#DED9D3] focus:border-[#6B2C2C] focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-[#f5f5f7] border-0 focus:bg-white focus:ring-2 focus:ring-[#6B2C2C] focus:outline-none transition-all"
                   placeholder="+1 (555) 000-0000"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-[#1b1b1b] text-sm font-semibold mb-1.5">
-                  Email *
+                <label htmlFor="email" className="block text-[#1b1b1b] text-sm font-medium mb-2">
+                  Email
                 </label>
                 <input
                   type="email"
@@ -435,37 +552,37 @@ export default function Home() {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-3 py-2 text-sm rounded-lg bg-white border-2 border-[#DED9D3] focus:border-[#6B2C2C] focus:outline-none transition-colors"
-                  placeholder="your.email@example.com"
+                  className="w-full px-4 py-3 rounded-xl bg-[#f5f5f7] border-0 focus:bg-white focus:ring-2 focus:ring-[#6B2C2C] focus:outline-none transition-all"
+                  placeholder="john@example.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="comments" className="block text-[#1b1b1b] text-sm font-semibold mb-1.5">
-                  Comments
+                <label htmlFor="comments" className="block text-[#1b1b1b] text-sm font-medium mb-2">
+                  Message
                 </label>
                 <textarea
                   id="comments"
                   value={formData.comments}
                   onChange={(e) => setFormData({ ...formData, comments: e.target.value })}
-                  rows={3}
-                  className="w-full px-3 py-2 text-sm rounded-lg bg-white border-2 border-[#DED9D3] focus:border-[#6B2C2C] focus:outline-none transition-colors resize-none"
-                  placeholder="Tell us about your business and tax needs..."
+                  rows={4}
+                  className="w-full px-4 py-3 rounded-xl bg-[#f5f5f7] border-0 focus:bg-white focus:ring-2 focus:ring-[#6B2C2C] focus:outline-none transition-all resize-none"
+                  placeholder="Tell us about your business..."
                 />
               </div>
 
-              <div className="flex gap-3 pt-3">
+              <div className="flex gap-3 pt-2">
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex-1 px-6 py-2.5 text-sm bg-[#6B2C2C] text-[#eeede9] rounded-lg font-semibold hover:bg-[#4D1F1F] transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex-1 px-6 py-3.5 bg-[#1b1b1b] text-white rounded-full font-semibold hover:bg-[#6B2C2C] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? 'Sending...' : 'Submit'}
+                  {isSubmitting ? 'Sending...' : 'Send message'}
                 </button>
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="px-6 py-2.5 text-sm bg-transparent text-[#1b1b1b] border-2 border-[#1b1b1b] rounded-lg font-semibold hover:bg-[#1b1b1b] hover:text-[#eeede9] transition-all"
+                  className="px-6 py-3.5 bg-[#f5f5f7] text-[#1b1b1b] rounded-full font-semibold hover:bg-[#e8e8ed] transition-all duration-300"
                 >
                   Cancel
                 </button>
@@ -473,14 +590,14 @@ export default function Home() {
 
               {/* Success Message */}
               {submitStatus === 'success' && (
-                <div className="mt-4 p-3 bg-green-100 border border-green-400 text-green-700 rounded-lg text-sm">
-                  Thank you! Your message has been sent successfully. We'll get back to you soon.
+                <div className="p-4 bg-green-50 border border-green-200 text-green-800 rounded-2xl text-sm">
+                  Thank you! We'll get back to you soon.
                 </div>
               )}
 
               {/* Error Message */}
               {submitStatus === 'error' && (
-                <div className="mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg text-sm">
+                <div className="p-4 bg-red-50 border border-red-200 text-red-800 rounded-2xl text-sm">
                   {errorMessage}
                 </div>
               )}

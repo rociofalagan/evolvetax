@@ -9,7 +9,7 @@ export default function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 50;
+      const isScrolled = window.scrollY > 80;
       setScrolled(isScrolled);
     };
 
@@ -23,41 +23,73 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className={`sticky top-0 z-50 transition-all duration-300 ${
-      scrolled
-        ? 'bg-white shadow-lg border-b border-[#1b1b1b]/10'
-        : 'bg-transparent border-b border-transparent'
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+      scrolled ? 'py-1.5' : 'py-3'
     }`}>
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
+      {/* Apple-style backdrop blur background */}
+      <div
+        className={`absolute inset-0 transition-all duration-500 ${
+          scrolled
+            ? 'bg-[#eeede9]/95 backdrop-blur-xl shadow-sm border-b border-black/5'
+            : 'bg-black/20 backdrop-blur-md'
+        }`}
+      />
+
+      <div className="relative max-w-7xl mx-auto px-6">
+        <div className="flex items-center justify-between h-14">
           {/* Logo */}
           <Link href="/" className="flex items-center transition-all duration-300">
             <img
               src="/transparente.svg"
               alt="EvolveTax Logo"
-              className={`h-16 md:h-20 w-auto transition-all duration-300 ${
-                scrolled ? 'opacity-90 saturate-150' : 'opacity-100'
+              className={`w-auto transition-all duration-500 hover:scale-110 ${
+                scrolled ? 'h-11' : 'h-16'
               }`}
               style={{
-                filter: scrolled ? 'brightness(0.4) saturate(2) hue-rotate(-10deg)' : 'none'
+                filter: scrolled
+                  ? 'none'
+                  : 'brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0,0,0,0.3))',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                if (scrolled) {
+                  e.currentTarget.style.filter = 'brightness(1.2) drop-shadow(0 4px 12px rgba(107, 44, 44, 0.3))';
+                } else {
+                  e.currentTarget.style.filter = 'brightness(0) invert(1) drop-shadow(0 4px 16px rgba(255,255,255,0.8))';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (scrolled) {
+                  e.currentTarget.style.filter = 'none';
+                } else {
+                  e.currentTarget.style.filter = 'brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0,0,0,0.3))';
+                }
               }}
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-[#1b1b1b] hover:text-[#6B2C2C] font-medium transition-colors text-sm"
+                className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 text-sm ${
+                  scrolled
+                    ? 'text-[#1b1b1b] hover:bg-black/5'
+                    : 'text-white hover:bg-white/10'
+                }`}
               >
                 {item.name}
               </Link>
             ))}
             <Link
               href="/contact"
-              className="px-6 py-3 bg-[#6B2C2C] text-[#eeede9] rounded-full font-semibold hover:bg-[#eeede9] hover:text-[#6B2C2C] border-2 border-[#6B2C2C] transition-all text-sm"
+              className={`ml-3 px-5 py-2.5 rounded-full font-semibold transition-all duration-300 text-sm ${
+                scrolled
+                  ? 'bg-[#6B2C2C] text-white hover:bg-[#8B3C3C]'
+                  : 'bg-white text-[#1b1b1b] hover:bg-white/90'
+              }`}
             >
               Contact
             </Link>
@@ -66,7 +98,9 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-[#1b1b1b]"
+            className={`md:hidden p-2 rounded-lg transition-colors ${
+              scrolled ? 'text-[#1b1b1b] hover:bg-black/5' : 'text-white hover:bg-white/10'
+            }`}
             aria-label="Toggle menu"
           >
             <svg
@@ -89,15 +123,13 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className={`md:hidden py-6 border-t border-[#1b1b1b]/10 ${
-            scrolled ? 'bg-white' : 'bg-[#eeede9]/95 backdrop-blur-sm'
-          }`}>
-            <div className="flex flex-col gap-4">
+          <div className="md:hidden mt-2 py-4 rounded-2xl bg-[#eeede9]/95 backdrop-blur-xl border border-black/5">
+            <div className="flex flex-col gap-1 px-3">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-[#1b1b1b] hover:text-[#6B2C2C] font-medium transition-colors text-base py-2"
+                  className="px-4 py-3 text-[#1b1b1b] hover:bg-black/5 font-medium transition-colors text-base rounded-lg"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -105,7 +137,7 @@ export default function Navigation() {
               ))}
               <Link
                 href="/contact"
-                className="mt-4 px-6 py-3 bg-[#6B2C2C] text-[#eeede9] rounded-full font-semibold hover:bg-[#eeede9] hover:text-[#6B2C2C] border-2 border-[#6B2C2C] transition-all text-center text-sm"
+                className="mt-2 mx-2 px-5 py-3 bg-[#6B2C2C] text-white rounded-full font-semibold hover:bg-[#8B3C3C] transition-all text-center text-sm"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact

@@ -50,14 +50,6 @@ export default function Footer() {
                   Disclaimer
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/data-protection"
-                  className="text-white hover:text-white/80 transition-colors text-sm"
-                >
-                  Data Protection Notice
-                </Link>
-              </li>
             </ul>
           </div>
 
