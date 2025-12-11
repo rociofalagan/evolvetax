@@ -47,28 +47,32 @@ export default function Home() {
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
       ),
       title: 'Strategic Tax Planning',
-      description: 'We analyze your business and personal situation to design a customized international tax structure that fits your specific needs and goals.'
+      description: 'We analyze your business and personal situation to design a customized international tax structure that fits your specific needs and goals.',
+      sectionId: 'strategic-planning'
     },
     {
       icon: (
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
       ),
       title: 'Full Implementation Support',
-      description: 'We guide you through every step: company incorporation, tax residency setup, banking arrangements, and all compliance requirements.'
+      description: 'We guide you through every step: company incorporation, tax residency setup, banking arrangements, and all compliance requirements.',
+      sectionId: 'implementation'
     },
     {
       icon: (
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
       ),
       title: 'Ongoing Tax & Accounting',
-      description: 'We manage your bookkeeping, tax filings, and compliance obligations so you can focus on growing your business, not paperwork.'
+      description: 'We manage your bookkeeping, tax filings, and compliance obligations so you can focus on growing your business, not paperwork.',
+      sectionId: 'ongoing'
     },
     {
       icon: (
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       ),
       title: 'One-Time Tax Consultation',
-      description: 'Have a specific question about your tax structure? Book a consultation with our team to get expert guidance on your particular situation.'
+      description: 'Have a specific question about your tax structure? Book a consultation with our team to get expert guidance on your particular situation.',
+      sectionId: 'consultation'
     }
   ];
 
@@ -308,7 +312,7 @@ export default function Home() {
 
                 {/* Learn more link */}
                 <Link
-                  href="/services"
+                  href={`/services#${service.sectionId}`}
                   className="inline-flex items-center gap-2 text-[#6B2C2C] hover:gap-3 transition-all duration-300 text-sm font-semibold group"
                 >
                   <span>Learn more</span>
