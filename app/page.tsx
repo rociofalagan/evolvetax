@@ -214,7 +214,7 @@ export default function Home() {
       </section>
 
       {/* Services Overview - LexFlow Style */}
-      <section id="services" data-animate className="relative px-6 py-32 overflow-hidden">
+      <section id="services" data-animate className="relative px-6 pt-32 pb-20 overflow-hidden">
         {/* Gradient Background - smooth transition */}
         <div
           className="absolute inset-0"
@@ -347,41 +347,43 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Jurisdictions Section - Redesigned */}
-      <section id="jurisdictions" data-animate className="relative px-6 py-40 overflow-hidden">
-        {/* Gradient Background with granate accents */}
+      {/* Jurisdictions Section - Dark Theme */}
+      <section id="jurisdictions" data-animate className="relative px-6 pt-20 pb-32 overflow-hidden">
+        {/* Background city image - clear and visible */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: 'url(https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=2400)',
+            filter: 'grayscale(100%) brightness(0.5)'
+          }}
+        />
+
+        {/* Gradient fade at top - blends with previous section */}
+        <div
+          className="absolute top-0 left-0 right-0 h-40"
+          style={{
+            background: 'linear-gradient(to bottom, #faf8f5 0%, transparent 100%)'
+          }}
+        />
+
+        {/* Gradient fade at bottom - for smooth transition to next section */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-40"
+          style={{
+            background: 'linear-gradient(to top, #1b1b1b 0%, transparent 100%)'
+          }}
+        />
+
+        {/* Dark overlay for text readability - only center */}
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(to bottom, #f8f6f3 0%, #faf8f5 20%, #f5eae8 50%, #faf8f5 80%, #eeede9 100%)'
-          }}
-        />
-
-        {/* Subtle dot pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.08]"
-          style={{
-            backgroundImage: 'radial-gradient(circle, #6B2C2C 1px, transparent 1px)',
-            backgroundSize: '40px 40px'
-          }}
-        />
-
-        {/* Granate orb accents for depth */}
-        <div
-          className="absolute top-20 left-1/4 w-[600px] h-[600px] rounded-full opacity-[0.08] blur-3xl"
-          style={{
-            background: 'radial-gradient(circle, #6B2C2C 0%, transparent 70%)'
-          }}
-        />
-        <div
-          className="absolute bottom-20 right-1/4 w-[500px] h-[500px] rounded-full opacity-[0.06] blur-3xl"
-          style={{
-            background: 'radial-gradient(circle, #8B3C3C 0%, transparent 70%)'
+            background: 'radial-gradient(ellipse at center, rgba(27, 27, 27, 0.4) 0%, rgba(27, 27, 27, 0.6) 100%)'
           }}
         />
 
         <div className="relative max-w-7xl mx-auto">
-          {/* Header */}
+          {/* Badge + Header */}
           <div
             className={`text-center mb-16 transition-all duration-1000 ${
               visibleSections.has('jurisdictions')
@@ -389,30 +391,22 @@ export default function Home() {
                 : 'opacity-0 translate-y-12'
             }`}
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1b1b1b] mb-6 tracking-tight">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#6B2C2C] hover:bg-white rounded-full mb-6 transition-all duration-300 border-2 border-[#6B2C2C] cursor-default group">
+              <span className="text-sm font-semibold text-white group-hover:text-[#6B2C2C] tracking-wide transition-colors duration-300">
+                Jurisdictions we work with
+              </span>
+            </div>
+
+            {/* Title */}
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
               Global presence
             </h2>
-            <p className="text-lg md:text-xl text-[#1b1b1b]/70 max-w-4xl mx-auto leading-relaxed">
+
+            {/* Subtitle */}
+            <p className="text-lg md:text-xl text-white/70 max-w-4xl mx-auto leading-relaxed">
               Through strategic partnerships across the globe, we provide tax solutions and company formation services in these key jurisdictions
             </p>
-          </div>
-
-          {/* World Map */}
-          <div
-            className={`mb-16 flex justify-center transition-all duration-1000 ${
-              visibleSections.has('jurisdictions')
-                ? 'opacity-100 scale-100'
-                : 'opacity-0 scale-95'
-            }`}
-            style={{ transitionDelay: visibleSections.has('jurisdictions') ? '200ms' : '0ms' }}
-          >
-            <div className="w-full max-w-4xl">
-              <img
-                src="/Mapa mundo - granate.svg"
-                alt="World map showing our global presence"
-                className="w-full h-auto opacity-80"
-              />
-            </div>
           </div>
 
           {/* Countries pills */}
@@ -431,19 +425,19 @@ export default function Home() {
             ].map((country, index) => (
               <div
                 key={country.name}
-                className={`bg-white/80 backdrop-blur-sm px-6 py-3.5 rounded-full border-2 border-[#1b1b1b]/5 hover:border-[#6B2C2C] hover:bg-white transition-all duration-300 hover:scale-105 cursor-default group shadow-sm ${
+                className={`bg-white px-6 py-3.5 rounded-full border-2 border-white hover:bg-[#6B2C2C] hover:border-[#6B2C2C] transition-colors duration-300 cursor-default group ${
                   visibleSections.has('jurisdictions')
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-8'
                 }`}
                 style={{
                   transitionDelay: visibleSections.has('jurisdictions')
-                    ? `${400 + index * 50}ms`
+                    ? `${200 + index * 50}ms`
                     : '0ms',
                   transitionDuration: '600ms'
                 }}
               >
-                <span className="text-sm font-semibold text-[#1b1b1b] group-hover:text-[#6B2C2C] flex items-center gap-2 transition-colors">
+                <span className="text-sm font-semibold text-[#1b1b1b] group-hover:text-white flex items-center gap-2 transition-colors duration-300">
                   <span className="text-lg">{country.flag}</span>
                   {country.name}
                 </span>
@@ -453,8 +447,40 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Curved Divider - Wave Transition from Jurisdictions to CTA */}
+      <div className="relative h-24 overflow-hidden" style={{ background: '#1b1b1b' }}>
+        <svg
+          className="absolute bottom-0 w-full h-24"
+          viewBox="0 0 1440 96"
+          preserveAspectRatio="none"
+          fill="none"
+        >
+          <path
+            d="M0,48 Q360,96 720,48 T1440,48 L1440,96 L0,96 Z"
+            fill="#eeede9"
+          />
+        </svg>
+      </div>
+
       {/* CTA Section */}
-      <section id="cta" data-animate className="px-6 py-40 bg-[#eeede9] relative overflow-hidden">
+      <section id="cta" data-animate className="relative px-6 py-40 overflow-hidden">
+        {/* Gradient Background - same as services section */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(to bottom, #f5f3ef 0%, #ffffff 30%, #f8f6f3 100%)'
+          }}
+        />
+
+        {/* Subtle dot pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.15]"
+          style={{
+            backgroundImage: 'radial-gradient(circle, #6B2C2C 1px, transparent 1px)',
+            backgroundSize: '32px 32px'
+          }}
+        />
+
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2
             className={`text-5xl md:text-6xl lg:text-7xl font-semibold text-[#1b1b1b] mb-8 tracking-tight transition-all duration-1000 ${
@@ -463,21 +489,21 @@ export default function Home() {
                 : 'opacity-0 translate-y-12'
             }`}
           >
-            Ready to evolve?
+            Ready to start?
           </h2>
           <p
-            className={`text-xl md:text-2xl text-[#1b1b1b]/60 mb-14 max-w-2xl mx-auto leading-relaxed transition-all duration-1000 ${
+            className={`text-lg md:text-xl text-[#1b1b1b]/60 mb-14 max-w-2xl mx-auto leading-relaxed transition-all duration-1000 ${
               visibleSections.has('cta')
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-12'
             }`}
             style={{ transitionDelay: visibleSections.has('cta') ? '200ms' : '0ms' }}
           >
-            Share your details and we'll design the optimal tax structure for your business
+            Share your details with our team and we will help you design the optimal tax structure for your business
           </p>
           <button
             onClick={() => setIsModalOpen(true)}
-            className={`inline-flex items-center gap-2 px-12 py-5 bg-[#1b1b1b] text-white rounded-full font-semibold text-lg hover:bg-[#6B2C2C] transition-all duration-500 shadow-lg hover:shadow-xl hover:scale-105 ${
+            className={`inline-flex items-center gap-2 px-12 py-5 bg-[#1b1b1b] text-white rounded-full font-semibold text-lg hover:bg-[#6B2C2C] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 ${
               visibleSections.has('cta')
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-12'
@@ -494,6 +520,21 @@ export default function Home() {
           </button>
         </div>
       </section>
+
+      {/* Curved Divider - Wave Transition from CTA to Footer */}
+      <div className="relative h-24 overflow-hidden" style={{ background: 'linear-gradient(to bottom, #f8f6f3 0%, #f5f3ef 100%)' }}>
+        <svg
+          className="absolute bottom-0 w-full h-24"
+          viewBox="0 0 1440 96"
+          preserveAspectRatio="none"
+          fill="none"
+        >
+          <path
+            d="M0,48 Q360,96 720,48 T1440,48 L1440,96 L0,96 Z"
+            fill="#6B2C2C"
+          />
+        </svg>
+      </div>
 
       {/* Contact Modal - Apple Style */}
       {isModalOpen && (
