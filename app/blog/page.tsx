@@ -249,7 +249,7 @@ export default function Blog() {
       <section
         id="cta"
         data-animate
-        className="relative px-6 py-32 overflow-hidden bg-white"
+        className="relative px-6 py-32 overflow-hidden bg-[#eeede9]"
       >
         <div className="relative max-w-4xl mx-auto text-center">
           <h2
@@ -273,7 +273,7 @@ export default function Blog() {
           </p>
           <Link
             href="/contact"
-            className={`inline-flex items-center gap-2 px-12 py-5 bg-[#1b1b1b] text-white rounded-full font-semibold text-lg hover:bg-[#6B2C2C] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 ${
+            className={`inline-flex items-center gap-2 px-12 py-5 bg-[#6B2C2C] text-white rounded-full font-semibold text-lg hover:bg-[#8B3C3C] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 ${
               visibleSections.has('cta')
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-16'

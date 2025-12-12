@@ -10,6 +10,7 @@ export default function Navigation() {
     { name: 'Home', href: '/' },
     { name: 'Services', href: '/services' },
     { name: 'Blog', href: '/blog' },
+    { name: 'About', href: '/about' },
   ];
 
   return (
