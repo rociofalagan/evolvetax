@@ -1,90 +1,93 @@
 import Link from 'next/link';
+import { dictionaries, homePath, type Lang } from '../lib/i18n';
+import { legalKeys, legalPaths, serviceKeys, servicePath } from '../lib/routes';
+import { legalDocs } from '../lib/legal';
+import { services } from '../lib/services';
+import { site } from '../lib/site';
 
-export default function Footer() {
+export default function Footer({ lang }: { lang: Lang }) {
+  const dict = dictionaries[lang];
+  const t = dict.footer;
+  const base = homePath[lang] === '/' ? '/' : homePath[lang];
+
   return (
-    <footer className="px-6 pt-8 pb-12 bg-[#6B2C2C]">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-          {/* Left side - Logo */}
-          <div className="flex items-center gap-3">
-            <img
-              src="/transparente.svg"
-              alt="EvolveTax Logo"
-              className="w-40 h-40 brightness-0 invert"
-            />
-          </div>
+    <footer className="relative overflow-hidden bg-ink px-6 pb-10 pt-20 text-cream">
+      <img
+        src="/favicon.svg"
+        alt=""
+        aria-hidden
+        className="pointer-events-none absolute -bottom-40 -right-24 w-[520px] opacity-[0.04] invert"
+      />
 
-          {/* Center - Legal Links */}
-          <div className="flex-1">
-            <h4 className="text-white font-bold text-base mb-3">Legal</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/privacy-policy"
-                  className="text-white hover:text-white/80 transition-colors text-sm"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/terms-and-conditions"
-                  className="text-white hover:text-white/80 transition-colors text-sm"
-                >
-                  Terms & Conditions
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/cookie-policy"
-                  className="text-white hover:text-white/80 transition-colors text-sm"
-                >
-                  Cookie Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/disclaimer"
-                  className="text-white hover:text-white/80 transition-colors text-sm"
-                >
-                  Disclaimer
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Right side - Contact */}
+      <div className="relative mx-auto max-w-6xl">
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.3fr_1.2fr_1fr_1fr_1fr]">
           <div>
-            <h4 className="text-white font-bold text-base mb-3">Contact</h4>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="mailto:hello@evolvetaxdubai.com"
-                  className="flex items-center gap-2 text-white hover:text-white/80 transition-colors text-sm"
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  <span>hello@evolvetaxdubai.com</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.linkedin.com/company/evolvetaxdubai/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-white hover:text-white/80 transition-colors text-sm"
-                >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                  <span>LinkedIn</span>
-                </a>
-              </li>
-            </ul>
+            <img src="/evolvetax-wordmark.svg" alt="Evolve Tax" width={272} height={66} className="h-9 w-auto invert" />
+            <p className="mt-5 max-w-xs text-sm leading-relaxed text-cream/55">{t.blurb}</p>
           </div>
+
+          <FooterColumn title={dict.services.eyebrow}>
+            {serviceKeys.map((key) => (
+              <FooterLink key={key} href={servicePath(key, lang)}>{services[key][lang].name}</FooterLink>
+            ))}
+          </FooterColumn>
+
+          <FooterColumn title={t.navigation}>
+            {dict.nav.items.map((item) => (
+              <FooterLink key={item.id} href={`${base}#${item.id}`}>{item.name}</FooterLink>
+            ))}
+            <FooterLink href={`${base}#contact`}>{t.contact}</FooterLink>
+          </FooterColumn>
+
+          <FooterColumn title={t.legal}>
+            {legalKeys.map((key) => (
+              <FooterLink key={key} href={legalPaths[key][lang]}>{legalDocs[key][lang].title}</FooterLink>
+            ))}
+          </FooterColumn>
+
+          <FooterColumn title={t.contact}>
+            <li>
+              <a href={`mailto:${site.email}`} className="text-sm text-cream/70 transition-colors hover:text-cream">
+                {site.email}
+              </a>
+            </li>
+            <li>
+              <a
+                href={site.linkedinCompany}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-cream/70 transition-colors hover:text-cream"
+              >
+                LinkedIn ↗
+              </a>
+            </li>
+          </FooterColumn>
+        </div>
+
+        <div className="mt-16 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-cream/40 sm:flex-row sm:justify-between">
+          <p>© {new Date().getFullYear()} {site.legalName}. {t.rights}</p>
+          <p>{t.location}</p>
         </div>
       </div>
     </footer>
+  );
+}
+
+function FooterColumn({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div>
+      <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-cream/40">{title}</p>
+      <ul className="space-y-2.5">{children}</ul>
+    </div>
+  );
+}
+
+function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <li>
+      <Link href={href} className="text-sm text-cream/70 transition-colors hover:text-cream">
+        {children}
+      </Link>
+    </li>
   );
 }

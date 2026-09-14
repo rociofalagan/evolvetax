@@ -1,112 +1,123 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { dictionaries, homePath, type Lang } from '../lib/i18n';
+import { alternatePath } from '../lib/routes';
 
-export default function Navigation() {
+export default function Navigation({ lang }: { lang: Lang }) {
+  const t = dictionaries[lang].nav;
+  const home = homePath[lang];
+  const otherLang: Lang = lang === 'en' ? 'es' : 'en';
+
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'Services', href: '/services' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'About', href: '/about' },
-  ];
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  // Todas las páginas empiezan con cabecera oscura: menú transparente arriba y sólido al hacer scroll.
+  const solid = scrolled || isMenuOpen;
+  const otherPath = alternatePath(pathname, otherLang);
+  const anchor = (id: string) => (home === '/' ? `/#${id}` : `${home}#${id}`);
+
+  const langSwitch = (
+    <span className="flex items-center rounded-lg border border-white/10 p-0.5 text-xs font-semibold">
+      {(['en', 'es'] as Lang[]).map((l) =>
+        l === lang ? (
+          <span key={l} className="rounded-md bg-white/10 px-2 py-1 uppercase text-cream">
+            {l}
+          </span>
+        ) : (
+          <a
+            key={l}
+            href={otherPath}
+            hrefLang={otherLang}
+            aria-label={t.switchLabel}
+            className="rounded-md px-2 py-1 uppercase text-cream/55 transition-colors hover:text-cream"
+          >
+            {l}
+          </a>
+        )
+      )}
+    </span>
+  );
 
   return (
-    <nav className="fixed top-0 w-full z-50 py-3">
-      {/* Apple-style backdrop blur background - consistent transparent style */}
-      <div className="absolute inset-0 bg-black/20 backdrop-blur-md" />
+    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-3 sm:px-6">
+      <nav
+        aria-label="Main"
+        className={`mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-2xl px-4 py-2.5 transition-all duration-500 sm:px-5 ${
+          solid
+            ? 'border border-white/10 bg-ink/85 shadow-[0_12px_40px_-12px_rgba(0,0,0,0.45)] backdrop-blur-xl'
+            : 'border border-transparent bg-transparent'
+        }`}
+      >
+        <Link href={home} aria-label={t.home} className="shrink-0">
+          <img src="/evolvetax-wordmark.svg" alt="Evolve Tax" width={272} height={66} className="h-7 w-auto invert sm:h-8" />
+        </Link>
 
-      <div className="relative max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-14">
-          {/* Logo */}
-          <Link href="/" className="flex items-center transition-all duration-300">
-            <img
-              src="/transparente.svg"
-              alt="EvolveTax Logo"
-              className="w-auto h-16 transition-all duration-500 hover:scale-110"
-              style={{
-                filter: 'brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0,0,0,0.3))',
-                transition: 'all 0.3s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.filter = 'brightness(0) invert(1) drop-shadow(0 4px 16px rgba(255,255,255,0.8))';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.filter = 'brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0,0,0,0.3))';
-              }}
-            />
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="px-4 py-2 rounded-lg font-medium transition-all duration-300 text-sm text-white hover:bg-white/10"
-              >
-                {item.name}
-              </Link>
-            ))}
+        <div className="hidden items-center gap-1 md:flex">
+          {t.items.map((item) => (
             <Link
-              href="/contact"
-              className="ml-3 px-5 py-2.5 rounded-full font-semibold transition-all duration-300 text-sm bg-white text-[#1b1b1b] hover:bg-white/90"
+              key={item.id}
+              href={anchor(item.id)}
+              className="rounded-lg px-3.5 py-2 text-sm font-medium text-cream/75 transition-colors hover:bg-white/5 hover:text-cream"
             >
-              Contact
+              {item.name}
             </Link>
-          </div>
+          ))}
+          <span className="ml-2">{langSwitch}</span>
+          <Link
+            href={anchor('contact')}
+            className="ml-2 rounded-xl bg-cream px-4 py-2 text-sm font-semibold text-ink transition-all hover:bg-white hover:shadow-[0_0_0_4px_rgba(238,237,233,0.15)]"
+          >
+            {t.cta}
+          </Link>
+        </div>
 
-          {/* Mobile Menu Button */}
+        <div className="flex items-center gap-2 md:hidden">
+          {langSwitch}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg transition-colors text-white hover:bg-white/10"
-            aria-label="Toggle menu"
+            className="rounded-lg p-2 text-cream transition-colors hover:bg-white/10"
+            aria-label={isMenuOpen ? t.close : t.open}
+            aria-expanded={isMenuOpen}
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              {isMenuOpen ? (
-                <path d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path d="M4 6h16M4 12h16M4 18h16" />
-              )}
+            <svg className="h-6 w-6" fill="none" strokeLinecap="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+              {isMenuOpen ? <path d="M6 18L18 6M6 6l12 12" /> : <path d="M4 7h16M4 12h16M4 17h10" />}
             </svg>
           </button>
         </div>
+      </nav>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden mt-2 py-4 rounded-2xl bg-[#eeede9]/95 backdrop-blur-xl border border-black/5">
-            <div className="flex flex-col gap-1 px-3">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="px-4 py-3 text-[#1b1b1b] hover:bg-black/5 font-medium transition-colors text-base rounded-lg"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <Link
-                href="/contact"
-                className="mt-2 mx-2 px-5 py-3 bg-[#6B2C2C] text-white rounded-full font-semibold hover:bg-[#8B3C3C] transition-all text-center text-sm"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contact
-              </Link>
-            </div>
-          </div>
-        )}
-      </div>
-    </nav>
+      {isMenuOpen && (
+        <div className="mx-auto mt-2 max-w-6xl rounded-2xl border border-white/10 bg-ink/95 p-3 backdrop-blur-xl md:hidden">
+          {t.items.map((item) => (
+            <Link
+              key={item.id}
+              href={anchor(item.id)}
+              onClick={() => setIsMenuOpen(false)}
+              className="block rounded-lg px-4 py-3 text-base font-medium text-cream/85 hover:bg-white/5"
+            >
+              {item.name}
+            </Link>
+          ))}
+          <Link
+            href={anchor('contact')}
+            onClick={() => setIsMenuOpen(false)}
+            className="mt-2 block rounded-xl bg-cream px-4 py-3 text-center text-sm font-semibold text-ink"
+          >
+            {t.cta}
+          </Link>
+        </div>
+      )}
+    </header>
   );
 }
