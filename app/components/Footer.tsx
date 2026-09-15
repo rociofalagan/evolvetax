@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import AnchorLink from './AnchorLink';
 import { dictionaries, homePath, type Lang } from '../lib/i18n';
 import { legalKeys, legalPaths, serviceKeys, servicePath } from '../lib/routes';
 import { legalDocs } from '../lib/legal';
@@ -85,9 +86,15 @@ function FooterColumn({ title, children }: { title: string; children: React.Reac
 function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <li>
-      <Link href={href} className="text-sm text-cream/70 transition-colors hover:text-cream">
-        {children}
-      </Link>
+      {href.includes('#') ? (
+        <AnchorLink href={href} className="text-sm text-cream/70 transition-colors hover:text-cream">
+          {children}
+        </AnchorLink>
+      ) : (
+        <Link href={href} className="text-sm text-cream/70 transition-colors hover:text-cream">
+          {children}
+        </Link>
+      )}
     </li>
   );
 }

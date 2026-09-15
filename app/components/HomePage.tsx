@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import AnchorLink from './AnchorLink';
 import Reveal from './Reveal';
 import JsonLd from './JsonLd';
 import ContactSection from './ContactSection';
@@ -70,19 +71,19 @@ function Hero({ t }: { t: D['hero'] }) {
           </p>
 
           <div className="rise mt-10 flex flex-col gap-3 sm:flex-row" style={{ animationDelay: '300ms' }}>
-            <Link
+            <AnchorLink
               href="#diagnosis"
               className="group inline-flex items-center justify-center gap-2 rounded-xl bg-cream px-7 py-4 text-[15px] font-semibold text-ink transition-all hover:bg-white hover:shadow-[0_0_0_6px_rgba(238,237,233,0.12)]"
             >
               {t.primary}
               <span className="transition-transform group-hover:translate-x-1">→</span>
-            </Link>
-            <Link
+            </AnchorLink>
+            <AnchorLink
               href="#contact"
               className="inline-flex items-center justify-center rounded-xl border border-white/15 px-7 py-4 text-[15px] font-medium text-cream/85 transition-colors hover:border-white/30 hover:bg-white/[0.04]"
             >
               {t.secondary}
-            </Link>
+            </AnchorLink>
           </div>
 
           <ul className="rise mt-12 flex flex-wrap gap-x-7 gap-y-3 text-sm text-cream/55" style={{ animationDelay: '420ms' }}>
@@ -257,22 +258,22 @@ function Services({ t, lang }: { t: D['services']; lang: Lang }) {
 
         <Reveal className="mt-6 text-center text-muted">
           {t.oneOff.lead}{' '}
-          <Link href="#diagnosis" className="font-semibold text-wine underline decoration-wine/30 underline-offset-4 hover:decoration-wine">
+          <AnchorLink href="#diagnosis" className="font-semibold text-wine underline decoration-wine/30 underline-offset-4 hover:decoration-wine">
             {t.oneOff.link}
-          </Link>
+          </AnchorLink>
         </Reveal>
 
         <Reveal className="mt-10 flex flex-col items-start justify-between gap-6 rounded-3xl border border-wine/15 bg-rose/60 p-8 sm:flex-row sm:items-center sm:p-10">
           <p className="max-w-2xl text-xl font-semibold leading-snug tracking-tight sm:text-2xl">
             {t.band.lead} <span className="font-serif font-normal italic text-wine">{t.band.accent}</span>
           </p>
-          <Link
+          <AnchorLink
             href="#diagnosis"
             className="group inline-flex shrink-0 items-center gap-2 rounded-xl bg-wine px-6 py-3.5 text-sm font-semibold text-cream transition-colors hover:bg-wine-deep"
           >
             {t.bandCta}
             <span className="transition-transform group-hover:translate-x-1">→</span>
-          </Link>
+          </AnchorLink>
         </Reveal>
       </div>
     </section>
@@ -318,9 +319,9 @@ function Faq({ t }: { t: D['faq'] }) {
           <Title value={t.title} className="mt-5" />
           <p className="mt-5 text-lg leading-relaxed text-muted">
             {t.textLead}{' '}
-            <Link href="#contact" className="font-semibold text-wine underline decoration-wine/30 underline-offset-4 hover:decoration-wine">
+            <AnchorLink href="#contact" className="font-semibold text-wine underline decoration-wine/30 underline-offset-4 hover:decoration-wine">
               {t.textLink}
-            </Link>
+            </AnchorLink>
             .
           </p>
         </Reveal>

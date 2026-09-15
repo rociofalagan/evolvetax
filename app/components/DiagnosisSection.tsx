@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import AnchorLink from './AnchorLink';
 import Reveal from './Reveal';
 import { Check, Eyebrow, Title } from './ui';
 import { dictionaries, type Lang } from '../lib/i18n';
@@ -63,9 +63,9 @@ export default function DiagnosisSection({ lang }: { lang: Lang }) {
 
               <p className="mt-8 border-t border-white/10 pt-6 text-center text-sm text-cream/60">
                 {t.altLead}{' '}
-                <Link href="#contact" className="font-semibold text-cream underline decoration-cream/30 underline-offset-4 hover:decoration-cream">
+                <AnchorLink href="#contact" className="font-semibold text-cream underline decoration-cream/30 underline-offset-4 hover:decoration-cream">
                   {t.altLink}
-                </Link>
+                </AnchorLink>
               </p>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import AnchorLink from './AnchorLink';
 import Reveal from './Reveal';
 import JsonLd from './JsonLd';
 import ContactSection from './ContactSection';
@@ -34,7 +35,7 @@ export default function ServicePage({ serviceKey, lang }: { serviceKey: ServiceK
               <ol className="flex flex-wrap items-center gap-2">
                 <li><Link href={home} className="hover:text-cream">{ui.home}</Link></li>
                 <li aria-hidden>/</li>
-                <li><Link href={homeAnchor('services')} className="hover:text-cream">{ui.services}</Link></li>
+                <li><AnchorLink href={homeAnchor('services')} className="hover:text-cream">{ui.services}</AnchorLink></li>
                 <li aria-hidden>/</li>
                 <li aria-current="page" className="text-cream/80">{s.name}</li>
               </ol>
@@ -56,19 +57,19 @@ export default function ServicePage({ serviceKey, lang }: { serviceKey: ServiceK
             </p>
 
             <div className="rise mt-9 flex flex-col gap-3 sm:flex-row" style={{ animationDelay: '260ms' }}>
-              <Link
+              <AnchorLink
                 href="#diagnosis"
                 className="group inline-flex items-center justify-center gap-2 rounded-xl bg-cream px-7 py-4 text-[15px] font-semibold text-ink transition-all hover:bg-white hover:shadow-[0_0_0_6px_rgba(238,237,233,0.12)]"
               >
                 {ui.primary}
                 <span className="transition-transform group-hover:translate-x-1">→</span>
-              </Link>
-              <Link
+              </AnchorLink>
+              <AnchorLink
                 href="#included"
                 className="inline-flex items-center justify-center rounded-xl border border-white/15 px-7 py-4 text-[15px] font-medium text-cream/85 transition-colors hover:border-white/30 hover:bg-white/[0.04]"
               >
                 {ui.secondary}
-              </Link>
+              </AnchorLink>
             </div>
           </div>
 

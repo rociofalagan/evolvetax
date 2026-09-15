@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import AnchorLink from './AnchorLink';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { dictionaries, homePath, type Lang } from '../lib/i18n';
@@ -65,21 +66,21 @@ export default function Navigation({ lang }: { lang: Lang }) {
 
         <div className="hidden items-center gap-1 md:flex">
           {t.items.map((item) => (
-            <Link
+            <AnchorLink
               key={item.id}
               href={anchor(item.id)}
               className="rounded-lg px-3.5 py-2 text-sm font-medium text-cream/75 transition-colors hover:bg-white/5 hover:text-cream"
             >
               {item.name}
-            </Link>
+            </AnchorLink>
           ))}
           <span className="ml-2">{langSwitch}</span>
-          <Link
+          <AnchorLink
             href={anchor('diagnosis')}
             className="ml-2 rounded-xl bg-cream px-4 py-2 text-sm font-semibold text-ink transition-all hover:bg-white hover:shadow-[0_0_0_4px_rgba(238,237,233,0.15)]"
           >
             {t.cta}
-          </Link>
+          </AnchorLink>
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
@@ -100,22 +101,22 @@ export default function Navigation({ lang }: { lang: Lang }) {
       {isMenuOpen && (
         <div className="mx-auto mt-2 max-w-6xl rounded-2xl border border-white/10 bg-ink/95 p-3 backdrop-blur-xl md:hidden">
           {t.items.map((item) => (
-            <Link
+            <AnchorLink
               key={item.id}
               href={anchor(item.id)}
-              onClick={() => setIsMenuOpen(false)}
+              onNavigate={() => setIsMenuOpen(false)}
               className="block rounded-lg px-4 py-3 text-base font-medium text-cream/85 hover:bg-white/5"
             >
               {item.name}
-            </Link>
+            </AnchorLink>
           ))}
-          <Link
+          <AnchorLink
             href={anchor('diagnosis')}
-            onClick={() => setIsMenuOpen(false)}
+            onNavigate={() => setIsMenuOpen(false)}
             className="mt-2 block rounded-xl bg-cream px-4 py-3 text-center text-sm font-semibold text-ink"
           >
             {t.cta}
-          </Link>
+          </AnchorLink>
         </div>
       )}
     </header>
