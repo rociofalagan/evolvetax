@@ -20,7 +20,6 @@ export function baseMetadata(lang: Lang): Metadata {
     applicationName: site.name,
     authors: [{ name: site.founderName, url: site.linkedinFounder }],
     creator: site.name,
-    icons: { icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }, { url: '/favicon.ico' }] },
     formatDetection: { telephone: false, email: false, address: false },
     robots: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
     openGraph: {
