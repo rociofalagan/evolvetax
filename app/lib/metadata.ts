@@ -1,8 +1,9 @@
 import type { Metadata, Viewport } from 'next';
 import { dictionaries, type Lang } from './i18n';
 import { site } from './site';
-import { legalPaths, servicePath, type LegalKey, type ServiceKey } from './routes';
+import { blogPath, legalPaths, postPath, servicePath, type LegalKey, type PostKey, type ServiceKey } from './routes';
 import { legalDocs } from './legal';
+import { blogUi, getPost } from './blog';
 import { services } from './services';
 
 export const viewport: Viewport = {
@@ -74,5 +75,44 @@ export function homeMetadata(lang: Lang): Metadata {
     },
     openGraph: { title: t.title, description: t.description, url: path },
     twitter: { card: 'summary_large_image', title: t.title, description: t.description },
+  };
+}
+
+// Metadatos del índice del blog.
+export function blogIndexMetadata(lang: Lang): Metadata {
+  const ui = blogUi[lang];
+  return {
+    title: { absolute: ui.metaTitle },
+    description: ui.metaDescription,
+    alternates: { canonical: blogPath[lang], languages: { en: blogPath.en, es: blogPath.es, 'x-default': blogPath.en } },
+    openGraph: { title: ui.metaTitle, description: ui.metaDescription, url: blogPath[lang] },
+    twitter: { card: 'summary_large_image', title: ui.metaTitle, description: ui.metaDescription },
+  };
+}
+
+// Metadatos de cada artículo.
+export function blogPostMetadata(key: PostKey, lang: Lang): Metadata {
+  const post = getPost(key, lang);
+  const title = `${post.metaTitle}`;
+  return {
+    title: { absolute: title },
+    description: post.excerpt,
+    authors: [{ name: site.founderName, url: site.linkedinFounder }],
+    keywords: post.tags,
+    alternates: {
+      canonical: postPath(key, lang),
+      languages: { en: postPath(key, 'en'), es: postPath(key, 'es'), 'x-default': postPath(key, 'en') },
+    },
+    openGraph: {
+      type: 'article',
+      title,
+      description: post.excerpt,
+      url: postPath(key, lang),
+      publishedTime: post.published,
+      modifiedTime: post.updated,
+      authors: [site.founderName],
+      tags: post.tags,
+    },
+    twitter: { card: 'summary_large_image', title, description: post.excerpt },
   };
 }

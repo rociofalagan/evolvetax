@@ -1,5 +1,6 @@
 import { dictionaries, homePath, type Lang } from './i18n';
-import { serviceKeys, servicePath, type ServiceKey } from './routes';
+import { blogPath, postPath, serviceKeys, servicePath, type PostKey, type ServiceKey } from './routes';
+import { blogUi, categories, getPost, getPosts } from './blog';
 import { services, servicesUpdated } from './services';
 import { site } from './site';
 
@@ -165,6 +166,79 @@ export function serviceSchema(key: ServiceKey, lang: Lang) {
         ],
       },
       faqPage(url, lang, s.faq),
+    ],
+  };
+}
+
+export function blogIndexSchema(lang: Lang) {
+  const ui = blogUi[lang];
+  const url = abs(blogPath[lang]);
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organization(lang),
+      website,
+      {
+        '@type': 'Blog',
+        '@id': `${url}#blog`,
+        url,
+        name: ui.metaTitle,
+        description: ui.metaDescription,
+        inLanguage: lang,
+        publisher: { '@id': orgId },
+        blogPost: getPosts(lang).map((p) => ({
+          '@type': 'BlogPosting',
+          headline: p.title,
+          url: abs(postPath(p.key, lang)),
+          datePublished: p.published,
+        })),
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: ui.home, item: abs(homePath[lang]) },
+          { '@type': 'ListItem', position: 2, name: ui.blog, item: url },
+        ],
+      },
+    ],
+  };
+}
+
+export function blogPostSchema(key: PostKey, lang: Lang) {
+  const post = getPost(key, lang);
+  const ui = blogUi[lang];
+  const url = abs(postPath(key, lang));
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organization(lang),
+      founder(lang),
+      website,
+      {
+        '@type': 'BlogPosting',
+        '@id': `${url}#article`,
+        headline: post.title,
+        description: post.excerpt,
+        url,
+        mainEntityOfPage: url,
+        datePublished: post.published,
+        dateModified: post.updated,
+        inLanguage: lang,
+        author: { '@id': founderId },
+        publisher: { '@id': orgId },
+        image: `${site.url}/evolvetaxwhite.jpg`,
+        articleSection: categories[post.category][lang],
+        keywords: post.tags.join(', '),
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: ui.home, item: abs(homePath[lang]) },
+          { '@type': 'ListItem', position: 2, name: ui.blog, item: abs(blogPath[lang]) },
+          { '@type': 'ListItem', position: 3, name: post.title, item: url },
+        ],
+      },
+      faqPage(url, lang, post.faq),
     ],
   };
 }

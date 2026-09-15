@@ -35,7 +35,7 @@ export default function Footer({ lang }: { lang: Lang }) {
 
           <FooterColumn title={t.navigation}>
             {dict.nav.items.map((item) => (
-              <FooterLink key={item.id} href={`${base}#${item.id}`}>{item.name}</FooterLink>
+              <FooterLink key={item.name} href={item.href ?? `${base}#${item.id}`}>{item.name}</FooterLink>
             ))}
             <FooterLink href={`${base}#contact`}>{t.contact}</FooterLink>
           </FooterColumn>

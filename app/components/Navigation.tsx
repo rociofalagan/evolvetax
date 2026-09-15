@@ -67,8 +67,8 @@ export default function Navigation({ lang }: { lang: Lang }) {
         <div className="hidden items-center gap-1 md:flex">
           {t.items.map((item) => (
             <AnchorLink
-              key={item.id}
-              href={anchor(item.id)}
+              key={item.name}
+              href={item.href ?? anchor(item.id ?? '')}
               className="rounded-lg px-3.5 py-2 text-sm font-medium text-cream/75 transition-colors hover:bg-white/5 hover:text-cream"
             >
               {item.name}
@@ -102,8 +102,8 @@ export default function Navigation({ lang }: { lang: Lang }) {
         <div className="mx-auto mt-2 max-w-6xl rounded-2xl border border-white/10 bg-ink/95 p-3 backdrop-blur-xl md:hidden">
           {t.items.map((item) => (
             <AnchorLink
-              key={item.id}
-              href={anchor(item.id)}
+              key={item.name}
+              href={item.href ?? anchor(item.id ?? '')}
               onNavigate={() => setIsMenuOpen(false)}
               className="block rounded-lg px-4 py-3 text-base font-medium text-cream/85 hover:bg-white/5"
             >

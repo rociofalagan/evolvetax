@@ -11,6 +11,9 @@ import { relatedServices, servicePath, type ServiceKey } from '../lib/routes';
 import { serviceSchema } from '../lib/schema';
 import { serviceUi, services, servicesUpdated } from '../lib/services';
 import { site } from '../lib/site';
+import PostCard from './blog/PostCard';
+import { toCard } from './blog/BlogIndex';
+import { blogUi, getPosts } from '../lib/blog';
 
 // Opción del formulario que se preselecciona en cada landing.
 const needIndex: Record<ServiceKey, number> = { structuring: 0, dubai: 1, uaeTax: 2, spainTax: 3, residency: 4, beckham: 5 };
@@ -254,6 +257,23 @@ export default function ServicePage({ serviceKey, lang }: { serviceKey: ServiceK
           </div>
         </div>
       </section>
+
+      {/* Artículos del blog relacionados (enlazado interno) */}
+      {getPosts(lang).some((p) => p.relatedServices.includes(serviceKey)) && (
+        <section className="bg-paper px-6 pb-24 sm:pb-28">
+          <div className="mx-auto max-w-6xl border-t border-line pt-20">
+            <SectionHeading eyebrow={blogUi[lang].blog} title={ui.relatedArticles} />
+            <div className="mt-12 grid gap-5 md:grid-cols-3">
+              {getPosts(lang)
+                .filter((p) => p.relatedServices.includes(serviceKey))
+                .slice(0, 3)
+                .map((p) => (
+                  <PostCard key={p.key} post={toCard(p, lang)} readMore={blogUi[lang].readMore} minRead={blogUi[lang].minRead} />
+                ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <DiagnosisSection lang={lang} />
 

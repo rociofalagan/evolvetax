@@ -11,6 +11,8 @@ export const homePath: Record<Lang, string> = { en: '/', es: '/es' };
 
 type Accent = { lead: string; accent: string };
 
+export type NavItem = { name: string; id?: string; href?: string };
+
 const en = {
   meta: {
     title: 'International Tax Advisory for Digital Entrepreneurs | Evolve Tax',
@@ -25,7 +27,8 @@ const en = {
       { name: 'Services', id: 'services' },
       { name: 'Process', id: 'process' },
       { name: 'FAQ', id: 'faq' },
-    ],
+      { name: 'Blog', href: '/blog' },
+    ] as NavItem[],
     cta: 'Book diagnosis →',
     home: 'Evolve Tax — home',
     open: 'Open menu',
@@ -226,6 +229,7 @@ const es: Dictionary = {
       { name: 'Servicios', id: 'services' },
       { name: 'Proceso', id: 'process' },
       { name: 'FAQ', id: 'faq' },
+      { name: 'Blog', href: '/es/blog' },
     ],
     cta: 'Reservar diagnóstico →',
     home: 'Evolve Tax — inicio',

@@ -45,6 +45,7 @@ export const serviceUi = {
     relatedEyebrow: 'Other services',
     relatedTitle: { lead: 'You may also', accent: 'need.' },
     learnMore: 'Learn more',
+    relatedArticles: { lead: 'From the', accent: 'blog.' },
   },
   es: {
     home: 'Inicio',
@@ -68,6 +69,7 @@ export const serviceUi = {
     relatedEyebrow: 'Otros servicios',
     relatedTitle: { lead: 'También te puede', accent: 'interesar.' },
     learnMore: 'Saber más',
+    relatedArticles: { lead: 'Del', accent: 'blog.' },
   },
 } satisfies Record<Lang, Record<string, string | Accent>>;
 
