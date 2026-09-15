@@ -92,7 +92,7 @@ const en = {
     learnMore: 'Learn more',
     oneOff: { lead: 'Just need to review a specific situation?', link: 'Start with an initial diagnosis.' },
     band: { lead: 'Most firms set up your structure and disappear.', accent: 'We stay.' } as Accent,
-    bandCta: 'Let’s talk about your case',
+    bandCta: 'Book your initial diagnosis',
   },
   process: {
     eyebrow: 'Process',
@@ -293,7 +293,7 @@ const es: Dictionary = {
     learnMore: 'Saber más',
     oneOff: { lead: '¿Solo necesitas revisar una situación concreta?', link: 'Empieza por un diagnóstico inicial.' },
     band: { lead: 'La mayoría te monta la estructura y desaparece.', accent: 'Nosotros nos quedamos.' },
-    bandCta: 'Hablemos de tu caso',
+    bandCta: 'Reserva tu diagnóstico inicial',
   },
   process: {
     eyebrow: 'Proceso',
