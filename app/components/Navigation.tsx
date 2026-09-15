@@ -75,7 +75,7 @@ export default function Navigation({ lang }: { lang: Lang }) {
           ))}
           <span className="ml-2">{langSwitch}</span>
           <Link
-            href={anchor('contact')}
+            href={anchor('diagnosis')}
             className="ml-2 rounded-xl bg-cream px-4 py-2 text-sm font-semibold text-ink transition-all hover:bg-white hover:shadow-[0_0_0_4px_rgba(238,237,233,0.15)]"
           >
             {t.cta}
@@ -110,7 +110,7 @@ export default function Navigation({ lang }: { lang: Lang }) {
             </Link>
           ))}
           <Link
-            href={anchor('contact')}
+            href={anchor('diagnosis')}
             onClick={() => setIsMenuOpen(false)}
             className="mt-2 block rounded-xl bg-cream px-4 py-3 text-center text-sm font-semibold text-ink"
           >

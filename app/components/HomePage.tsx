@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Reveal from './Reveal';
 import JsonLd from './JsonLd';
 import ContactSection from './ContactSection';
+import DiagnosisSection from './DiagnosisSection';
 import { Check, DarkBackdrop, Eyebrow, FaqList, SectionHeading, Title } from './ui';
 import { dictionaries, type Lang } from '../lib/i18n';
 import { servicePath } from '../lib/routes';
@@ -31,6 +32,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
       <Services t={t.services} lang={lang} />
       <Process t={t.process} />
       <Faq t={t.faq} />
+      <DiagnosisSection lang={lang} />
       <ContactSection lang={lang} />
     </main>
   );
@@ -69,14 +71,14 @@ function Hero({ t }: { t: D['hero'] }) {
 
           <div className="rise mt-10 flex flex-col gap-3 sm:flex-row" style={{ animationDelay: '300ms' }}>
             <Link
-              href="#contact"
+              href="#diagnosis"
               className="group inline-flex items-center justify-center gap-2 rounded-xl bg-cream px-7 py-4 text-[15px] font-semibold text-ink transition-all hover:bg-white hover:shadow-[0_0_0_6px_rgba(238,237,233,0.12)]"
             >
               {t.primary}
               <span className="transition-transform group-hover:translate-x-1">→</span>
             </Link>
             <Link
-              href="#process"
+              href="#contact"
               className="inline-flex items-center justify-center rounded-xl border border-white/15 px-7 py-4 text-[15px] font-medium text-cream/85 transition-colors hover:border-white/30 hover:bg-white/[0.04]"
             >
               {t.secondary}
@@ -255,7 +257,7 @@ function Services({ t, lang }: { t: D['services']; lang: Lang }) {
 
         <Reveal className="mt-6 text-center text-muted">
           {t.oneOff.lead}{' '}
-          <Link href="#contact" className="font-semibold text-wine underline decoration-wine/30 underline-offset-4 hover:decoration-wine">
+          <Link href="#diagnosis" className="font-semibold text-wine underline decoration-wine/30 underline-offset-4 hover:decoration-wine">
             {t.oneOff.link}
           </Link>
         </Reveal>
@@ -265,7 +267,7 @@ function Services({ t, lang }: { t: D['services']; lang: Lang }) {
             {t.band.lead} <span className="font-serif font-normal italic text-wine">{t.band.accent}</span>
           </p>
           <Link
-            href="#contact"
+            href="#diagnosis"
             className="group inline-flex shrink-0 items-center gap-2 rounded-xl bg-wine px-6 py-3.5 text-sm font-semibold text-cream transition-colors hover:bg-wine-deep"
           >
             {t.bandCta}

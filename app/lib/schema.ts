@@ -35,7 +35,20 @@ function organization(lang: Lang) {
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: t.services.eyebrow,
-      itemListElement: serviceKeys.map((key) => ({
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          price: site.diagnosis.price,
+          priceCurrency: site.diagnosis.currency,
+          url: `${abs(homePath[lang])}#diagnosis`,
+          itemOffered: {
+            '@type': 'Service',
+            name: t.diagnosis.priceLabel,
+            description: t.diagnosis.text,
+            provider: { '@id': orgId },
+          },
+        },
+        ...serviceKeys.map((key) => ({
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
@@ -43,7 +56,8 @@ function organization(lang: Lang) {
           url: abs(servicePath(key, lang)),
           provider: { '@id': orgId },
         },
-      })),
+        })),
+      ],
     },
   };
 }

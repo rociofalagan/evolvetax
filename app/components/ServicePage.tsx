@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Reveal from './Reveal';
 import JsonLd from './JsonLd';
 import ContactSection from './ContactSection';
+import DiagnosisSection from './DiagnosisSection';
 import { Check, DarkBackdrop, Eyebrow, FaqList, SectionHeading, Title } from './ui';
 import { dictionaries, homePath, type Lang } from '../lib/i18n';
 import { relatedServices, servicePath, type ServiceKey } from '../lib/routes';
@@ -56,7 +57,7 @@ export default function ServicePage({ serviceKey, lang }: { serviceKey: ServiceK
 
             <div className="rise mt-9 flex flex-col gap-3 sm:flex-row" style={{ animationDelay: '260ms' }}>
               <Link
-                href="#contact"
+                href="#diagnosis"
                 className="group inline-flex items-center justify-center gap-2 rounded-xl bg-cream px-7 py-4 text-[15px] font-semibold text-ink transition-all hover:bg-white hover:shadow-[0_0_0_6px_rgba(238,237,233,0.12)]"
               >
                 {ui.primary}
@@ -252,6 +253,8 @@ export default function ServicePage({ serviceKey, lang }: { serviceKey: ServiceK
           </div>
         </div>
       </section>
+
+      <DiagnosisSection lang={lang} />
 
       <ContactSection lang={lang} title={s.cta.title} text={s.cta.text} defaultNeed={form.needs[needIndex[serviceKey]]} />
     </main>

@@ -26,7 +26,7 @@ export const serviceUi = {
   en: {
     home: 'Home',
     services: 'Services',
-    primary: 'Tell us about your case',
+    primary: 'Book your initial diagnosis',
     secondary: 'See what’s included',
     includedEyebrow: 'What’s included',
     forWhoEyebrow: 'Who it’s for',
@@ -49,7 +49,7 @@ export const serviceUi = {
   es: {
     home: 'Inicio',
     services: 'Servicios',
-    primary: 'Cuéntanos tu caso',
+    primary: 'Reserva tu diagnóstico inicial',
     secondary: 'Ver qué incluye',
     includedEyebrow: 'Qué incluye',
     forWhoEyebrow: 'Para quién es',
