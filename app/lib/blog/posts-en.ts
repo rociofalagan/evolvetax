@@ -430,44 +430,35 @@ export const postsEn: Record<PostKey, PostContent> = {
     metaTitle: 'How Much Does It Cost to Set Up a Company in Dubai? (2026)',
     title: 'How much does it cost to set up a company in Dubai?',
     excerpt:
-      'A free zone licence can start below AED 6,000 and a full setup with a visa and a bank account can pass AED 30,000. Here is what each line of the quote means, what is missing from most of them and what you pay every year.',
+      'A free zone company with one residence visa usually costs between AED 15,000 and AED 20,000 in its first year. Here is what each line of the quote means, what is missing from most of them and what you pay every year.',
     tags: ['Dubai', 'Company setup', 'Costs', 'Free zones'],
     takeaways: [
-      'A free zone licence without visas typically starts between AED 5,750 and AED 15,000 per year.',
-      'Adding one residence visa usually takes the first-year total to somewhere between AED 15,000 and AED 30,000.',
-      'Mainland companies start higher because of the office lease requirement.',
+      'As a guide, a free zone company with one residence visa costs between AED 15,000 and AED 20,000 in the first year.',
+      'That figure covers the trade licence, the establishment card and the visa — not the bank account or the accounting.',
+      'Mainland companies cost more because they require a physical office lease.',
       'The licence is only part of it: renewals, accounting, Corporate Tax and bank requirements come after.',
     ],
     body: [
       { p: `“How much does it cost to set up a company in Dubai?” is the first question everyone asks, and the honest answer is that it depends on four things: the free zone or mainland route, how many activities your licence covers, how many residence visas you need and whether you need a physical office.` },
       { p: `What follows are the components of any quote, with indicative market ranges for 2026, so you can read a proposal and understand what you are actually paying for.` },
 
-      { h2: `The licence itself`, id: 'licence' },
-      {
-        table: {
-          head: ['Option', 'Indicative range (AED per year)'],
-          rows: [
-            ['Free zone licence, no visa', '5,750 – 15,000'],
-            ['Free zone licence with 1 visa quota', '12,500 – 25,000'],
-            ['Mainland trade licence and approvals', 'from 15,000'],
-          ],
-        },
-      },
-      { p: `The spread is wide because free zones compete on price and on what they include. Cheaper packages tend to limit the number of activities, the visa quota or the type of office. A licence that does not cover what you actually sell is the most expensive kind of saving.` },
+      { h2: `The short answer`, id: 'short-answer' },
+      { callout: { title: 'AED 15,000 – 20,000 for a typical first year', text: 'A free zone company with one residence visa usually lands in that range, including the trade licence, the establishment card and the visa. A licence without visas costs less; a mainland company costs more because it requires a physical office lease.' } },
+      { p: `Free zones compete on price and on what they include, so two quotes for “the same” company can look very different. Cheaper packages tend to limit the number of activities, the visa quota or the type of office. A licence that does not cover what you actually sell is the most expensive kind of saving.` },
 
       { h2: `Setup fees you pay once`, id: 'one-off' },
       {
         list: [
-          ['Name reservation and initial approval', 'roughly AED 600 – 2,000.'],
-          ['Establishment card', 'roughly AED 1,000 – 2,000, needed to sponsor visas.'],
-          ['Document attestation and translation', 'variable, and only if a corporate shareholder or foreign documents are involved.'],
-          ['Professional fees', 'what your adviser charges for handling the process.'],
+          ['Name reservation and initial approval', 'a one-off government fee at incorporation.'],
+          ['Establishment card', 'needed before the company can sponsor any visa.'],
+          ['Document attestation and translation', 'only if a corporate shareholder or foreign documents are involved.'],
+          ['Professional fees', 'what your adviser charges for handling the process, agreed in writing.'],
         ],
       },
 
       { h2: `Residence visas`, id: 'visas' },
-      { p: `Each residence visa costs roughly AED 3,500 – 6,000 and includes the entry permit, the status change, the medical test, the Emirates ID and the stamping. Health insurance is mandatory for visa holders and is paid separately.` },
-      { p: `A common first-year setup for a solo founder — free zone licence with one visa quota, establishment card and one residence visa — usually lands between AED 20,000 and AED 30,000, everything included.` },
+      { p: `Each residence visa covers the entry permit, the status change, the medical test, the Emirates ID and the stamping, and it is renewed every two or three years. Health insurance is mandatory for visa holders and is paid separately.` },
+      { p: `The first visa is normally included in the AED 15,000 – 20,000 range above. Each additional visa adds to the cost, and beyond a certain number you also need a larger office.` },
 
       { h2: `The costs that are missing from most quotes`, id: 'hidden' },
       { callout: { title: 'Ask about these before you sign', text: 'Bank account minimum balance requirements, accounting and Corporate Tax filings, VAT registration and returns, audited financial statements if you want the free zone 0% rate, health insurance, and the annual renewal of licence, establishment card and visas.' } },
@@ -496,7 +487,7 @@ export const postsEn: Record<PostKey, PostContent> = {
       { p: `If you want a written quote for your case — the right free zone, the activities and the total first-year cost — see our [business setup in Dubai](/services/dubai-company-setup) service, or read [free zone or mainland](/blog/dubai-free-zone-vs-mainland) first if you are still deciding on the route.` },
     ],
     faq: [
-      { q: 'What is the cheapest way to set up a company in Dubai?', a: 'A free zone licence without visas, which can start below AED 6,000 per year in the most competitive zones. It is only the cheapest option if it covers your activities and you do not need a residence visa.' },
+      { q: 'What is the cheapest way to set up a company in Dubai?', a: 'A free zone licence without visas is the cheapest route, since the visa is a large part of the cost. It is only worth it if the licence covers your activities and you do not need UAE residency.' },
       { q: 'How much does a Dubai company cost per year?', a: 'Budget for the licence renewal, the establishment card, visa renewals when they fall due, and accounting and Corporate Tax filings. For a small free zone company, the recurring cost is usually similar to the first-year licence plus the compliance work.' },
       { q: 'Is there a minimum share capital?', a: 'Most free zones state a share capital in the licence but do not require it to be deposited in a bank account. It varies by free zone and by activity.' },
       { q: 'Does the price include the bank account?', a: 'No. Opening a corporate bank account is a separate process with its own requirements, and some banks ask for a minimum balance that has nothing to do with the setup fee.' },

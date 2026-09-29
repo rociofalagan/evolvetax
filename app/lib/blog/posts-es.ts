@@ -430,44 +430,35 @@ export const postsEs: Record<PostKey, PostContent> = {
     metaTitle: 'Cuánto cuesta crear una empresa en Dubái en 2026',
     title: '¿Cuánto cuesta crear una empresa en Dubái?',
     excerpt:
-      'Una licencia de free zone puede arrancar por debajo de 6.000 AED y un montaje completo con visado y cuenta bancaria puede superar los 30.000. Te explicamos qué significa cada línea del presupuesto, qué falta en la mayoría y qué se paga cada año.',
+      'Una sociedad de free zone con un visado de residencia suele costar entre 15.000 y 20.000 AED el primer año. Te explicamos qué significa cada línea del presupuesto, qué falta en la mayoría y qué se paga cada año.',
     tags: ['Dubái', 'Crear empresa', 'Costes', 'Free zones'],
     takeaways: [
-      'Una licencia de free zone sin visados suele ir de 5.750 a 15.000 AED al año.',
-      'Añadir un visado de residencia suele dejar el total del primer año entre 15.000 y 30.000 AED.',
-      'Las sociedades de mainland parten de más porque exigen alquiler de oficina.',
+      'Como referencia, una sociedad de free zone con un visado de residencia cuesta entre 15.000 y 20.000 AED el primer año.',
+      'Esa cifra cubre la licencia comercial, la establishment card y el visado, no la cuenta bancaria ni la contabilidad.',
+      'Las sociedades de mainland cuestan más porque exigen alquiler de oficina física.',
       'La licencia es solo una parte: después vienen renovaciones, contabilidad, Corporate Tax y requisitos del banco.',
     ],
     body: [
       { p: `“¿Cuánto cuesta crear una empresa en Dubái?” es la primera pregunta de todo el mundo, y la respuesta honesta es que depende de cuatro cosas: la vía (free zone o mainland), cuántas actividades cubre la licencia, cuántos visados de residencia necesitas y si necesitas oficina física.` },
       { p: `Aquí tienes los conceptos que componen cualquier presupuesto, con rangos orientativos de mercado para 2026, para que puedas leer una propuesta y entender qué estás pagando.` },
 
-      { h2: `La licencia`, id: 'licencia' },
-      {
-        table: {
-          head: ['Opción', 'Rango orientativo (AED al año)'],
-          rows: [
-            ['Licencia de free zone, sin visado', '5.750 – 15.000'],
-            ['Licencia de free zone con 1 visado', '12.500 – 25.000'],
-            ['Licencia de mainland y aprobaciones', 'desde 15.000'],
-          ],
-        },
-      },
-      { p: `La horquilla es amplia porque las free zones compiten en precio y en lo que incluyen. Los paquetes más baratos suelen limitar el número de actividades, la cuota de visados o el tipo de oficina. Una licencia que no cubre lo que vendes de verdad es el ahorro más caro que existe.` },
+      { h2: `La respuesta corta`, id: 'respuesta-corta' },
+      { callout: { title: '15.000 – 20.000 AED en un primer año típico', text: 'Una sociedad de free zone con un visado de residencia suele quedar en esa horquilla, incluyendo la licencia comercial, la establishment card y el visado. Una licencia sin visados cuesta menos; una sociedad de mainland cuesta más porque exige alquiler de oficina física.' } },
+      { p: `Las free zones compiten en precio y en lo que incluyen, así que dos presupuestos por “la misma” empresa pueden parecer muy distintos. Los paquetes más baratos suelen limitar el número de actividades, la cuota de visados o el tipo de oficina. Una licencia que no cubre lo que vendes de verdad es el ahorro más caro que existe.` },
 
       { h2: `Gastos de constitución que se pagan una vez`, id: 'unicos' },
       {
         list: [
-          ['Reserva de nombre y aprobación inicial', 'aproximadamente 600 – 2.000 AED.'],
-          ['Establishment card', 'aproximadamente 1.000 – 2.000 AED, necesaria para patrocinar visados.'],
-          ['Legalización y traducción de documentos', 'variable, y solo si hay socio persona jurídica o documentos extranjeros.'],
-          ['Honorarios profesionales', 'lo que cobra tu asesor por llevar el proceso.'],
+          ['Reserva de nombre y aprobación inicial', 'una tasa única al constituir.'],
+          ['Establishment card', 'necesaria antes de que la empresa pueda patrocinar cualquier visado.'],
+          ['Legalización y traducción de documentos', 'solo si hay socio persona jurídica o documentos extranjeros.'],
+          ['Honorarios profesionales', 'lo que cobra tu asesor por llevar el proceso, acordado por escrito.'],
         ],
       },
 
       { h2: `Visados de residencia`, id: 'visados' },
-      { p: `Cada visado de residencia cuesta en torno a 3.500 – 6.000 AED e incluye el permiso de entrada, el cambio de estatus, la prueba médica, el Emirates ID y el sellado. El seguro médico es obligatorio para los titulares de visado y se paga aparte.` },
-      { p: `Un montaje típico de primer año para una persona sola (licencia de free zone con una cuota de visado, establishment card y un visado de residencia) suele quedar entre 20.000 y 30.000 AED, todo incluido.` },
+      { p: `Cada visado de residencia incluye el permiso de entrada, el cambio de estatus, la prueba médica, el Emirates ID y el sellado, y se renueva cada dos o tres años. El seguro médico es obligatorio para los titulares de visado y se paga aparte.` },
+      { p: `El primer visado suele estar incluido en la horquilla de 15.000 – 20.000 AED. Cada visado adicional suma coste y, a partir de cierto número, además necesitas una oficina mayor.` },
 
       { h2: `Los costes que no aparecen en casi ningún presupuesto`, id: 'ocultos' },
       { callout: { title: 'Pregunta por esto antes de firmar', text: 'Los saldos mínimos que exige el banco, la contabilidad y las declaraciones de Corporate Tax, el alta y las declaraciones de IVA, las cuentas auditadas si quieres aplicar el 0 % de free zone, el seguro médico y la renovación anual de licencia, establishment card y visados.' } },
@@ -496,7 +487,7 @@ export const postsEs: Record<PostKey, PostContent> = {
       { p: `Si quieres un presupuesto por escrito para tu caso, con la free zone adecuada, las actividades y el coste total del primer año, mira nuestro servicio de [incorporación de empresas en Dubái](/es/servicios/crear-empresa-en-dubai), o lee antes [free zone o mainland](/es/blog/free-zone-o-mainland-dubai) si todavía estás decidiendo la vía.` },
     ],
     faq: [
-      { q: '¿Cuál es la forma más barata de crear una empresa en Dubái?', a: 'Una licencia de free zone sin visados, que en las zonas más competitivas puede arrancar por debajo de 6.000 AED al año. Solo es la opción más barata si cubre tus actividades y no necesitas visado de residencia.' },
+      { q: '¿Cuál es la forma más barata de crear una empresa en Dubái?', a: 'Una licencia de free zone sin visados es la vía más barata, porque el visado es buena parte del coste. Solo compensa si la licencia cubre tus actividades y no necesitas la residencia emiratí.' },
       { q: '¿Cuánto cuesta mantener una empresa en Dubái al año?', a: 'Hay que contar la renovación de la licencia, la establishment card, la renovación de visados cuando toque y la contabilidad y el Corporate Tax. En una sociedad pequeña de free zone, el coste recurrente suele ser parecido al de la licencia del primer año más el trabajo de cumplimiento.' },
       { q: '¿Hay capital social mínimo?', a: 'La mayoría de free zones indican un capital social en la licencia, pero no exigen desembolsarlo en una cuenta bancaria. Varía según la free zone y la actividad.' },
       { q: '¿El precio incluye la cuenta bancaria?', a: 'No. Abrir la cuenta es un proceso aparte, con sus propios requisitos, y algunos bancos piden un saldo mínimo que no tiene nada que ver con el coste de constitución.' },
