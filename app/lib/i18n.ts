@@ -86,7 +86,7 @@ const en = {
     text: 'Six services you can hire separately or combine, depending on where you are and where you’re going.',
     items: [
       { key: 'structuring' as ServiceKey, title: 'International tax structuring', text: 'Before you incorporate anything or move anywhere, you need a strategy. We analyse your situation and compare options with real numbers.', tags: ['Tax residency', 'Company structure', 'Jurisdictions'] },
-      { key: 'dubai' as ServiceKey, title: 'Company setup in Dubai', text: 'Incorporation in any free zone in around 14 days, with residence visa, bank account and tax registrations.', tags: ['Free zone', 'Visa', 'Banking'] },
+      { key: 'dubai' as ServiceKey, title: 'Business setup in Dubai', text: 'Company formation in any free zone in around 14 days, with residence visa, corporate bank account and tax registrations.', tags: ['Free zone', 'Visa', 'Banking'] },
       { key: 'uaeTax' as ServiceKey, title: 'Tax management in Dubai', text: 'Bookkeeping, Corporate Tax and VAT for your company in the UAE, with every deadline under control.', tags: ['Bookkeeping', 'Corporate Tax', 'VAT'] },
       { key: 'spainTax' as ServiceKey, title: 'Tax management in Spain', text: 'Tax advice and returns in Spain for freelancers and companies, with international invoicing in mind.', tags: ['Freelancers & companies', 'International VAT', 'Form 720'] },
       { key: 'residency' as ServiceKey, title: 'Change of tax residency', text: 'Leaving Spain or moving to it: we plan the change with you and help you prove it.', tags: ['183 days', 'Tax treaties', 'Exit tax'] },

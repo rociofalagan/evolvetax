@@ -3,6 +3,7 @@
 
 import type { Lang } from './i18n';
 import type { ServiceKey } from './routes';
+import type { PostBlock } from './blog/types';
 
 type Accent = { lead: string; accent: string };
 
@@ -14,13 +15,15 @@ export type ServiceContent = {
   forWho: string[];
   process: { title: string; text: string }[];
   guide: { title: Accent; intro: string; blocks: { heading: string; paragraphs: string[] }[] };
+  // Guía larga opcional (SEO): bloques enriquecidos con tablas, listas y avisos.
+  deepDive?: { title: Accent; intro: string; blocks: PostBlock[] };
   mistakes: { title: string; text: string }[];
   faq: { q: string; a: string }[];
   cta: { title: Accent; text: string };
 };
 
 // Fecha de última revisión que se muestra en cada landing (y en los datos estructurados).
-export const servicesUpdated = { iso: '2026-09-14', en: 'September 2026', es: 'septiembre de 2026' };
+export const servicesUpdated = { iso: '2026-09-29', en: 'September 2026', es: 'septiembre de 2026' };
 
 export const serviceUi = {
   en: {
@@ -34,6 +37,8 @@ export const serviceUi = {
     processEyebrow: 'How it works',
     processTitle: { lead: 'Step by', accent: 'step.' },
     guideEyebrow: 'Guide',
+    deepDiveEyebrow: 'Complete guide',
+    contents: 'Contents',
     mistakesEyebrow: 'Common mistakes',
     mistakesTitle: { lead: 'Mistakes we', accent: 'see often.' },
     faqEyebrow: 'FAQ',
@@ -58,6 +63,8 @@ export const serviceUi = {
     processEyebrow: 'Cómo funciona',
     processTitle: { lead: 'Paso a', accent: 'paso.' },
     guideEyebrow: 'Guía',
+    deepDiveEyebrow: 'Guía completa',
+    contents: 'Índice',
     mistakesEyebrow: 'Errores habituales',
     mistakesTitle: { lead: 'Errores que vemos', accent: 'a menudo.' },
     faqEyebrow: 'Preguntas frecuentes',
@@ -259,47 +266,48 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
      ---------------------------------------------------------------- */
   dubai: {
     en: {
-      name: 'Company setup in Dubai',
+      name: 'Business setup in Dubai',
       meta: {
-        title: 'Company Setup in Dubai for Entrepreneurs | Evolve Tax',
+        title: 'Business Setup in Dubai: Company Formation Services | Evolve Tax',
         description:
-          'Set up your company in a Dubai free zone in around 14 days: licence, residence visa and bank account, with the tax structure and compliance planned from day one.',
+          'Business setup in Dubai with a licensed tax adviser: free zone or mainland licence in about 14 days, residence visa, bank account and Corporate Tax registration.',
       },
       hero: {
-        eyebrow: 'Service · Company setup in Dubai',
-        title: { lead: 'Set up your company in Dubai,', accent: 'the right way.' },
+        eyebrow: 'Service · Business setup in Dubai',
+        title: { lead: 'Business setup in Dubai,', accent: 'done the right way.' },
         intro:
-          'We incorporate your company in the free zone that best fits your activity and handle the whole process: licence, residence visa and bank account. And unlike a simple formation agent, we look at the tax side from day one, so the structure makes sense both in the UAE and in the country you come from.',
+          'We handle your company formation in Dubai from start to finish: choosing the free zone or mainland licence, incorporation, residence visa, corporate bank account and tax registrations. And unlike a pure formation agent, we are a licensed tax consultant, so the structure is designed around your tax situation — in the UAE and in the country you are coming from.',
         facts: [
-          { label: 'Setup time', value: '≈ 14 days' },
+          { label: 'Licence issued in', value: '≈ 14 days' },
           { label: 'Free zones', value: 'Any, based on your activity' },
           { label: 'Includes', value: 'Licence · Visa · Bank' },
-          { label: 'Afterwards', value: 'Accounting & taxes' },
+          { label: 'Licensed as', value: 'Tax consultant & CSP' },
         ],
       },
       included: {
         title: { lead: 'What the setup', accent: 'includes.' },
-        intro: 'Everything you need for your company to operate, not just the licence.',
+        intro: 'Everything your company needs to operate in Dubai, not just the trade licence.',
         items: [
-          { title: 'Free zone and activity choice', text: 'We help you choose the free zone and licensed activities that match what you actually do, to avoid restrictions later.' },
-          { title: 'Company incorporation', text: 'Name reservation, application, documentation and incorporation until the licence is issued.' },
-          { title: 'Residence visa and Emirates ID', text: 'If you’re going to live in the UAE, we guide you through the residence visa linked to your company and the Emirates ID.' },
-          { title: 'Corporate bank account', text: 'We prepare your file and support you through account opening, one of the steps where most delays happen.' },
-          { title: 'Tax registrations', text: 'Corporate Tax registration and, where applicable, VAT registration, so you start compliant.' },
-          { title: 'Tax structure check', text: 'We review how the company fits with your personal tax situation before you incorporate.' },
+          { title: 'Free zone or mainland selection', text: 'We compare the free zones and the mainland for your activity, visa needs and budget, and recommend the licence that fits.' },
+          { title: 'Company incorporation', text: 'Name reservation, initial approval, documentation and incorporation until your trade licence is issued.' },
+          { title: 'Residence visa and Emirates ID', text: 'Establishment card, entry permit, medical test, Emirates ID and visa stamping for you and, if needed, your family.' },
+          { title: 'Corporate bank account', text: 'We prepare the compliance file and support you through the account opening, the step where most applications stall.' },
+          { title: 'Corporate Tax and VAT registration', text: 'Registration with the Federal Tax Authority and, where applicable, VAT, so your company starts compliant.' },
+          { title: 'Tax structure review', text: 'Before incorporating, we check how the company fits with your personal tax residency and where it will really be taxed.' },
         ],
       },
       forWho: [
-        'Digital entrepreneurs who want to run their business from the UAE.',
+        'Digital entrepreneurs and online businesses that want to operate from the UAE.',
         'Freelancers and consultants with international clients who are moving to Dubai.',
         'Founders who want a UAE company as part of a well-designed international structure.',
-        'Anyone who wants the whole process handled end to end.',
+        'Companies expanding to the Middle East that need a licence, visas and banking.',
+        'Anyone who wants one provider for the setup and the tax work that comes after.',
       ],
       process: [
-        { title: 'Analysis and free zone', text: 'We review your activity and situation and choose the free zone and licence that fit.' },
-        { title: 'Documentation', text: 'We tell you exactly what’s needed and prepare the application with you.' },
-        { title: 'Incorporation', text: 'We file the application and follow it up until the licence is issued — around 14 days in total.' },
-        { title: 'Visa, bank and registrations', text: 'Residence visa, bank account and tax registrations, so the company is ready to operate.' },
+        { title: 'Analysis and free zone', text: 'We review your activity, your residency and your plans, and choose the free zone or mainland licence that fits.' },
+        { title: 'Documentation', text: 'We tell you exactly what is needed and prepare the application with you.' },
+        { title: 'Incorporation', text: 'We file and follow up the application until the trade licence is issued — around 14 days in total.' },
+        { title: 'Visa, bank and registrations', text: 'Residence visa, corporate bank account and tax registrations, so the company is ready to operate.' },
       ],
       guide: {
         title: { lead: 'What you should know', accent: 'before setting up in Dubai.' },
@@ -320,74 +328,183 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
             ],
           },
           {
-            heading: 'A company in Dubai doesn’t change your personal tax residency',
+            heading: 'A company in Dubai does not change your personal tax residency',
             paragraphs: [
-              'Having a UAE company doesn’t make you non-resident where you live today. If you still live in Spain, for example, or the company is effectively managed from Spain, both you and the company can be taxed there.',
-              'That’s why we check your personal tax residency before incorporating, not after.',
+              'Having a UAE company does not make you non-resident where you live today. If you still live in Spain, for example, or the company is effectively managed from Spain, both you and the company can be taxed there.',
+              'That is why we check your personal tax residency before incorporating, not after.',
             ],
           },
         ],
       },
+      deepDive: {
+        title: { lead: 'Company formation in Dubai:', accent: 'the complete guide.' },
+        intro: 'Licences, costs, documents, timelines, visas, banking and what happens after the licence is issued.',
+        blocks: [
+          { h2: 'Which licence you need', id: 'licence-types' },
+          { p: 'Every UAE company operates under a trade licence tied to the activities it is allowed to carry out. The main categories are:' },
+          {
+            list: [
+              ['Commercial licence', 'trading, import and export, e-commerce and general buying and selling of goods.'],
+              ['Professional or service licence', 'consulting, marketing, design, software, coaching and most digital services.'],
+              ['Industrial licence', 'manufacturing, processing and assembly.'],
+              ['Tourism licence', 'travel agencies and tourism-related activities.'],
+            ],
+          },
+          { p: 'The activities on your licence matter more than people expect: invoicing for something your licence does not cover is one of the most common problems we see, and adding activities later means an amendment and extra fees. We map your real revenue streams to the activity list before filing anything.' },
+
+          { h2: 'Mainland, free zone or offshore', id: 'routes' },
+          {
+            table: {
+              head: ['', 'Free zone', 'Mainland', 'Offshore'],
+              rows: [
+                ['Foreign ownership', '100%', '100% for most activities', '100%'],
+                ['Trade in the UAE market', 'Limited; may need a distributor or permit', 'Anywhere in the UAE', 'No'],
+                ['Residence visas', 'Yes, depending on the package', 'Yes, depending on office space', 'No'],
+                ['Office', 'Flexi-desk packages are common', 'Physical office lease usually required', 'Registered agent only'],
+                ['Corporate Tax', '9%, with a possible 0% on qualifying income', '0% up to AED 375,000 and 9% above', 'Subject to the same rules'],
+              ],
+            },
+          },
+          { p: 'For a digital business selling to clients outside the UAE, a free zone company is usually the right answer. We compare both in detail in [Free zone or mainland in Dubai](/blog/dubai-free-zone-vs-mainland).' },
+
+          { h2: 'What business setup in Dubai costs', id: 'cost' },
+          { p: 'There is no single price: the cost depends on the free zone, the number of activities, whether you need visas and whether you need a physical office. These are the components that make up any quote, with indicative market ranges for 2026:' },
+          {
+            table: {
+              head: ['Concept', 'Indicative range (AED)'],
+              rows: [
+                ['Free zone licence, no visa', '5,750 – 15,000 per year'],
+                ['Free zone licence with 1 visa quota', '12,500 – 25,000 per year'],
+                ['Mainland trade licence and approvals', 'from 15,000 per year'],
+                ['Name reservation and initial approval', '600 – 2,000'],
+                ['Establishment card', '1,000 – 2,000'],
+                ['Residence visa per person (permit, medical, Emirates ID, stamping)', '3,500 – 6,000'],
+                ['Office lease for mainland (Ejari)', 'from 8,000 per year'],
+              ],
+            },
+          },
+          { callout: { title: 'What a licence quote does not include', text: 'Bank account minimum balances, accounting and Corporate Tax filings, VAT registration and returns, document attestation and translation, health insurance for visa holders, and the renewal of the licence and visas every year. We quote these separately so there are no surprises in month three.' } },
+          { p: 'Our own fees for the setup are agreed in writing before we start, and we tell you which third-party costs are paid directly to the authorities. We break every line down in [how much it costs to set up a company in Dubai](/blog/cost-to-set-up-a-company-in-dubai).' },
+
+          { h2: 'Documents you will need', id: 'documents' },
+          {
+            list: [
+              'Passport copy with at least six months of validity',
+              'Recent passport-size photograph with a white background',
+              'Proof of address in your current country of residence',
+              'Entry stamp or current UAE visa page, if you are already in the country',
+              'A short CV or company profile, required by some free zones and activities',
+              'A no-objection certificate, if you already hold a UAE employment visa',
+              'Attested corporate documents, if a company is going to be a shareholder',
+            ],
+          },
+
+          { h2: 'Step by step, and how long it takes', id: 'steps' },
+          {
+            olist: [
+              'Choose the activity, the legal form and the free zone or mainland route.',
+              'Reserve the company name and obtain the initial approval.',
+              'Prepare and file the application with the documentation.',
+              'Trade licence issued — around 14 days in total in a free zone.',
+              'Establishment card and visa quota for the company.',
+              'Entry permit, medical test, Emirates ID and residence visa stamping.',
+              'Corporate bank account opening.',
+              'Corporate Tax registration and, if applicable, VAT registration.',
+            ],
+          },
+          { p: 'The licence is the fast part. Visas usually take one to three weeks after the licence, and the bank account depends on the bank and on how well the file is prepared — that is where most of the real waiting time is.' },
+
+          { h2: 'Residence visas and how many you get', id: 'visas' },
+          { p: 'The number of visas your company can sponsor depends on the package and the office space. A flexi-desk package typically comes with one or two visa quotas; more visas usually require a larger office.' },
+          { p: 'The visa process runs in stages: entry permit, status change, medical test, Emirates ID biometrics and visa stamping. Once you have a residence visa you can sponsor your spouse and children, and you can apply for a UAE tax residency certificate when you meet the day-count conditions explained in our [guide to the UAE tax system](/blog/uae-tax-system-guide).' },
+
+          { h2: 'Opening a corporate bank account', id: 'banking' },
+          { p: 'A trade licence does not come with a bank account. UAE banks run their own compliance checks and will ask about your business model, your clients, expected turnover and the source of your funds. Applications are rejected or delayed when the story on paper does not match the activity on the licence.' },
+          { p: 'We prepare the file — licence, corporate documents, passports, business plan, contracts or invoices that prove real activity — and guide you through the options, from traditional banks with minimum balance requirements to digital business banking.' },
+
+          { h2: 'What happens after the licence: tax and compliance', id: 'after-setup' },
+          { p: 'A UAE company has yearly obligations from day one:' },
+          {
+            list: [
+              ['Corporate Tax registration', 'with the Federal Tax Authority, and an annual return within nine months of your financial year end, even if the tax due is zero.'],
+              ['Bookkeeping', 'proper accounting records, kept for at least seven years.'],
+              ['VAT', 'registration is mandatory above AED 375,000 of taxable supplies, with periodic returns.'],
+              ['Free zone 0% rate', 'only available to a Qualifying Free Zone Person with adequate substance, audited accounts and non-qualifying revenue under the de minimis threshold.'],
+              ['Renewals', 'licence, establishment card and visas renew every year.'],
+            ],
+          },
+          { p: 'This is the part most formation agents do not cover. We do: see [tax management in Dubai](/services/dubai-tax-management).' },
+
+          { h2: 'If you are moving from Spain or the EU', id: 'from-europe' },
+          { p: 'Opening a company in Dubai does not, by itself, change where you pay tax. If you keep living in Spain, or you manage the company from there, the Spanish tax authorities can treat the company as Spanish and tax its worldwide profits. Your own tax residency has to change first, and it has to be provable.' },
+          { p: 'We analyse both sides before you incorporate: read [Does a Dubai company pay tax in Spain?](/blog/dubai-company-taxed-in-spain) or start with a [change of tax residency](/services/tax-residency-change) analysis.' },
+        ],
+      },
       mistakes: [
         { title: 'Choosing the free zone on price alone', text: 'The cheapest licence may not cover your activity or may limit how you can operate.' },
-        { title: 'Underestimating the bank account', text: 'Opening the account can take longer than the incorporation itself if the file isn’t well prepared.' },
-        { title: 'Forgetting about Corporate Tax', text: 'Many free zone companies don’t register or keep accounts because they assume they pay nothing, and end up with penalties.' },
+        { title: 'Underestimating the bank account', text: 'Opening the account can take longer than the incorporation itself if the file is not well prepared.' },
+        { title: 'Forgetting about Corporate Tax', text: 'Many free zone companies do not register or keep accounts because they assume they pay nothing, and end up with penalties.' },
         { title: 'Running it from another country', text: 'Setting up in Dubai while you keep living in and managing the business from Spain can make the company taxable in Spain.' },
       ],
       faq: [
-        { q: 'How long does it take to set up a company in Dubai?', a: 'Incorporation usually takes around 14 days once we have the documentation. The residence visa and bank account come afterwards and depend on each case.' },
-        { q: 'Which free zone is best?', a: 'There isn’t one best free zone for everyone. Almost any can work; we recommend one based on your activity, your budget and whether you need visas.' },
-        { q: 'Do I need to live in Dubai to have a company there?', a: 'No, but if you don’t live there, where the company is managed from needs careful analysis, because it determines where the company pays tax.' },
+        { q: 'How long does business setup in Dubai take?', a: 'The trade licence usually takes around 14 days once we have your documentation. The residence visa comes afterwards, normally one to three weeks, and the bank account depends on the bank and the profile of the business.' },
+        { q: 'How much does it cost to set up a company in Dubai?', a: 'A free zone licence without visas typically starts between AED 5,750 and AED 15,000 per year, and a licence with one visa quota between AED 12,500 and AED 25,000. Mainland companies usually start from AED 15,000 plus an office lease. We send a written quote with the exact figures for your case.' },
+        { q: 'Which free zone is best for my business?', a: 'There is no single best free zone. Almost any can work for a digital business; the right one depends on your licensed activities, how many visas you need and your budget.' },
+        { q: 'Can I set up a company in Dubai without living there?', a: 'Yes, you can own a UAE company as a non-resident. But if you manage it from another country, that country may consider the company tax resident there, so the structure needs to be analysed first.' },
+        { q: 'Do I need a physical office in Dubai?', a: 'Not in most free zones: a flexi-desk or shared desk package is enough and is included in many licence packages. Mainland companies usually require a physical office lease registered through Ejari.' },
+        { q: 'How many residence visas can my company sponsor?', a: 'It depends on the package and the office space. Flexi-desk packages usually include one or two visa quotas, and more visas normally require a larger office.' },
         { q: 'Does a free zone company pay taxes?', a: 'Free zone companies are subject to Corporate Tax and must register and file returns. Depending on the type of income and whether the requirements are met, part of the income may be taxed at 0%.' },
-        { q: 'Can you handle the accounting afterwards?', a: 'Yes. Once the company is set up we can take care of the bookkeeping, Corporate Tax and VAT.' },
+        { q: 'Can I open the bank account remotely?', a: 'Some banks allow part of the process remotely, but most still require an in-person meeting or biometrics. We prepare the file and tell you what each option involves before you travel.' },
+        { q: 'Do you handle the accounting after the setup?', a: 'Yes. Once the company is incorporated we can take care of the bookkeeping, Corporate Tax and VAT, so you have one provider for the setup and for what comes after.' },
       ],
       cta: {
         title: { lead: 'Ready to set up', accent: 'your company?' },
-        text: 'Tell us what you do and we’ll tell you how we’d structure it and which free zone fits you.',
+        text: 'Tell us what you do and we will tell you how we would structure it, which free zone fits and what it costs.',
       },
     },
     es: {
       name: 'Incorporación de empresas en Dubái',
       meta: {
-        title: 'Crear empresa en Dubái para emprendedores | Evolve Tax',
+        title: 'Crear empresa en Dubái: constitución y licencias | Evolve Tax',
         description:
-          'Crea tu empresa en una free zone de Dubái en unos 14 días: licencia, visado de residencia y cuenta bancaria, con la estructura fiscal y el cumplimiento pensados desde el primer día.',
+          'Crear empresa en Dubái con una asesora fiscal, no solo con un agente: licencia de free zone o mainland en unos 14 días, visado de residencia, cuenta bancaria y alta en el Corporate Tax.',
       },
       hero: {
         eyebrow: 'Servicio · Incorporación de empresas en Dubái',
         title: { lead: 'Crea tu empresa en Dubái,', accent: 'bien hecha.' },
         intro:
-          'Constituimos tu sociedad en la free zone que mejor encaja con tu actividad y nos encargamos de todo el proceso: licencia, visado de residencia y cuenta bancaria. Y a diferencia de un simple agente de constitución, miramos la parte fiscal desde el primer día, para que la estructura tenga sentido tanto en Emiratos como en el país del que vienes.',
+          'Nos encargamos de todo el proceso: elegir la licencia de free zone o mainland, constituir la sociedad, tramitar el visado de residencia, abrir la cuenta bancaria y hacer las altas fiscales. Y a diferencia de un simple agente de constitución, somos asesoría fiscal con licencia, así que la estructura se diseña pensando en tu situación fiscal, en Emiratos y en el país del que vienes.',
         facts: [
-          { label: 'Plazo de constitución', value: '≈ 14 días' },
+          { label: 'Licencia en', value: '≈ 14 días' },
           { label: 'Free zones', value: 'Cualquiera, según tu actividad' },
           { label: 'Incluye', value: 'Licencia · Visado · Banco' },
-          { label: 'Después', value: 'Contabilidad e impuestos' },
+          { label: 'Licencia como', value: 'Tax consultant y CSP' },
         ],
       },
       included: {
         title: { lead: 'Qué incluye', accent: 'la constitución.' },
-        intro: 'Todo lo que necesitas para que la empresa opere, no solo la licencia.',
+        intro: 'Todo lo que tu empresa necesita para operar en Dubái, no solo la licencia.',
         items: [
-          { title: 'Elección de free zone y actividad', text: 'Te ayudamos a elegir la free zone y las actividades de la licencia que encajan con lo que haces de verdad, para evitar limitaciones después.' },
-          { title: 'Constitución de la sociedad', text: 'Reserva de nombre, solicitud, documentación y constitución hasta que se emite la licencia.' },
-          { title: 'Visado de residencia y Emirates ID', text: 'Si vas a vivir en Emiratos, te acompañamos en el visado de residencia vinculado a tu empresa y en el Emirates ID.' },
-          { title: 'Cuenta bancaria de empresa', text: 'Preparamos tu expediente y te acompañamos en la apertura de la cuenta, uno de los pasos donde más retrasos hay.' },
-          { title: 'Altas fiscales', text: 'Registro en el Corporate Tax y, si corresponde, en el IVA, para que empieces cumpliendo.' },
-          { title: 'Revisión de la estructura fiscal', text: 'Revisamos cómo encaja la sociedad con tu situación fiscal personal antes de constituir.' },
+          { title: 'Elección de free zone o mainland', text: 'Comparamos las free zones y el mainland según tu actividad, los visados que necesitas y tu presupuesto, y te recomendamos la licencia que encaja.' },
+          { title: 'Constitución de la sociedad', text: 'Reserva de nombre, aprobación inicial, documentación y constitución hasta que se emite la licencia.' },
+          { title: 'Visado de residencia y Emirates ID', text: 'Establishment card, permiso de entrada, prueba médica, Emirates ID y sellado del visado para ti y, si hace falta, para tu familia.' },
+          { title: 'Cuenta bancaria de empresa', text: 'Preparamos el expediente de compliance y te acompañamos en la apertura, el paso donde más solicitudes se atascan.' },
+          { title: 'Alta en Corporate Tax e IVA', text: 'Registro en la Federal Tax Authority y, si corresponde, en el IVA, para que la empresa empiece cumpliendo.' },
+          { title: 'Revisión de la estructura fiscal', text: 'Antes de constituir, revisamos cómo encaja la sociedad con tu residencia fiscal personal y dónde va a tributar de verdad.' },
         ],
       },
       forWho: [
-        'Emprendedores digitales que quieren operar su negocio desde Emiratos.',
+        'Emprendedores digitales y negocios online que quieren operar desde Emiratos.',
         'Freelancers y consultores con clientes internacionales que se mudan a Dubái.',
         'Fundadores que quieren una sociedad emiratí dentro de una estructura internacional bien diseñada.',
-        'Quien quiere que alguien se encargue de todo el proceso de principio a fin.',
+        'Empresas que se expanden a Oriente Medio y necesitan licencia, visados y banco.',
+        'Quien quiere un solo proveedor para la constitución y para la parte fiscal posterior.',
       ],
       process: [
-        { title: 'Análisis y free zone', text: 'Revisamos tu actividad y tu situación y elegimos la free zone y la licencia que encajan.' },
+        { title: 'Análisis y free zone', text: 'Revisamos tu actividad, tu residencia y tus planes, y elegimos la licencia de free zone o mainland que encaja.' },
         { title: 'Documentación', text: 'Te decimos exactamente qué hace falta y preparamos la solicitud contigo.' },
-        { title: 'Constitución', text: 'Presentamos la solicitud y hacemos el seguimiento hasta que se emite la licencia: unos 14 días en total.' },
-        { title: 'Visado, banco y altas', text: 'Visado de residencia, cuenta bancaria y registros fiscales, para que la empresa esté lista para operar.' },
+        { title: 'Constitución', text: 'Presentamos y hacemos el seguimiento hasta que se emite la licencia: unos 14 días en total.' },
+        { title: 'Visado, banco y altas', text: 'Visado de residencia, cuenta bancaria de empresa y altas fiscales, para que la empresa esté lista para operar.' },
       ],
       guide: {
         title: { lead: 'Lo que debes saber', accent: 'antes de montar en Dubái.' },
@@ -416,6 +533,110 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
           },
         ],
       },
+      deepDive: {
+        title: { lead: 'Crear empresa en Dubái:', accent: 'la guía completa.' },
+        intro: 'Licencias, costes, documentación, plazos, visados, banco y qué ocurre después de tener la licencia.',
+        blocks: [
+          { h2: 'Qué licencia necesitas', id: 'tipos-de-licencia' },
+          { p: 'Toda sociedad emiratí opera con una licencia comercial vinculada a las actividades que puede realizar. Las categorías principales son:' },
+          {
+            list: [
+              ['Licencia comercial', 'comercio, importación y exportación, e-commerce y compraventa de bienes en general.'],
+              ['Licencia profesional o de servicios', 'consultoría, marketing, diseño, software, coaching y la mayoría de servicios digitales.'],
+              ['Licencia industrial', 'fabricación, transformación y montaje.'],
+              ['Licencia turística', 'agencias de viajes y actividades relacionadas con el turismo.'],
+            ],
+          },
+          { p: 'Las actividades de la licencia importan más de lo que parece: facturar algo que tu licencia no cubre es uno de los problemas más frecuentes que vemos, y añadir actividades después implica una modificación y tasas extra. Antes de presentar nada, cruzamos tus fuentes de ingresos reales con la lista de actividades.' },
+
+          { h2: 'Mainland, free zone u offshore', id: 'rutas' },
+          {
+            table: {
+              head: ['', 'Free zone', 'Mainland', 'Offshore'],
+              rows: [
+                ['Propiedad extranjera', '100 %', '100 % en la mayoría de actividades', '100 %'],
+                ['Vender en el mercado emiratí', 'Limitado; puede requerir distribuidor o permiso', 'En todo Emiratos', 'No'],
+                ['Visados de residencia', 'Sí, según el paquete', 'Sí, según la oficina', 'No'],
+                ['Oficina', 'Son habituales los paquetes flexi-desk', 'Normalmente exige oficina física', 'Solo agente registrado'],
+                ['Corporate Tax', '9 %, con posible 0 % sobre rentas cualificadas', '0 % hasta 375.000 AED y 9 % a partir de ahí', 'Sujeta a las mismas reglas'],
+              ],
+            },
+          },
+          { p: 'Para un negocio digital que vende a clientes de fuera de Emiratos, la free zone suele ser la respuesta. Las comparamos en detalle en [Free zone o mainland en Dubái](/es/blog/free-zone-o-mainland-dubai).' },
+
+          { h2: 'Cuánto cuesta crear una empresa en Dubái', id: 'coste' },
+          { p: 'No hay un precio único: depende de la free zone, del número de actividades, de si necesitas visados y de si necesitas oficina física. Estos son los conceptos que componen cualquier presupuesto, con rangos orientativos de mercado para 2026:' },
+          {
+            table: {
+              head: ['Concepto', 'Rango orientativo (AED)'],
+              rows: [
+                ['Licencia de free zone, sin visado', '5.750 – 15.000 al año'],
+                ['Licencia de free zone con 1 visado', '12.500 – 25.000 al año'],
+                ['Licencia de mainland y aprobaciones', 'desde 15.000 al año'],
+                ['Reserva de nombre y aprobación inicial', '600 – 2.000'],
+                ['Establishment card', '1.000 – 2.000'],
+                ['Visado de residencia por persona (permiso, médico, Emirates ID, sellado)', '3.500 – 6.000'],
+                ['Alquiler de oficina en mainland (Ejari)', 'desde 8.000 al año'],
+              ],
+            },
+          },
+          { callout: { title: 'Lo que no incluye un presupuesto de licencia', text: 'Los saldos mínimos del banco, la contabilidad y las declaraciones de Corporate Tax, el alta y las declaraciones de IVA, la legalización y traducción de documentos, el seguro médico obligatorio para los visados y la renovación anual de licencia y visados. Nosotros lo presupuestamos aparte para que no haya sorpresas en el tercer mes.' } },
+          { p: 'Nuestros honorarios de constitución se acuerdan por escrito antes de empezar, y te decimos qué costes de terceros se pagan directamente a las autoridades. Desglosamos cada línea en [cuánto cuesta crear una empresa en Dubái](/es/blog/cuanto-cuesta-crear-una-empresa-en-dubai).'},
+
+          { h2: 'Documentación que vas a necesitar', id: 'documentacion' },
+          {
+            list: [
+              'Copia del pasaporte con al menos seis meses de validez',
+              'Fotografía reciente tipo carné con fondo blanco',
+              'Justificante de domicilio en tu país de residencia actual',
+              'Sello de entrada o página del visado emiratí, si ya estás en el país',
+              'Un CV breve o perfil de la empresa, que piden algunas free zones y actividades',
+              'Certificado de no objeción, si ya tienes un visado de trabajo emiratí',
+              'Documentación societaria legalizada, si va a ser socia otra empresa',
+            ],
+          },
+
+          { h2: 'Paso a paso y cuánto tarda', id: 'pasos' },
+          {
+            olist: [
+              'Elegir la actividad, la forma jurídica y la vía: free zone o mainland.',
+              'Reservar el nombre de la sociedad y obtener la aprobación inicial.',
+              'Preparar y presentar la solicitud con la documentación.',
+              'Emisión de la licencia comercial: unos 14 días en total en free zone.',
+              'Establishment card y cuota de visados de la empresa.',
+              'Permiso de entrada, prueba médica, Emirates ID y sellado del visado.',
+              'Apertura de la cuenta bancaria de empresa.',
+              'Alta en el Corporate Tax y, si corresponde, en el IVA.',
+            ],
+          },
+          { p: 'La licencia es la parte rápida. Los visados suelen tardar de una a tres semanas más, y la cuenta bancaria depende del banco y de lo bien preparado que esté el expediente: ahí es donde está casi toda la espera real.' },
+
+          { h2: 'Visados de residencia y cuántos te corresponden', id: 'visados' },
+          { p: 'El número de visados que puede patrocinar tu empresa depende del paquete y de la oficina. Un paquete flexi-desk suele incluir una o dos cuotas de visado; más visados normalmente exigen una oficina mayor.' },
+          { p: 'El trámite va por fases: permiso de entrada, cambio de estatus, prueba médica, biometría del Emirates ID y sellado del visado. Con el visado de residencia puedes patrocinar a tu cónyuge y a tus hijos, y solicitar el certificado de residencia fiscal emiratí cuando cumplas los días exigidos, que explicamos en nuestra [guía del sistema fiscal de Emiratos](/es/blog/sistema-fiscal-emiratos-arabes-unidos).' },
+
+          { h2: 'Abrir la cuenta bancaria', id: 'banco' },
+          { p: 'La licencia no lleva cuenta bancaria incluida. Los bancos emiratíes hacen sus propias comprobaciones de compliance y preguntan por tu modelo de negocio, tus clientes, la facturación prevista y el origen de los fondos. Las solicitudes se rechazan o se retrasan cuando lo que cuenta el expediente no encaja con la actividad de la licencia.' },
+          { p: 'Preparamos el expediente (licencia, documentación societaria, pasaportes, plan de negocio, contratos o facturas que acrediten actividad real) y te explicamos las opciones, desde bancos tradicionales con saldo mínimo hasta banca digital para empresas.' },
+
+          { h2: 'Después de la licencia: impuestos y cumplimiento', id: 'despues' },
+          { p: 'Una sociedad emiratí tiene obligaciones anuales desde el primer día:' },
+          {
+            list: [
+              ['Alta en el Corporate Tax', 'en la Federal Tax Authority, y declaración anual en los nueve meses siguientes al cierre, aunque la cuota sea cero.'],
+              ['Contabilidad', 'registros contables adecuados, conservados al menos siete años.'],
+              ['IVA', 'el registro es obligatorio por encima de 375.000 AED de operaciones sujetas, con declaraciones periódicas.'],
+              ['El 0 % de free zone', 'solo está disponible para una Qualifying Free Zone Person con sustancia suficiente, cuentas auditadas e ingresos no cualificados por debajo del umbral.'],
+              ['Renovaciones', 'licencia, establishment card y visados se renuevan cada año.'],
+            ],
+          },
+          { p: 'Esta es la parte que no cubren la mayoría de agentes de constitución. Nosotros sí: mira [gestión fiscal en Dubái](/es/servicios/gestion-fiscal-en-dubai).' },
+
+          { h2: 'Si te mudas desde España o la UE', id: 'desde-europa' },
+          { p: 'Abrir una empresa en Dubái no cambia, por sí solo, dónde pagas impuestos. Si sigues viviendo en España, o diriges la sociedad desde allí, Hacienda puede considerarla española y gravar su beneficio mundial. Tu residencia fiscal tiene que cambiar primero, y tiene que poder demostrarse.' },
+          { p: 'Analizamos las dos partes antes de constituir: lee [¿Tributa en España una empresa de Dubái?](/es/blog/empresa-dubai-tributa-en-espana) o empieza por un análisis de [cambio de residencia fiscal](/es/servicios/cambio-de-residencia-fiscal).' },
+        ],
+      },
       mistakes: [
         { title: 'Elegir la free zone solo por precio', text: 'La licencia más barata puede no cubrir tu actividad o limitar cómo puedes operar.' },
         { title: 'Subestimar la cuenta bancaria', text: 'La apertura de la cuenta puede tardar más que la propia constitución si el expediente no está bien preparado.' },
@@ -423,22 +644,23 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
         { title: 'Dirigirla desde otro país', text: 'Montar en Dubái mientras sigues viviendo y gestionando el negocio desde España puede hacer que la sociedad tribute en España.' },
       ],
       faq: [
-        { q: '¿Cuánto se tarda en crear una empresa en Dubái?', a: 'La constitución suele tardar unos 14 días desde que tenemos la documentación. El visado de residencia y la cuenta bancaria vienen después y dependen de cada caso.' },
-        { q: '¿Qué free zone es la mejor?', a: 'No hay una free zone mejor para todo el mundo. Prácticamente cualquiera puede servir; te recomendamos una según tu actividad, tu presupuesto y si necesitas visados.' },
-        { q: '¿Tengo que vivir en Dubái para tener allí una empresa?', a: 'No, pero si no vives allí hay que analizar bien desde dónde se dirige la sociedad, porque eso determina dónde tributa.' },
+        { q: '¿Cuánto se tarda en crear una empresa en Dubái?', a: 'La licencia comercial suele tardar unos 14 días desde que tenemos tu documentación. El visado de residencia viene después, normalmente de una a tres semanas, y la cuenta bancaria depende del banco y del perfil del negocio.' },
+        { q: '¿Cuánto cuesta crear una empresa en Dubái?', a: 'Una licencia de free zone sin visados suele ir de 5.750 a 15.000 AED al año, y con una cuota de visado, de 12.500 a 25.000 AED. Las de mainland suelen partir de 15.000 AED más el alquiler de oficina. Te enviamos un presupuesto por escrito con las cifras exactas de tu caso.' },
+        { q: '¿Qué free zone es la mejor para mi negocio?', a: 'No hay una única mejor free zone. Prácticamente cualquiera puede servir para un negocio digital; la adecuada depende de las actividades de tu licencia, de cuántos visados necesitas y de tu presupuesto.' },
+        { q: '¿Puedo crear una empresa en Dubái sin vivir allí?', a: 'Sí, puedes ser propietario de una sociedad emiratí sin ser residente. Pero si la diriges desde otro país, ese país puede considerarla residente fiscal allí, así que hay que analizar la estructura antes.' },
+        { q: '¿Necesito una oficina física en Dubái?', a: 'En la mayoría de free zones no: basta con un paquete flexi-desk o escritorio compartido, que suele venir incluido en la licencia. Las sociedades de mainland normalmente sí exigen un contrato de oficina registrado con Ejari.' },
+        { q: '¿Cuántos visados de residencia puede patrocinar mi empresa?', a: 'Depende del paquete y de la oficina. Los paquetes flexi-desk suelen incluir una o dos cuotas de visado, y más visados normalmente exigen una oficina mayor.' },
         { q: '¿Se pagan impuestos con una sociedad de free zone?', a: 'Las sociedades de free zone están sujetas al Corporate Tax y deben registrarse y presentar declaración. Según el tipo de rentas y si se cumplen los requisitos, parte de los ingresos puede tributar al 0 %.' },
-        { q: '¿Podéis llevar después la contabilidad?', a: 'Sí. Una vez constituida la empresa podemos encargarnos de la contabilidad, el Corporate Tax y el IVA.' },
+        { q: '¿Puedo abrir la cuenta bancaria en remoto?', a: 'Algunos bancos permiten parte del proceso en remoto, pero la mayoría siguen pidiendo una reunión presencial o biometría. Preparamos el expediente y te decimos qué implica cada opción antes de que viajes.' },
+        { q: '¿Lleváis la contabilidad después de la constitución?', a: 'Sí. Una vez constituida la empresa podemos encargarnos de la contabilidad, el Corporate Tax y el IVA, para que tengas un solo proveedor para la constitución y para lo que viene después.' },
       ],
       cta: {
         title: { lead: '¿Montamos', accent: 'tu empresa?' },
-        text: 'Cuéntanos a qué te dedicas y te decimos cómo lo estructuraríamos y qué free zone encaja contigo.',
+        text: 'Cuéntanos a qué te dedicas y te decimos cómo lo estructuraríamos, qué free zone encaja y cuánto cuesta.',
       },
     },
   },
 
-  /* ----------------------------------------------------------------
-     Gestión fiscal en Dubái
-     ---------------------------------------------------------------- */
   uaeTax: {
     en: {
       name: 'Tax management in Dubai',

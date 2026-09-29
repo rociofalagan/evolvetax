@@ -1,5 +1,5 @@
 import { dictionaries, homePath, type Lang } from './i18n';
-import { blogPath, postPath, serviceKeys, servicePath, type PostKey, type ServiceKey } from './routes';
+import { blogPath, legalPaths, postPath, serviceKeys, servicePath, type PostKey, type ServiceKey } from './routes';
 import { blogUi, categories, getPost, getPosts } from './blog';
 import { services, servicesUpdated } from './services';
 import { site } from './site';
@@ -153,9 +153,11 @@ export function serviceSchema(key: ServiceKey, lang: Lang) {
         url,
         provider: { '@id': orgId },
         areaServed: [
+          { '@type': 'City', name: 'Dubai' },
           { '@type': 'Country', name: 'United Arab Emirates' },
           { '@type': 'Country', name: 'Spain' },
         ],
+        termsOfService: `${site.url}${legalPaths.terms[lang]}`,
       },
       {
         '@type': 'BreadcrumbList',

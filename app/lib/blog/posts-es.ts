@@ -68,7 +68,7 @@ export const postsEs: Record<PostKey, PostContent> = {
 
       { h2: `Qué significa para un negocio digital`, id: 'negocio-digital' },
       { p: `Emiratos sigue siendo un lugar muy competitivo para un negocio internacional: sin impuesto sobre la renta personal, con un Corporate Tax del 9 % y un umbral generoso y, para las sociedades de free zone bien estructuradas, un 0 % sobre las rentas cualificadas.` },
-      { p: `Pero “competitivo” no significa “sin obligaciones”. Toda sociedad debe estar registrada, llevar la contabilidad en orden y presentar a tiempo, que es justo lo que cubre nuestra [gestión fiscal en Dubái](/es/servicios/gestion-fiscal-en-dubai). Y trasladar tu empresa a Dubái no cambia dónde pagas impuestos tú: eso depende de tu propia residencia fiscal, como explicamos en [¿Tributa en España una empresa de Dubái?](/es/blog/empresa-dubai-tributa-en-espana)` },
+      { p: `Pero “competitivo” no significa “sin obligaciones”. Toda sociedad debe estar registrada, llevar la contabilidad en orden y presentar a tiempo, que es justo lo que cubre nuestra [gestión fiscal en Dubái](/es/servicios/gestion-fiscal-en-dubai), igual que nos encargamos de la [incorporación de empresas en Dubái](/es/servicios/crear-empresa-en-dubai). Y trasladar tu empresa a Dubái no cambia dónde pagas impuestos tú: eso depende de tu propia residencia fiscal, como explicamos en [¿Tributa en España una empresa de Dubái?](/es/blog/empresa-dubai-tributa-en-espana)` },
     ],
     faq: [
       { q: '¿Dubái está libre de impuestos para las empresas?', a: 'Ya no. Desde 2023, las sociedades pagan un 9 % de Corporate Tax sobre la base imponible que supera 375.000 AED. Las de free zone pueden pagar un 0 % sobre las rentas cualificadas si cumplen los requisitos.' },
@@ -422,6 +422,84 @@ export const postsEs: Record<PostKey, PostContent> = {
       { q: '¿Una sociedad de free zone está libre de impuestos?', a: 'No. Está sujeta al Corporate Tax, pero puede aplicar un 0 % sobre las rentas cualificadas si cumple los requisitos.' },
       { q: '¿Necesito un socio local para una sociedad de mainland?', a: 'Para la mayoría de actividades comerciales no, desde 2021, aunque algunas actividades reguladas siguen teniendo requisitos específicos.' },
       { q: '¿Cuánto se tarda en crear una sociedad de free zone?', a: 'La constitución suele tardar unos 14 días desde que la documentación está lista; el visado de residencia y la cuenta bancaria vienen después.' },
+    ],
+  },
+
+  /* ------------------------------------------------------------------ */
+  dubaiCost: {
+    metaTitle: 'Cuánto cuesta crear una empresa en Dubái en 2026',
+    title: '¿Cuánto cuesta crear una empresa en Dubái?',
+    excerpt:
+      'Una licencia de free zone puede arrancar por debajo de 6.000 AED y un montaje completo con visado y cuenta bancaria puede superar los 30.000. Te explicamos qué significa cada línea del presupuesto, qué falta en la mayoría y qué se paga cada año.',
+    tags: ['Dubái', 'Crear empresa', 'Costes', 'Free zones'],
+    takeaways: [
+      'Una licencia de free zone sin visados suele ir de 5.750 a 15.000 AED al año.',
+      'Añadir un visado de residencia suele dejar el total del primer año entre 15.000 y 30.000 AED.',
+      'Las sociedades de mainland parten de más porque exigen alquiler de oficina.',
+      'La licencia es solo una parte: después vienen renovaciones, contabilidad, Corporate Tax y requisitos del banco.',
+    ],
+    body: [
+      { p: `“¿Cuánto cuesta crear una empresa en Dubái?” es la primera pregunta de todo el mundo, y la respuesta honesta es que depende de cuatro cosas: la vía (free zone o mainland), cuántas actividades cubre la licencia, cuántos visados de residencia necesitas y si necesitas oficina física.` },
+      { p: `Aquí tienes los conceptos que componen cualquier presupuesto, con rangos orientativos de mercado para 2026, para que puedas leer una propuesta y entender qué estás pagando.` },
+
+      { h2: `La licencia`, id: 'licencia' },
+      {
+        table: {
+          head: ['Opción', 'Rango orientativo (AED al año)'],
+          rows: [
+            ['Licencia de free zone, sin visado', '5.750 – 15.000'],
+            ['Licencia de free zone con 1 visado', '12.500 – 25.000'],
+            ['Licencia de mainland y aprobaciones', 'desde 15.000'],
+          ],
+        },
+      },
+      { p: `La horquilla es amplia porque las free zones compiten en precio y en lo que incluyen. Los paquetes más baratos suelen limitar el número de actividades, la cuota de visados o el tipo de oficina. Una licencia que no cubre lo que vendes de verdad es el ahorro más caro que existe.` },
+
+      { h2: `Gastos de constitución que se pagan una vez`, id: 'unicos' },
+      {
+        list: [
+          ['Reserva de nombre y aprobación inicial', 'aproximadamente 600 – 2.000 AED.'],
+          ['Establishment card', 'aproximadamente 1.000 – 2.000 AED, necesaria para patrocinar visados.'],
+          ['Legalización y traducción de documentos', 'variable, y solo si hay socio persona jurídica o documentos extranjeros.'],
+          ['Honorarios profesionales', 'lo que cobra tu asesor por llevar el proceso.'],
+        ],
+      },
+
+      { h2: `Visados de residencia`, id: 'visados' },
+      { p: `Cada visado de residencia cuesta en torno a 3.500 – 6.000 AED e incluye el permiso de entrada, el cambio de estatus, la prueba médica, el Emirates ID y el sellado. El seguro médico es obligatorio para los titulares de visado y se paga aparte.` },
+      { p: `Un montaje típico de primer año para una persona sola (licencia de free zone con una cuota de visado, establishment card y un visado de residencia) suele quedar entre 20.000 y 30.000 AED, todo incluido.` },
+
+      { h2: `Los costes que no aparecen en casi ningún presupuesto`, id: 'ocultos' },
+      { callout: { title: 'Pregunta por esto antes de firmar', text: 'Los saldos mínimos que exige el banco, la contabilidad y las declaraciones de Corporate Tax, el alta y las declaraciones de IVA, las cuentas auditadas si quieres aplicar el 0 % de free zone, el seguro médico y la renovación anual de licencia, establishment card y visados.' } },
+      { p: `No son extras inventados por los asesores: es lo que mantiene la sociedad en regla una vez tienes la licencia enmarcada en la pared. Nuestra guía del [sistema fiscal de Emiratos](/es/blog/sistema-fiscal-emiratos-arabes-unidos) explica las obligaciones en detalle.` },
+
+      { h2: `Qué se paga cada año`, id: 'anual' },
+      {
+        list: [
+          ['Renovación de la licencia', 'similar a la tasa inicial.'],
+          ['Renovación de visados', 'cada dos o tres años, según el tipo de visado.'],
+          ['Contabilidad y Corporate Tax', 'una cuota recurrente, según tu volumen de operaciones.'],
+          ['Declaraciones de IVA', 'si tus operaciones sujetas superan 375.000 AED.'],
+        ],
+      },
+
+      { h2: `Cómo gastar menos sin hacer chapuzas`, id: 'ahorrar' },
+      {
+        olist: [
+          `Da de alta solo las actividades que realmente facturas y añade más cuando las necesites.`,
+          `Empieza con la cuota de visados que necesitas ahora, no con la que quizá necesites en dos años.`,
+          `Compara el coste total del primer año, no el precio de la licencia.`,
+          `Pide por escrito el coste de renovación antes de firmar nada.`,
+          `Decide la estructura antes de pagarla: mover una sociedad después cuesta mucho más que montarla bien.`,
+        ],
+      },
+      { p: `Si quieres un presupuesto por escrito para tu caso, con la free zone adecuada, las actividades y el coste total del primer año, mira nuestro servicio de [incorporación de empresas en Dubái](/es/servicios/crear-empresa-en-dubai), o lee antes [free zone o mainland](/es/blog/free-zone-o-mainland-dubai) si todavía estás decidiendo la vía.` },
+    ],
+    faq: [
+      { q: '¿Cuál es la forma más barata de crear una empresa en Dubái?', a: 'Una licencia de free zone sin visados, que en las zonas más competitivas puede arrancar por debajo de 6.000 AED al año. Solo es la opción más barata si cubre tus actividades y no necesitas visado de residencia.' },
+      { q: '¿Cuánto cuesta mantener una empresa en Dubái al año?', a: 'Hay que contar la renovación de la licencia, la establishment card, la renovación de visados cuando toque y la contabilidad y el Corporate Tax. En una sociedad pequeña de free zone, el coste recurrente suele ser parecido al de la licencia del primer año más el trabajo de cumplimiento.' },
+      { q: '¿Hay capital social mínimo?', a: 'La mayoría de free zones indican un capital social en la licencia, pero no exigen desembolsarlo en una cuenta bancaria. Varía según la free zone y la actividad.' },
+      { q: '¿El precio incluye la cuenta bancaria?', a: 'No. Abrir la cuenta es un proceso aparte, con sus propios requisitos, y algunos bancos piden un saldo mínimo que no tiene nada que ver con el coste de constitución.' },
     ],
   },
 };

@@ -6,6 +6,7 @@ import JsonLd from './JsonLd';
 import ContactSection from './ContactSection';
 import DiagnosisSection from './DiagnosisSection';
 import { Check, DarkBackdrop, Eyebrow, FaqList, SectionHeading, Title } from './ui';
+import Block from './blog/Block';
 import { dictionaries, homePath, type Lang } from '../lib/i18n';
 import { relatedServices, servicePath, type ServiceKey } from '../lib/routes';
 import { serviceSchema } from '../lib/schema';
@@ -198,6 +199,38 @@ export default function ServicePage({ serviceKey, lang }: { serviceKey: ServiceK
           </div>
         </div>
       </section>
+
+      {/* Guía larga (SEO) */}
+      {s.deepDive && (
+        <section id="guide" className="bg-paper px-6 pb-24 sm:pb-28">
+          <div className="mx-auto max-w-6xl border-t border-line pt-20">
+            <SectionHeading eyebrow={ui.deepDiveEyebrow} title={s.deepDive.title} text={s.deepDive.intro} />
+            <div className="mx-auto mt-12 grid max-w-6xl gap-10 lg:grid-cols-[220px_1fr]">
+              <aside className="hidden lg:block">
+                <div className="sticky top-28">
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted">{ui.contents}</p>
+                  <ol className="mt-4 space-y-2 border-l border-line">
+                    {s.deepDive.blocks
+                      .filter((b): b is { h2: string; id: string } => 'h2' in b)
+                      .map((h) => (
+                        <li key={h.id}>
+                          <a href={`#${h.id}`} className="-ml-px block border-l border-transparent pl-4 text-sm leading-snug text-muted transition-colors hover:border-wine hover:text-wine">
+                            {h.h2}
+                          </a>
+                        </li>
+                      ))}
+                  </ol>
+                </div>
+              </aside>
+              <article className="min-w-0 space-y-5 rounded-3xl border border-line bg-white p-6 sm:p-10">
+                {s.deepDive.blocks.map((block, i) => (
+                  <Block key={i} block={block} />
+                ))}
+              </article>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Errores habituales */}
       <section className="grain relative isolate overflow-hidden bg-ink px-6 py-24 text-cream sm:py-28">

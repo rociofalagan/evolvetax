@@ -13,11 +13,12 @@ const meta: Record<PostKey, Omit<PostMeta, 'key'>> = {
   llc: { category: 'structures', published: '2026-09-15', updated: '2026-09-15', relatedServices: ['structuring', 'spainTax'], relatedPosts: ['dubaiInSpain', 'digitalVat', 'uaeTax'] },
   digitalVat: { category: 'vat', published: '2026-09-15', updated: '2026-09-15', relatedServices: ['spainTax', 'uaeTax'], relatedPosts: ['uaeTax', 'llc', 'freeZone'] },
   dubaiInSpain: { category: 'residency', published: '2026-09-15', updated: '2026-09-15', relatedServices: ['structuring', 'residency'], relatedPosts: ['uaeTax', 'llc', 'beckham'] },
+  dubaiCost: { category: 'uae', published: '2026-09-29', updated: '2026-09-29', relatedServices: ['dubai', 'uaeTax'], relatedPosts: ['freeZone', 'uaeTax', 'dubaiInSpain'] },
   freeZone: { category: 'uae', published: '2026-09-15', updated: '2026-09-15', relatedServices: ['dubai', 'uaeTax'], relatedPosts: ['uaeTax', 'dubaiInSpain', 'digitalVat'] },
 };
 
 // Orden en el listado (el primero es el destacado).
-const order: PostKey[] = ['dubaiInSpain', 'uaeTax', 'beckham', 'llc', 'digitalVat', 'freeZone'];
+const order: PostKey[] = ['dubaiCost', 'dubaiInSpain', 'uaeTax', 'beckham', 'llc', 'digitalVat', 'freeZone'];
 
 const content: Record<Lang, Record<PostKey, PostContent>> = { en: postsEn, es: postsEs };
 
