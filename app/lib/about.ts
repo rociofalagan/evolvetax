@@ -50,6 +50,7 @@ export const about: Record<Lang, AboutContent> = {
         { title: 'Corporate services provider', text: 'The same licence allows us to incorporate companies, handle licences and process residence visas, so the setup and the tax work stay under one roof.' },
         { title: 'Nearly a decade in tax', text: 'Experience in consulting and law firms in Spain and Dubai, working on international structures, tax residency and corporate compliance.' },
         { title: 'Two jurisdictions, one adviser', text: 'We work daily with both the UAE Federal Tax Authority and the Spanish tax system, which is where most cross-border mistakes happen.' },
+        { title: 'A network beyond our own desk', text: 'We incorporate LLCs in the United States ourselves and work with local lawyers and accountants in other countries, so we can advise and incorporate outside our three core jurisdictions.' },
       ],
     },
     how: {
@@ -61,7 +62,7 @@ export const about: Record<Lang, AboutContent> = {
       ],
     },
     servicesTitle: { lead: 'What we', accent: 'do.' },
-    servicesIntro: 'Six services you can hire separately or combine, from the first analysis to the day-to-day compliance.',
+    servicesIntro: 'Seven services you can hire separately or combine, from the first analysis to the day-to-day compliance.',
     cta: {
       title: { lead: 'Shall we look at', accent: 'your case?' },
       text: 'Start with an initial diagnosis: a one-hour call where you tell us your situation and we review it together.',
@@ -99,6 +100,7 @@ export const about: Record<Lang, AboutContent> = {
         { title: 'Proveedor de servicios corporativos', text: 'La misma licencia nos permite constituir sociedades, tramitar licencias y gestionar visados de residencia, así que la constitución y la parte fiscal están en el mismo sitio.' },
         { title: 'Casi una década en fiscalidad', text: 'Experiencia en consultoras y despachos de España y Dubái, trabajando en estructuras internacionales, residencia fiscal y cumplimiento societario.' },
         { title: 'Dos jurisdicciones, una asesora', text: 'Trabajamos a diario con la Federal Tax Authority emiratí y con el sistema fiscal español, que es donde se concentran los errores transfronterizos.' },
+        { title: 'Una red más allá de nuestro despacho', text: 'Creamos LLC en Estados Unidos y trabajamos con abogados y asesores locales en otros países, para poder asesorar y constituir fuera de nuestras tres jurisdicciones principales.' },
       ],
     },
     how: {
@@ -110,7 +112,7 @@ export const about: Record<Lang, AboutContent> = {
       ],
     },
     servicesTitle: { lead: 'Qué', accent: 'hacemos.' },
-    servicesIntro: 'Seis servicios que puedes contratar por separado o combinar, desde el primer análisis hasta el día a día.',
+    servicesIntro: 'Siete servicios que puedes contratar por separado o combinar, desde el primer análisis hasta el día a día.',
     cta: {
       title: { lead: '¿Vemos', accent: 'tu caso?' },
       text: 'Empieza por un diagnóstico inicial: una llamada de una hora en la que nos cuentas tu situación y la analizamos juntos.',

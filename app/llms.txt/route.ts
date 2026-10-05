@@ -10,7 +10,7 @@ export function GET() {
   const lines = [
     `# ${site.name}`,
     '',
-    `> International tax advisory for digital entrepreneurs and online businesses, based in Dubai (${site.legalName}, trade licence ${site.licence}). We work in English and Spanish across the UAE and Spain.`,
+    `> International tax advisory for digital entrepreneurs and online businesses, based in Dubai (${site.legalName}, trade licence ${site.licence}). We work in English and Spanish across the UAE, Spain and the United States, and incorporate in other countries through a network of local partners.`,
     '',
     `Contact: ${site.email} · ${site.phoneDisplay} · ${site.url}`,
     '',

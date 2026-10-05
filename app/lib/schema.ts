@@ -44,10 +44,13 @@ function organization(lang: Lang) {
       'Spanish personal and corporate tax',
       'Beckham Law',
       'VAT for digital businesses',
+      'US LLC formation for non-residents',
+      'Company incorporation abroad',
     ],
     areaServed: [
       { '@type': 'Country', name: 'United Arab Emirates' },
       { '@type': 'Country', name: 'Spain' },
+      { '@type': 'Country', name: 'United States' },
     ],
     knowsLanguage: ['en', 'es'],
     founder: { '@id': founderId },

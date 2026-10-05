@@ -845,6 +845,302 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
   /* ----------------------------------------------------------------
      Gestión fiscal en España
      ---------------------------------------------------------------- */
+  /* ----------------------------------------------------------------
+     LLC en Estados Unidos (y otros países con colaboradores locales)
+     ---------------------------------------------------------------- */
+  usLlc: {
+    en: {
+      name: 'LLC in the United States',
+      meta: {
+        title: 'Open a US LLC from Abroad | Evolve Tax',
+        description:
+          'We open your LLC in the United States: state, EIN, bank account and annual filings. And companies in other countries through our network of local partners.',
+      },
+      hero: {
+        eyebrow: 'Service · US LLC and other countries',
+        title: { lead: 'Your LLC in the United States,', accent: 'opened and filed properly.' },
+        intro:
+          'We incorporate your LLC, apply for the EIN, prepare the bank account and keep the annual filings in order. And if the right answer is a company somewhere else, we have local partners to incorporate and advise in other countries too.',
+        facts: [
+          { label: 'Incorporation', value: 'A few days' },
+          { label: 'EIN', value: 'Weeks without an SSN' },
+          { label: 'Annual filing', value: 'Form 5472 + 1120' },
+          { label: 'Other countries', value: 'Local partners' },
+        ],
+      },
+      included: {
+        title: { lead: 'What we', accent: 'take care of.' },
+        intro: 'From choosing the state to the filings you have to make every year, including the part nobody tells you about.',
+        items: [
+          { title: 'Choice of state', text: 'Delaware, Wyoming, Florida, New Mexico and others differ in fees, annual reports and privacy. We choose based on your business, not on what is trending.' },
+          { title: 'Incorporation', text: 'Filing with the state, registered agent and operating agreement adapted to whether you are one owner or several.' },
+          { title: 'EIN', text: 'Application for the federal tax number, including the route that applies when you have no SSN or ITIN.' },
+          { title: 'Bank account', text: 'We prepare the documentation and support your application with US banks and fintechs.' },
+          { title: 'Annual compliance', text: 'Form 5472 with pro-forma Form 1120 for foreign-owned single-member LLCs, state annual report and franchise tax.' },
+          { title: 'Other countries', text: 'When the LLC is not the answer, we incorporate and advise in other jurisdictions through our network of local lawyers and accountants.' },
+        ],
+      },
+      forWho: [
+        'Digital entrepreneurs selling to the US market who need a US entity to invoice and get paid.',
+        'Founders who already have an LLC and are not sure what they must file each year.',
+        'Anyone who has been told an LLC is “tax-free” and wants to know how it is really taxed where they live.',
+        'Businesses that need a company in another country and want a single advisor coordinating it.',
+      ],
+      process: [
+        { title: 'Analysis first', text: 'We check where you are tax resident and whether an LLC actually helps you — and in which state.' },
+        { title: 'Incorporation', text: 'We file with the state, appoint the registered agent and prepare the operating agreement.' },
+        { title: 'EIN and bank account', text: 'We apply for the EIN and get everything ready so the account application goes through.' },
+        { title: 'Ongoing filings', text: 'We keep the annual US obligations and coordinate them with what you declare in your country.' },
+      ],
+      guide: {
+        title: { lead: 'What you should know', accent: 'before opening an LLC.' },
+        intro: 'The LLC is a useful tool. It is not a way of not paying tax.',
+        blocks: [
+          {
+            heading: 'How a US LLC is taxed',
+            paragraphs: [
+              'By default, an LLC is transparent for US federal tax purposes: a single-member LLC is disregarded and a multi-member one is taxed as a partnership, so the income flows to its owners. It can also elect to be taxed as a corporation.',
+              'If the owner is not a US person and the LLC has no income effectively connected with a US trade or business, the LLC may pay no US federal income tax. That is not the same as paying no tax: the income normally has to be declared where you are tax resident.',
+            ],
+          },
+          {
+            heading: 'What you still have to file',
+            paragraphs: [
+              'A foreign-owned single-member LLC has to file Form 5472 together with a pro-forma Form 1120 every year, even with no activity, and the penalty for not filing starts at USD 25,000. On top of that comes the state annual report and franchise tax and, if you sell within the United States, possible sales tax obligations in the states where you have nexus.',
+              'Beneficial ownership and information reporting rules in the United States have changed repeatedly over the last few years, so we check what applies to your LLC each time a filing is due.',
+            ],
+          },
+          {
+            heading: 'The mistake that costs the most',
+            paragraphs: [
+              'An LLC does not change where you are tax resident. If you live in Spain and run the LLC from there, the income will normally be taxed in Spain, and the company may even be treated as having its place of effective management there.',
+              'That is why we start with your residency and your business, not with the paperwork. Sometimes the LLC is the right answer, sometimes it is a company somewhere else, and sometimes you do not need a new company at all.',
+            ],
+          },
+          {
+            heading: 'Other countries, through our partner network',
+            paragraphs: [
+              'Beyond the United States, the UAE and Spain, we work with a network of local lawyers, accountants and corporate services providers in Europe, Latin America, the United Kingdom and Asia.',
+              'We coordinate the incorporation and the advice with them and stay as your single point of contact, so you do not end up with one adviser per country and no one looking at the whole picture.',
+            ],
+          },
+        ],
+      },
+      deepDive: {
+        title: { lead: 'Complete guide to the', accent: 'US LLC for non-residents.' },
+        intro: 'What it is, how it is taxed, what you file every year and how to choose the state — plus what to do when the answer is a company in another country.',
+        blocks: [
+          { h2: 'What an LLC is, and what it is not', id: 'what' },
+          { p: 'An LLC (Limited Liability Company) is a US entity that separates your personal assets from the business and is flexible about how it is taxed. It is not a corporation, it does not issue shares and it has no board: it has members and an operating agreement that sets the rules between them.' },
+          { p: 'It is popular among digital entrepreneurs for three practical reasons: it is quick and cheap to set up, it gives you a US entity to invoice and collect through, and in many cases it does not pay tax in the United States. The third reason is the one that gets misunderstood most often.' },
+          {
+            callout: {
+              title: 'The LLC does not make you a non-resident',
+              text: 'Where you pay tax depends on where you are tax resident and where the company is actually managed, not on where it is registered. Before incorporating anything, it is worth reviewing your [international tax structuring](/services/international-tax-structuring).',
+            },
+          },
+
+          { h2: 'How it is taxed', id: 'tax' },
+          { p: 'By default the LLC is transparent: the United States looks through it and attributes the income to its members. A single-member LLC is a **disregarded entity**; a multi-member LLC is taxed as a **partnership**. It can also elect to be taxed as a corporation, which changes the picture completely.' },
+          { p: 'For a member who is not a US person, the key question is whether the LLC has income **effectively connected** with a US trade or business. If it does not — typically a business run from outside the United States, without employees, offices or dependent agents there — there is usually no US federal income tax to pay on that income.' },
+          { p: 'What does not disappear is the tax in your own country. Many countries, Spain among them, do not treat the LLC the same way the United States does, which can lead to double taxation or to income being attributed to you personally. We cover this in the guide on [US LLCs and tax transparency](/blog/us-llc-tax-transparency).' },
+
+          { h2: 'What you file every year', id: 'filings' },
+          { p: 'These are the obligations that catch people out. Not filing them is far more expensive than the tax itself.' },
+          {
+            table: {
+              head: ['Filing', 'Who files it', 'When'],
+              rows: [
+                ['Form 5472 + pro-forma 1120', 'Foreign-owned single-member LLCs', 'Annually, even with no activity'],
+                ['Form 1065 + K-1', 'Multi-member LLCs taxed as partnerships', 'Annually'],
+                ['State annual report / franchise tax', 'Almost every LLC, depending on the state', 'Annually, on the state’s own date'],
+                ['Sales tax', 'LLCs with nexus in a state where they sell', 'Depends on the state and the volume'],
+              ],
+            },
+          },
+          { p: 'The penalty for not filing Form 5472 starts at **USD 25,000** per year and per entity, and it applies even if the LLC had no income. It is the single most common and most expensive mistake we see.' },
+
+          { h2: 'Which state to choose', id: 'state' },
+          { p: 'There is no best state in the abstract. These are the trade-offs that actually matter:' },
+          {
+            list: [
+              ['Annual cost', 'Each state has its own franchise tax and annual report fee, and the difference between the cheapest and the most expensive is significant over the years.'],
+              ['Privacy', 'Some states publish the members in the public registry and others do not.'],
+              ['Where you really operate', 'If you have people, an office or stock in a particular state, you may have to register there regardless of where you incorporated.'],
+              ['Banking and payment providers', 'Some providers are more comfortable with certain states, which in practice affects how easily you get your account.'],
+            ],
+          },
+
+          { h2: 'Other countries, through our partner network', id: 'network' },
+          { p: 'Sometimes the honest answer is that the LLC does not fit, and what you need is a company in the United Kingdom, in another EU country, in Latin America or in Asia — or simply to keep operating as you are.' },
+          { p: 'For those cases we work with a network of local lawyers, accountants and corporate services providers, which lets us incorporate and advise outside our three core jurisdictions. We select the partner, coordinate the work and remain your single point of contact, so the tax strategy stays consistent instead of being split across advisers who never speak to each other.' },
+        ],
+      },
+      mistakes: [
+        { title: 'Choosing the state because of a video', text: 'The state that suits a US e-commerce business with staff is not the one that suits a consultant invoicing from abroad.' },
+        { title: 'Assuming the LLC pays no tax anywhere', text: 'If you are tax resident in Spain, or in most countries, the income is normally taxed there even when the LLC pays nothing in the United States.' },
+        { title: 'Forgetting Form 5472', text: 'It is due every year, even with no activity, and the penalty starts at USD 25,000.' },
+        { title: 'Incorporating before looking at your residency', text: 'The order matters: first where you are tax resident, then which company — not the other way round.' },
+      ],
+      faq: [
+        { q: 'Do I need to live in the United States to open an LLC?', a: 'No. A non-resident can be the sole member of an LLC. You do need a registered agent in the state and, in practice, an EIN to open a bank account.' },
+        { q: 'Does my LLC pay tax in the United States?', a: 'If the owner is not a US person and the LLC has no income effectively connected with a US trade or business, there is usually no US federal income tax on that income. The filings still have to be made, and the income normally has to be declared where you are tax resident.' },
+        { q: 'Do I have to file anything if the LLC had no activity?', a: 'Yes. A foreign-owned single-member LLC files Form 5472 with a pro-forma Form 1120 every year, even at zero, plus the state annual report. Not filing carries a penalty from USD 25,000.' },
+        { q: 'How long does it take to open an LLC?', a: 'The company itself is usually a matter of days. The EIN is what takes longest when you have no SSN or ITIN: it can take several weeks, and the bank account comes after that.' },
+        { q: 'Can you incorporate in countries other than the United States?', a: 'Yes. Beyond the UAE, Spain and the United States, we work with a network of local partners that lets us incorporate and advise in other jurisdictions, with us coordinating the whole thing.' },
+      ],
+      cta: {
+        title: { lead: 'Let’s check whether the LLC', accent: 'is really your answer.' },
+        text: 'Tell us where you live and what your business looks like, and we’ll tell you whether an LLC helps you, which state fits and what it would cost you to keep it.',
+      },
+    },
+    es: {
+      name: 'LLC en Estados Unidos',
+      meta: {
+        title: 'Crear una LLC en Estados Unidos | Evolve Tax',
+        description:
+          'Creamos tu LLC en Estados Unidos desde fuera: estado, EIN, cuenta bancaria y obligaciones anuales. Y empresas en otros países con nuestra red de colaboradores.',
+      },
+      hero: {
+        eyebrow: 'Servicio · LLC en EE. UU. y otros países',
+        title: { lead: 'Tu LLC en Estados Unidos,', accent: 'abierta y declarada como toca.' },
+        intro:
+          'Constituimos tu LLC, solicitamos el EIN, preparamos la cuenta bancaria y mantenemos al día las declaraciones anuales. Y si lo que necesitas es una sociedad en otro país, tenemos colaboradores locales para constituir y asesorar fuera de Estados Unidos.',
+        facts: [
+          { label: 'Constitución', value: 'Unos días' },
+          { label: 'EIN', value: 'Semanas sin SSN' },
+          { label: 'Declaración anual', value: 'Form 5472 + 1120' },
+          { label: 'Otros países', value: 'Colaboradores locales' },
+        ],
+      },
+      included: {
+        title: { lead: 'De qué nos', accent: 'encargamos.' },
+        intro: 'Desde elegir el estado hasta las declaraciones que hay que presentar cada año, incluida la parte que nadie te cuenta.',
+        items: [
+          { title: 'Elección del estado', text: 'Delaware, Wyoming, Florida, Nuevo México y otros se diferencian en tasas, informes anuales y privacidad. Elegimos según tu negocio, no según lo que esté de moda.' },
+          { title: 'Constitución', text: 'Presentación ante el estado, agente registrado y operating agreement adaptado a si eres un solo socio o varios.' },
+          { title: 'EIN', text: 'Solicitud del número fiscal federal, incluida la vía que corresponde cuando no tienes SSN ni ITIN.' },
+          { title: 'Cuenta bancaria', text: 'Preparamos la documentación y te acompañamos en la solicitud ante bancos y fintechs estadounidenses.' },
+          { title: 'Obligaciones anuales', text: 'Form 5472 con el Form 1120 pro forma para LLC de un solo socio extranjero, informe anual del estado y franchise tax.' },
+          { title: 'Otros países', text: 'Cuando la LLC no es la respuesta, constituimos y asesoramos en otras jurisdicciones con nuestra red de abogados y asesores locales.' },
+        ],
+      },
+      forWho: [
+        'Emprendedores digitales que venden al mercado estadounidense y necesitan una entidad allí para facturar y cobrar.',
+        'Quien ya tiene una LLC y no sabe con certeza qué tiene que presentar cada año.',
+        'Quien ha oído que la LLC «no paga impuestos» y quiere saber cómo tributa de verdad donde vive.',
+        'Negocios que necesitan una sociedad en otro país y quieren un único asesor coordinándolo.',
+      ],
+      process: [
+        { title: 'Primero el análisis', text: 'Miramos dónde eres residente fiscal y si la LLC te sirve de algo, y en qué estado.' },
+        { title: 'Constitución', text: 'Presentamos ante el estado, nombramos agente registrado y preparamos el operating agreement.' },
+        { title: 'EIN y cuenta', text: 'Solicitamos el EIN y dejamos todo listo para que la cuenta bancaria salga adelante.' },
+        { title: 'Declaraciones', text: 'Mantenemos las obligaciones anuales en Estados Unidos y las coordinamos con lo que declaras en tu país.' },
+      ],
+      guide: {
+        title: { lead: 'Lo que conviene saber', accent: 'antes de abrir una LLC.' },
+        intro: 'La LLC es una herramienta útil. No es una forma de no pagar impuestos.',
+        blocks: [
+          {
+            heading: 'Cómo tributa una LLC',
+            paragraphs: [
+              'Por defecto la LLC es transparente a efectos fiscales federales en Estados Unidos: la de un solo socio se ignora (disregarded entity) y la de varios tributa como partnership, de modo que la renta va a sus socios. También puede optar por tributar como sociedad.',
+              'Si el socio no es persona estadounidense y la LLC no obtiene rentas efectivamente conectadas con una actividad en Estados Unidos, es posible que la LLC no pague impuesto federal allí. Eso no es lo mismo que no pagar impuestos: la renta normalmente hay que declararla donde eres residente fiscal.',
+            ],
+          },
+          {
+            heading: 'Lo que hay que presentar igualmente',
+            paragraphs: [
+              'Una LLC de un solo socio extranjero tiene que presentar cada año el Form 5472 junto con un Form 1120 pro forma, incluso sin actividad, y la sanción por no hacerlo arranca en 25.000 USD. A eso se suman el informe anual del estado y la franchise tax y, si vendes dentro de Estados Unidos, posibles obligaciones de sales tax en los estados donde tengas nexus.',
+              'Las normas de información sobre titularidad real en Estados Unidos han cambiado varias veces en los últimos años, así que revisamos qué aplica a tu LLC cada vez que toca presentar.',
+            ],
+          },
+          {
+            heading: 'El error que más caro sale',
+            paragraphs: [
+              'La LLC no cambia dónde eres residente fiscal. Si vives en España y diriges la LLC desde aquí, la renta tributará normalmente en España, e incluso puede considerarse que la sociedad tiene aquí su sede de dirección efectiva.',
+              'Por eso empezamos por tu residencia y tu negocio, no por el papeleo. A veces la LLC es la respuesta correcta, a veces lo es una sociedad en otro país y a veces no necesitas ninguna sociedad nueva.',
+            ],
+          },
+          {
+            heading: 'Otros países, con nuestra red de colaboradores',
+            paragraphs: [
+              'Más allá de Estados Unidos, Emiratos y España, trabajamos con una red de abogados, asesores y proveedores de servicios corporativos locales en Europa, Latinoamérica, Reino Unido y Asia.',
+              'Coordinamos con ellos la constitución y el asesoramiento y seguimos siendo tu único interlocutor, para que no acabes con un asesor por país y nadie mirando el conjunto.',
+            ],
+          },
+        ],
+      },
+      deepDive: {
+        title: { lead: 'Guía completa de la', accent: 'LLC para no residentes.' },
+        intro: 'Qué es, cómo tributa, qué se presenta cada año y cómo elegir el estado. Y qué hacer cuando la respuesta es una sociedad en otro país.',
+        blocks: [
+          { h2: 'Qué es una LLC y qué no es', id: 'que-es' },
+          { p: 'Una LLC (Limited Liability Company) es una entidad estadounidense que separa tu patrimonio personal del del negocio y que es flexible en cuanto a cómo tributa. No es una corporation, no emite acciones y no tiene consejo: tiene socios (members) y un operating agreement que fija las reglas entre ellos.' },
+          { p: 'Es popular entre emprendedores digitales por tres motivos prácticos: se constituye rápido y barato, te da una entidad en Estados Unidos para facturar y cobrar, y en muchos casos no paga impuestos allí. El tercero es el que peor se entiende.' },
+          {
+            callout: {
+              title: 'La LLC no te convierte en no residente',
+              text: 'Dónde pagas impuestos depende de dónde eres residente fiscal y desde dónde se dirige la sociedad, no de dónde está registrada. Antes de constituir nada conviene revisar tu [estructuración fiscal internacional](/es/servicios/estructuracion-fiscal-internacional).',
+            },
+          },
+
+          { h2: 'Cómo tributa', id: 'tributacion' },
+          { p: 'Por defecto la LLC es transparente: Estados Unidos mira a través de ella y atribuye la renta a sus socios. La de un solo socio es una **disregarded entity**; la de varios tributa como **partnership**. También puede optar por tributar como sociedad, lo que cambia el escenario por completo.' },
+          { p: 'Para un socio que no es persona estadounidense, la pregunta clave es si la LLC obtiene rentas **efectivamente conectadas** con una actividad económica en Estados Unidos. Si no las obtiene (lo habitual en un negocio dirigido desde fuera, sin empleados, oficinas ni agentes dependientes allí), normalmente no hay impuesto federal estadounidense sobre esa renta.' },
+          { p: 'Lo que no desaparece es el impuesto en tu país. Muchos países, España entre ellos, no tratan la LLC igual que Estados Unidos, lo que puede generar doble imposición o atribución de la renta a tu IRPF. Lo contamos en la guía sobre [la LLC y la transparencia fiscal](/es/blog/llc-estados-unidos-transparencia-fiscal).' },
+
+          { h2: 'Qué se presenta cada año', id: 'obligaciones' },
+          { p: 'Estas son las obligaciones que pillan a mucha gente. No presentarlas sale mucho más caro que el propio impuesto.' },
+          {
+            table: {
+              head: ['Declaración', 'Quién la presenta', 'Cuándo'],
+              rows: [
+                ['Form 5472 + 1120 pro forma', 'LLC de un solo socio extranjero', 'Cada año, aunque no haya actividad'],
+                ['Form 1065 + K-1', 'LLC de varios socios que tributa como partnership', 'Cada año'],
+                ['Informe anual del estado / franchise tax', 'Casi toda LLC, según el estado', 'Cada año, en la fecha del estado'],
+                ['Sales tax', 'LLC con nexus en un estado donde vende', 'Depende del estado y del volumen'],
+              ],
+            },
+          },
+          { p: 'La sanción por no presentar el Form 5472 arranca en **25.000 USD** por año y por entidad, y se aplica aunque la LLC no haya tenido ingresos. Es el error más habitual y más caro que vemos.' },
+
+          { h2: 'Qué estado elegir', id: 'estado' },
+          { p: 'No hay un estado mejor en abstracto. Estos son los criterios que de verdad importan:' },
+          {
+            list: [
+              ['Coste anual', 'Cada estado tiene su franchise tax y su tasa de informe anual, y la diferencia entre el más barato y el más caro se nota con los años.'],
+              ['Privacidad', 'Algunos estados publican los socios en el registro público y otros no.'],
+              ['Dónde operas de verdad', 'Si tienes personas, oficina o stock en un estado concreto, puede que tengas que registrarte allí aunque te hayas constituido en otro.'],
+              ['Bancos y pasarelas de pago', 'Algunos proveedores están más cómodos con ciertos estados, lo que en la práctica afecta a lo fácil que te resulte abrir la cuenta.'],
+            ],
+          },
+
+          { h2: 'Otros países, con nuestra red de colaboradores', id: 'red' },
+          { p: 'A veces la respuesta honesta es que la LLC no encaja y lo que necesitas es una sociedad en Reino Unido, en otro país de la Unión Europea, en Latinoamérica o en Asia, o simplemente seguir operando como estás.' },
+          { p: 'Para esos casos trabajamos con una red de abogados, asesores y proveedores de servicios corporativos locales que nos permite constituir y asesorar fuera de nuestras tres jurisdicciones principales. Seleccionamos al colaborador, coordinamos el trabajo y seguimos siendo tu único interlocutor, para que la estrategia fiscal sea coherente y no quede repartida entre asesores que no hablan entre sí.' },
+        ],
+      },
+      mistakes: [
+        { title: 'Elegir el estado por un vídeo', text: 'El estado que le conviene a un ecommerce con personal en Estados Unidos no es el que le conviene a un consultor que factura desde fuera.' },
+        { title: 'Dar por hecho que la LLC no paga impuestos en ningún sitio', text: 'Si eres residente fiscal en España, o en la mayoría de países, la renta tributa allí aunque la LLC no pague nada en Estados Unidos.' },
+        { title: 'Olvidar el Form 5472', text: 'Se presenta cada año, aunque no haya actividad, y la sanción arranca en 25.000 USD.' },
+        { title: 'Constituir antes de mirar tu residencia', text: 'El orden importa: primero dónde eres residente fiscal y después qué sociedad, no al revés.' },
+      ],
+      faq: [
+        { q: '¿Necesito vivir en Estados Unidos para abrir una LLC?', a: 'No. Un no residente puede ser socio único de una LLC. Sí necesitas un agente registrado en el estado y, en la práctica, un EIN para abrir la cuenta bancaria.' },
+        { q: '¿Mi LLC paga impuestos en Estados Unidos?', a: 'Si el socio no es persona estadounidense y la LLC no tiene rentas efectivamente conectadas con una actividad allí, normalmente no hay impuesto federal estadounidense sobre esa renta. Las declaraciones hay que presentarlas igual, y la renta normalmente se declara donde eres residente fiscal.' },
+        { q: '¿Tengo que presentar algo si la LLC no ha tenido actividad?', a: 'Sí. Una LLC de un solo socio extranjero presenta cada año el Form 5472 con un Form 1120 pro forma, aunque sea a cero, además del informe anual del estado. No presentarlo tiene una sanción desde 25.000 USD.' },
+        { q: '¿Cuánto se tarda en abrir una LLC?', a: 'La sociedad en sí suele ser cuestión de días. Lo que más tarda es el EIN cuando no tienes SSN ni ITIN: pueden ser varias semanas, y la cuenta bancaria viene después.' },
+        { q: '¿Constituís en otros países además de Estados Unidos?', a: 'Sí. Más allá de Emiratos, España y Estados Unidos, trabajamos con una red de colaboradores locales que nos permite constituir y asesorar en otras jurisdicciones, coordinándolo todo nosotros.' },
+      ],
+      cta: {
+        title: { lead: 'Veamos si la LLC', accent: 'es de verdad tu respuesta.' },
+        text: 'Cuéntanos dónde vives y cómo es tu negocio y te decimos si la LLC te sirve, qué estado encaja y cuánto te costaría mantenerla.',
+      },
+    },
+  },
+
   spainTax: {
     en: {
       name: 'Tax management in Spain',

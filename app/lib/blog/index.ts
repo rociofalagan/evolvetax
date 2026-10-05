@@ -10,7 +10,7 @@ export type { CategoryKey, PostBlock, PostContent, PostMeta } from './types';
 const meta: Record<PostKey, Omit<PostMeta, 'key'>> = {
   uaeTax: { category: 'uae', published: '2026-09-15', updated: '2026-09-15', relatedServices: ['uaeTax', 'dubai'], relatedPosts: ['freeZone', 'dubaiInSpain', 'digitalVat'] },
   beckham: { category: 'spain', published: '2026-09-15', updated: '2026-09-15', relatedServices: ['beckham', 'residency'], relatedPosts: ['dubaiInSpain', 'llc', 'uaeTax'] },
-  llc: { category: 'structures', published: '2026-09-15', updated: '2026-09-15', relatedServices: ['structuring', 'spainTax'], relatedPosts: ['dubaiInSpain', 'digitalVat', 'uaeTax'] },
+  llc: { category: 'structures', published: '2026-09-15', updated: '2026-09-15', relatedServices: ['usLlc', 'structuring', 'spainTax'], relatedPosts: ['dubaiInSpain', 'digitalVat', 'uaeTax'] },
   digitalVat: { category: 'vat', published: '2026-09-15', updated: '2026-09-15', relatedServices: ['spainTax', 'uaeTax'], relatedPosts: ['uaeTax', 'llc', 'freeZone'] },
   dubaiInSpain: { category: 'residency', published: '2026-09-15', updated: '2026-09-15', relatedServices: ['structuring', 'residency'], relatedPosts: ['uaeTax', 'llc', 'beckham'] },
   dubaiCost: { category: 'uae', published: '2026-09-29', updated: '2026-09-29', relatedServices: ['dubai', 'uaeTax'], relatedPosts: ['freeZone', 'uaeTax', 'dubaiInSpain'] },

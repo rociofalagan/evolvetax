@@ -17,7 +17,7 @@ const en = {
   meta: {
     title: 'International Tax Advisory for Digital Business | Evolve Tax',
     description:
-      'International tax advisory for digital entrepreneurs: structuring, company setup in Dubai, tax management in Spain and the UAE, and residency changes.',
+      'International tax advisory for digital entrepreneurs: structuring, companies in Dubai and the US, tax management in Spain and the UAE, and residency.',
     ogAlt: 'Evolve Tax — International tax advisory for digital businesses',
     locale: 'en_GB',
   },
@@ -38,7 +38,7 @@ const en = {
   hero: {
     eyebrow: 'International tax advisory · Digital businesses',
     title: { lead: 'Your business is already international.', accent: 'Your taxes should be too.' } as Accent,
-    text: 'Tax advice for digital entrepreneurs and online businesses: international structuring, company setup in Dubai, tax management in Spain and the UAE, and changes of tax residency — from the initial strategy to the returns every quarter.',
+    text: 'Tax advice for digital entrepreneurs and online businesses: international structuring, companies in Dubai and the United States, tax management in Spain and the UAE, and changes of tax residency — from the initial strategy to the returns every quarter.',
     primary: 'Book your initial diagnosis',
     secondary: 'Tell us about your case',
     bullets: ['8+ years in tax advisory', 'Spain, the UAE and beyond', 'Strategy, setup and ongoing compliance'],
@@ -84,17 +84,19 @@ const en = {
   services: {
     eyebrow: 'Services',
     title: { lead: 'What we do,', accent: 'exactly.' } as Accent,
-    text: 'Six services you can hire separately or combine, depending on where you are and where you’re going.',
+    text: 'Seven services you can hire separately or combine, depending on where you are and where you’re going.',
     items: [
       { key: 'structuring' as ServiceKey, title: 'International tax structuring', text: 'Before you incorporate anything or move anywhere, you need a strategy. We analyse your situation and compare options with real numbers.', tags: ['Tax residency', 'Company structure', 'Jurisdictions'] },
       { key: 'dubai' as ServiceKey, title: 'Business setup in Dubai', text: 'Company formation in any free zone in around 14 days, with residence visa, corporate bank account and tax registrations.', tags: ['Free zone', 'Visa', 'Banking'] },
       { key: 'uaeTax' as ServiceKey, title: 'Tax management in Dubai', text: 'Bookkeeping, Corporate Tax and VAT for your company in the UAE, with every deadline under control.', tags: ['Bookkeeping', 'Corporate Tax', 'VAT'] },
+      { key: 'usLlc' as ServiceKey, title: 'LLC in the United States', text: 'We open your LLC, apply for the EIN and keep the annual filings in order — and we incorporate in other countries through local partners.', tags: ['Any state', 'EIN', 'Form 5472'] },
       { key: 'spainTax' as ServiceKey, title: 'Tax management in Spain', text: 'Tax advice and returns in Spain for freelancers and companies, with international invoicing in mind.', tags: ['Freelancers & companies', 'International VAT', 'Form 720'] },
       { key: 'residency' as ServiceKey, title: 'Change of tax residency', text: 'Leaving Spain or moving to it: we plan the change with you and help you prove it.', tags: ['183 days', 'Tax treaties', 'Exit tax'] },
       { key: 'beckham' as ServiceKey, title: 'Beckham Law', text: 'The special tax regime for people moving to Spain: eligibility, application and annual returns.', tags: ['24% flat rate', 'Form 149', 'Up to 6 years'] },
     ],
     learnMore: 'Learn more',
     oneOff: { lead: 'Just need to review a specific situation?', link: 'Start with an initial diagnosis.' },
+    network: { lead: 'Need a company in another country?', link: 'We incorporate through local partners.' },
     band: { lead: 'Most firms set up your structure and disappear.', accent: 'We stay.' } as Accent,
     bandCta: 'Book your initial diagnosis',
   },
@@ -194,6 +196,7 @@ const en = {
         'International tax structuring',
         'Setting up a company in Dubai',
         'Tax management in Dubai (accounting, Corporate Tax, VAT)',
+        'Opening an LLC in the United States',
         'Tax management in Spain',
         'Changing my tax residency',
         'Beckham Law',
@@ -227,7 +230,7 @@ const es: Dictionary = {
   meta: {
     title: 'Asesoría fiscal internacional en Dubái y España | Evolve Tax',
     description:
-      'Asesoría fiscal internacional para emprendedores digitales: estructuración, empresas en Dubái, gestión fiscal en España y Emiratos y residencia fiscal.',
+      'Asesoría fiscal internacional para emprendedores digitales: estructuración, empresas en Dubái y EE. UU., fiscalidad en España y Emiratos y residencia.',
     ogAlt: 'Evolve Tax — Asesoría fiscal internacional para negocios digitales',
     locale: 'es_ES',
   },
@@ -248,7 +251,7 @@ const es: Dictionary = {
   hero: {
     eyebrow: 'Asesoría fiscal internacional · Negocios digitales',
     title: { lead: 'Tu negocio ya es internacional.', accent: 'Tu fiscalidad, también.' },
-    text: 'Asesoramiento fiscal para emprendedores y negocios digitales: estructuración internacional, empresas en Dubái, gestión fiscal en España y Emiratos y cambios de residencia fiscal, desde la estrategia inicial hasta las declaraciones de cada trimestre.',
+    text: 'Asesoramiento fiscal para emprendedores y negocios digitales: estructuración internacional, empresas en Dubái y Estados Unidos, gestión fiscal en España y Emiratos y cambios de residencia fiscal, desde la estrategia inicial hasta las declaraciones de cada trimestre.',
     primary: 'Reserva tu diagnóstico inicial',
     secondary: 'Cuéntanos tu caso',
     bullets: ['+8 años en asesoría fiscal', 'España, Emiratos y más allá', 'Estrategia, implantación y día a día'],
@@ -294,17 +297,19 @@ const es: Dictionary = {
   services: {
     eyebrow: 'Servicios',
     title: { lead: 'Qué hacemos,', accent: 'exactamente.' },
-    text: 'Seis servicios que puedes contratar por separado o combinar, según dónde estás y a dónde vas.',
+    text: 'Siete servicios que puedes contratar por separado o combinar, según dónde estás y a dónde vas.',
     items: [
       { key: 'structuring', title: 'Estructuración fiscal internacional', text: 'Antes de constituir nada o mudarte a ningún sitio, necesitas una estrategia. Analizamos tu situación y comparamos opciones con números reales.', tags: ['Residencia fiscal', 'Estructura societaria', 'Jurisdicciones'] },
       { key: 'dubai', title: 'Incorporación de empresas en Dubái', text: 'Constitución en cualquier free zone en unos 14 días, con visado de residencia, cuenta bancaria y altas fiscales.', tags: ['Free zone', 'Visado', 'Banca'] },
       { key: 'uaeTax', title: 'Gestión fiscal en Dubái', text: 'Contabilidad, Corporate Tax e IVA de tu sociedad en Emiratos, con todos los plazos bajo control.', tags: ['Contabilidad', 'Corporate Tax', 'IVA'] },
+      { key: 'usLlc', title: 'LLC en Estados Unidos', text: 'Abrimos tu LLC, solicitamos el EIN y mantenemos al día las declaraciones anuales. Y constituimos en otros países con colaboradores locales.', tags: ['Cualquier estado', 'EIN', 'Form 5472'] },
       { key: 'spainTax', title: 'Gestión fiscal en España', text: 'Asesoría y declaraciones en España para autónomos y sociedades, con la facturación internacional en mente.', tags: ['Autónomos y sociedades', 'IVA internacional', 'Modelo 720'] },
       { key: 'residency', title: 'Cambio de residencia fiscal', text: 'Salir de España o llegar a ella: planificamos el cambio contigo y te ayudamos a acreditarlo.', tags: ['183 días', 'Convenios', 'Exit tax'] },
       { key: 'beckham', title: 'Régimen Beckham', text: 'El régimen fiscal especial para quien se traslada a España: requisitos, solicitud y declaraciones anuales.', tags: ['Tipo fijo del 24 %', 'Modelo 149', 'Hasta 6 años'] },
     ],
     learnMore: 'Saber más',
     oneOff: { lead: '¿Solo necesitas revisar una situación concreta?', link: 'Empieza por un diagnóstico inicial.' },
+    network: { lead: '¿Necesitas una sociedad en otro país?', link: 'Constituimos con colaboradores locales.' },
     band: { lead: 'La mayoría te monta la estructura y desaparece.', accent: 'Nosotros nos quedamos.' },
     bandCta: 'Reserva tu diagnóstico inicial',
   },
@@ -404,6 +409,7 @@ const es: Dictionary = {
         'Estructuración fiscal internacional',
         'Crear empresa en Dubái',
         'Gestión fiscal en Dubái (contabilidad, Corporate Tax, IVA)',
+        'Abrir una LLC en Estados Unidos',
         'Gestión fiscal en España',
         'Cambiar mi residencia fiscal',
         'Régimen Beckham',

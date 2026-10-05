@@ -271,6 +271,13 @@ function Services({ t, lang }: { t: D['services']; lang: Lang }) {
           </AnchorLink>
         </Reveal>
 
+        <Reveal className="mt-3 text-center text-muted">
+          {t.network.lead}{' '}
+          <Link href={servicePath('usLlc', lang)} className="font-semibold text-wine underline decoration-wine/30 underline-offset-4 hover:decoration-wine">
+            {t.network.link}
+          </Link>
+        </Reveal>
+
         <Reveal className="mt-10 flex flex-col items-start justify-between gap-6 rounded-3xl border border-wine/15 bg-rose/60 p-8 sm:flex-row sm:items-center sm:p-10">
           <p className="max-w-2xl text-xl font-semibold leading-snug tracking-tight sm:text-2xl">
             {t.band.lead} <span className="font-serif font-normal italic text-wine">{t.band.accent}</span>

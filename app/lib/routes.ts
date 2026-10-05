@@ -2,13 +2,14 @@ import type { Lang } from './i18n';
 
 // Rutas de la web en cada idioma. Sin textos, para que el menú (cliente) pese poco.
 
-export const serviceKeys = ['structuring', 'dubai', 'uaeTax', 'spainTax', 'residency', 'beckham'] as const;
+export const serviceKeys = ['structuring', 'dubai', 'uaeTax', 'usLlc', 'spainTax', 'residency', 'beckham'] as const;
 export type ServiceKey = (typeof serviceKeys)[number];
 
 export const serviceSlugs: Record<ServiceKey, Record<Lang, string>> = {
   structuring: { en: 'international-tax-structuring', es: 'estructuracion-fiscal-internacional' },
   dubai: { en: 'dubai-company-setup', es: 'crear-empresa-en-dubai' },
   uaeTax: { en: 'dubai-tax-management', es: 'gestion-fiscal-en-dubai' },
+  usLlc: { en: 'us-llc-formation', es: 'crear-llc-en-estados-unidos' },
   spainTax: { en: 'spain-tax-management', es: 'gestion-fiscal-en-espana' },
   residency: { en: 'tax-residency-change', es: 'cambio-de-residencia-fiscal' },
   beckham: { en: 'beckham-law-spain', es: 'regimen-beckham' },
@@ -16,10 +17,11 @@ export const serviceSlugs: Record<ServiceKey, Record<Lang, string>> = {
 
 // Servicios relacionados que se enlazan al final de cada landing (enlazado interno).
 export const relatedServices: Record<ServiceKey, ServiceKey[]> = {
-  structuring: ['dubai', 'residency', 'spainTax'],
-  dubai: ['uaeTax', 'structuring', 'residency'],
+  structuring: ['dubai', 'usLlc', 'residency'],
+  dubai: ['uaeTax', 'structuring', 'usLlc'],
   uaeTax: ['dubai', 'spainTax', 'structuring'],
-  spainTax: ['beckham', 'residency', 'uaeTax'],
+  usLlc: ['structuring', 'dubai', 'spainTax'],
+  spainTax: ['beckham', 'residency', 'usLlc'],
   residency: ['beckham', 'structuring', 'dubai'],
   beckham: ['residency', 'spainTax', 'structuring'],
 };
