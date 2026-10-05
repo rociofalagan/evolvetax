@@ -7,6 +7,12 @@ import { blogUi, getPost } from './blog';
 import { about } from './about';
 import { services } from './services';
 
+// Enlace al feed RSS del blog. Los metadatos de cada página sustituyen el objeto
+// `alternates` del layout por completo, así que hay que repetirlo en cada uno.
+const feed = (lang: Lang) => ({
+  'application/rss+xml': [{ url: `${blogPath[lang]}/rss.xml`, title: 'Evolve Tax blog' }],
+});
+
 export const viewport: Viewport = {
   themeColor: '#161211',
 };
@@ -30,6 +36,7 @@ export function baseMetadata(lang: Lang): Metadata {
       alternateLocale: lang === 'en' ? ['es_ES'] : ['en_GB'],
     },
     twitter: { card: 'summary_large_image' },
+    alternates: { types: feed(lang) },
   };
 }
 
@@ -43,6 +50,7 @@ export function serviceMetadata(key: ServiceKey, lang: Lang): Metadata {
     alternates: {
       canonical: path,
       languages: { en: servicePath(key, 'en'), es: servicePath(key, 'es'), 'x-default': servicePath(key, 'en') },
+      types: feed(lang),
     },
     openGraph: { title: t.title, description: t.description, url: path },
     twitter: { card: 'summary_large_image', title: t.title, description: t.description },
@@ -58,6 +66,7 @@ export function legalMetadata(key: LegalKey, lang: Lang): Metadata {
     alternates: {
       canonical: legalPaths[key][lang],
       languages: { en: legalPaths[key].en, es: legalPaths[key].es, 'x-default': legalPaths[key].en },
+      types: feed(lang),
     },
   };
 }
@@ -72,6 +81,7 @@ export function homeMetadata(lang: Lang): Metadata {
     alternates: {
       canonical: path,
       languages: { en: '/', es: '/es', 'x-default': '/' },
+      types: feed(lang),
     },
     openGraph: { title: t.title, description: t.description, url: path },
     twitter: { card: 'summary_large_image', title: t.title, description: t.description },
@@ -84,7 +94,7 @@ export function blogIndexMetadata(lang: Lang): Metadata {
   return {
     title: { absolute: ui.metaTitle },
     description: ui.metaDescription,
-    alternates: { canonical: blogPath[lang], languages: { en: blogPath.en, es: blogPath.es, 'x-default': blogPath.en } },
+    alternates: { canonical: blogPath[lang], languages: { en: blogPath.en, es: blogPath.es, 'x-default': blogPath.en }, types: feed(lang) },
     openGraph: { title: ui.metaTitle, description: ui.metaDescription, url: blogPath[lang] },
     twitter: { card: 'summary_large_image', title: ui.metaTitle, description: ui.metaDescription },
   };
@@ -102,6 +112,7 @@ export function blogPostMetadata(key: PostKey, lang: Lang): Metadata {
     alternates: {
       canonical: postPath(key, lang),
       languages: { en: postPath(key, 'en'), es: postPath(key, 'es'), 'x-default': postPath(key, 'en') },
+      types: feed(lang),
     },
     openGraph: {
       type: 'article',
@@ -123,7 +134,7 @@ export function aboutMetadata(lang: Lang): Metadata {
   return {
     title: { absolute: t.title },
     description: t.description,
-    alternates: { canonical: aboutPath[lang], languages: { en: aboutPath.en, es: aboutPath.es, 'x-default': aboutPath.en } },
+    alternates: { canonical: aboutPath[lang], languages: { en: aboutPath.en, es: aboutPath.es, 'x-default': aboutPath.en }, types: feed(lang) },
     openGraph: { title: t.title, description: t.description, url: aboutPath[lang] },
     twitter: { card: 'summary_large_image', title: t.title, description: t.description },
   };

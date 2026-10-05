@@ -30,6 +30,7 @@ export const legalUi = {
 };
 
 const EMAIL = 'hello@evolvetaxdubai.com';
+const PHONE = '+971 58 522 5273';
 const WEB = 'www.evolvetaxdubai.com';
 
 const company = {
@@ -42,6 +43,7 @@ const company = {
     ['Actividades', 'Tax Consultant · Corporate Services Provider'],
     ['Domicilio', 'Building A1, IFZA Business Park, Dubai Silicon Oasis, Dubái (Emiratos Árabes Unidos)'],
     ['Sitio web', WEB],
+    ['Teléfono', PHONE],
     ['Email de contacto', EMAIL],
   ] as [string, string][],
   en: [
@@ -53,6 +55,7 @@ const company = {
     ['Activities', 'Tax Consultant · Corporate Services Provider'],
     ['Registered address', 'Building A1, IFZA Business Park, Dubai Silicon Oasis, Dubai (United Arab Emirates)'],
     ['Website', WEB],
+    ['Phone', PHONE],
     ['Contact email', EMAIL],
   ] as [string, string][],
 };

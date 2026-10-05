@@ -12,7 +12,8 @@ export const site = {
   founderPhoto: '/founder-evolve-tax.jpg',
   bookingUrl: '',
   // Teléfono de contacto para la ficha de empresa (Google). Si está vacío, no se publica.
-  phone: '',
+  phone: '+971585225273',
+  phoneDisplay: '+971 58 522 5273',
   licence: '62485',
   address: {
     street: 'Building A1, IFZA Business Park, Dubai Silicon Oasis',

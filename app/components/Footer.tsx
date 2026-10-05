@@ -49,6 +49,13 @@ export default function Footer({ lang }: { lang: Lang }) {
           </FooterColumn>
 
           <FooterColumn title={t.contact}>
+            {site.phone && (
+              <li>
+                <a href={`tel:${site.phone}`} className="text-sm text-cream/70 transition-colors hover:text-cream">
+                  {site.phoneDisplay}
+                </a>
+              </li>
+            )}
             <li>
               <a href={`mailto:${site.email}`} className="text-sm text-cream/70 transition-colors hover:text-cream">
                 {site.email}

@@ -1,10 +1,14 @@
 import type { MetadataRoute } from 'next';
 import { aboutPath, blogPath, legalKeys, legalPaths, postKeys, postPath, serviceKeys, servicePath } from './lib/routes';
-import { getPost } from './lib/blog';
+import { getPost, getPosts } from './lib/blog';
+import { servicesUpdated } from './lib/services';
 import { site } from './lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
+  const servicesDate = new Date(servicesUpdated.iso);
+  // La home se actualiza cuando lo hace el contenido más reciente.
+  const newestPost = getPosts('en').map((p) => new Date(p.updated)).sort((a, b) => b.getTime() - a.getTime())[0] ?? servicesDate;
   const url = (path: string) => `${site.url}${path}`;
 
   const homeLanguages = { en: url('/'), es: url('/es') };
@@ -13,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const languages = { en: url(servicePath(key, 'en')), es: url(servicePath(key, 'es')) };
     return (['en', 'es'] as const).map((lang) => ({
       url: url(servicePath(key, lang)),
-      lastModified,
+      lastModified: servicesDate,
       changeFrequency: 'monthly' as const,
       priority: 0.9,
       alternates: { languages },
@@ -35,7 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const blog = [
     ...(['en', 'es'] as const).map((lang) => ({
       url: url(blogPath[lang]),
-      lastModified,
+      lastModified: newestPost,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
       alternates: { languages: blogLanguages },
@@ -55,15 +59,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const aboutLanguages = { en: url(aboutPath.en), es: url(aboutPath.es) };
   const aboutPages = (['en', 'es'] as const).map((lang) => ({
     url: url(aboutPath[lang]),
-    lastModified,
+    lastModified: servicesDate,
     changeFrequency: 'monthly' as const,
     priority: 0.6,
     alternates: { languages: aboutLanguages },
   }));
 
   return [
-    { url: url('/'), lastModified, changeFrequency: 'monthly', priority: 1, alternates: { languages: homeLanguages } },
-    { url: url('/es'), lastModified, changeFrequency: 'monthly', priority: 1, alternates: { languages: homeLanguages } },
+    { url: url('/'), lastModified: newestPost, changeFrequency: 'monthly', priority: 1, alternates: { languages: homeLanguages } },
+    { url: url('/es'), lastModified: newestPost, changeFrequency: 'monthly', priority: 1, alternates: { languages: homeLanguages } },
     ...services,
     ...aboutPages,
     ...blog,

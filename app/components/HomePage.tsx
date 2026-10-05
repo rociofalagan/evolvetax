@@ -7,7 +7,8 @@ import ContactSection from './ContactSection';
 import DiagnosisSection from './DiagnosisSection';
 import { Check, DarkBackdrop, Eyebrow, FaqList, SectionHeading, Title } from './ui';
 import { dictionaries, type Lang } from '../lib/i18n';
-import { aboutPath, servicePath } from '../lib/routes';
+import { aboutPath, blogPath, postPath, servicePath } from '../lib/routes';
+import { categories, formatDate, getPosts } from '../lib/blog';
 import { homeSchema } from '../lib/schema';
 import { site } from '../lib/site';
 
@@ -33,6 +34,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
       <Services t={t.services} lang={lang} />
       <Process t={t.process} />
       <Faq t={t.faq} />
+      <Insights t={t.insights} lang={lang} />
       <DiagnosisSection lang={lang} />
       <ContactSection lang={lang} />
     </main>
@@ -281,6 +283,60 @@ function Services({ t, lang }: { t: D['services']; lang: Lang }) {
             <span className="transition-transform group-hover:translate-x-1">→</span>
           </AnchorLink>
         </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function Insights({ t, lang }: { t: D['insights']; lang: Lang }) {
+  const posts = getPosts(lang).slice(0, 3);
+
+  return (
+    <section id="insights" className="bg-cream px-6 py-24 sm:py-32">
+      <div className="mx-auto max-w-6xl">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <Reveal className="max-w-2xl">
+            <Eyebrow>{t.eyebrow}</Eyebrow>
+            <Title value={t.title} className="mt-5" />
+            <p className="mt-5 text-lg leading-relaxed text-muted">{t.text}</p>
+          </Reveal>
+          <Reveal className="shrink-0">
+            <Link
+              href={blogPath[lang]}
+              className="group inline-flex items-center gap-2 text-sm font-semibold text-wine underline decoration-wine/30 underline-offset-4 hover:decoration-wine"
+            >
+              {t.all}
+              <span className="transition-transform group-hover:translate-x-1">→</span>
+            </Link>
+          </Reveal>
+        </div>
+
+        <div className="mt-14 grid gap-5 md:grid-cols-3">
+          {posts.map((post, i) => (
+            <Reveal
+              as="article"
+              key={post.key}
+              delay={i * 80}
+              className="group relative flex flex-col rounded-3xl border border-line bg-white p-7 transition-all duration-500 hover:-translate-y-1 hover:border-wine/30 hover:shadow-[0_30px_70px_-40px_rgba(22,18,17,0.35)]"
+            >
+              <div className="flex items-center gap-3 text-xs font-medium text-muted">
+                <span className="rounded-full bg-rose px-3 py-1 text-wine">{categories[post.category][lang]}</span>
+                <span>
+                  {post.readingMinutes} {t.minRead}
+                </span>
+              </div>
+              <h3 className="mt-5 text-lg font-bold leading-snug tracking-tight">
+                <Link href={postPath(post.key, lang)} className="after:absolute after:inset-0 after:content-['']">
+                  {post.title}
+                </Link>
+              </h3>
+              <p className="mt-3 flex-1 text-[15px] leading-relaxed text-muted">{post.excerpt}</p>
+              <time dateTime={post.published} className="mt-6 text-xs text-muted/70">
+                {formatDate(post.published, lang)}
+              </time>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );

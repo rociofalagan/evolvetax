@@ -54,6 +54,14 @@ export default function ContactSection({
                 {t.booking}
               </a>
             )}
+            {site.phone && (
+              <a
+                href={`tel:${site.phone}`}
+                className="rounded-xl border border-ink/15 px-5 py-3 font-medium transition-colors hover:border-wine hover:text-wine"
+              >
+                {site.phoneDisplay}
+              </a>
+            )}
             <a
               href={`mailto:${site.email}`}
               className="rounded-xl border border-ink/15 px-5 py-3 font-medium transition-colors hover:border-wine hover:text-wine"

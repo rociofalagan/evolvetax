@@ -109,6 +109,13 @@ const en = {
       { title: 'Ongoing support', text: 'Bookkeeping, taxes and periodic reviews so your structure keeps working as you grow.' },
     ],
   },
+  insights: {
+    eyebrow: 'Guides',
+    title: { lead: 'Read before', accent: 'you decide.' } as Accent,
+    text: 'Practical guides on taxes in the UAE and Spain, international structures, VAT and tax residency.',
+    all: 'See all guides',
+    minRead: 'min read',
+  },
   faq: {
     eyebrow: 'FAQ',
     title: { lead: 'What people', accent: 'ask us.' } as Accent,
@@ -311,6 +318,13 @@ const es: Dictionary = {
       { title: 'Implantación', text: 'Ponemos en marcha la estructura: sociedad, residencia, cuentas y sistema contable.' },
       { title: 'Acompañamiento', text: 'Contabilidad, impuestos y revisiones periódicas para que la estructura siga funcionando mientras creces.' },
     ],
+  },
+  insights: {
+    eyebrow: 'Guías',
+    title: { lead: 'Lee antes', accent: 'de decidir.' },
+    text: 'Guías prácticas sobre impuestos en Emiratos y España, estructuras internacionales, IVA y residencia fiscal.',
+    all: 'Ver todas las guías',
+    minRead: 'min de lectura',
   },
   faq: {
     eyebrow: 'Preguntas frecuentes',
