@@ -66,7 +66,7 @@ export const legalDocs: Record<LegalKey, Record<Lang, LegalDoc>> = {
   notice: {
     es: {
       title: 'Aviso legal',
-      description: 'Información corporativa de Evolve Tax y condiciones de uso del sitio web.',
+      description: 'Información corporativa de Evolve Tax (Evolve Blueprint Consulting FZCO, licencia 62485) y condiciones de uso de evolvetaxdubai.com.',
       lead: 'Información corporativa y condiciones de uso del sitio web.',
       sections: [
         {
@@ -281,7 +281,7 @@ export const legalDocs: Record<LegalKey, Record<Lang, LegalDoc>> = {
     },
     en: {
       title: 'Legal notice',
-      description: 'Corporate information about Evolve Tax and terms of use of the website.',
+      description: 'Corporate information about Evolve Tax (Evolve Blueprint Consulting FZCO, licence 62485) and the terms of use of evolvetaxdubai.com.',
       lead: 'Corporate information and terms of use of the website.',
       sections: [
         {
@@ -502,7 +502,7 @@ export const legalDocs: Record<LegalKey, Record<Lang, LegalDoc>> = {
   privacy: {
     es: {
       title: 'Política de privacidad',
-      description: 'Cómo Evolve Tax recopila, utiliza y protege tus datos personales.',
+      description: 'Cómo Evolve Tax recopila, usa, conserva y protege tus datos personales, con quién los comparte y cómo ejercer tus derechos de protección de datos.',
       lead: 'Conoce cómo tratamos y protegemos tus datos personales.',
       sections: [
         {
@@ -698,7 +698,7 @@ export const legalDocs: Record<LegalKey, Record<Lang, LegalDoc>> = {
     },
     en: {
       title: 'Privacy policy',
-      description: 'How Evolve Tax collects, uses and protects your personal data.',
+      description: 'How Evolve Tax collects, uses, stores and protects your personal data, who we share it with and how to exercise your data protection rights.',
       lead: 'Learn how we process and protect your personal data.',
       sections: [
         {
@@ -900,7 +900,7 @@ export const legalDocs: Record<LegalKey, Record<Lang, LegalDoc>> = {
   terms: {
     es: {
       title: 'Términos y condiciones',
-      description: 'Términos y condiciones que rigen el uso del sitio web y la contratación de los servicios de Evolve Tax.',
+      description: 'Términos que rigen el uso de la web de Evolve Tax y la contratación de nuestros servicios de asesoría fiscal internacional, honorarios y responsabilidad.',
       lead: 'Conoce los términos que rigen el uso de nuestra web y de nuestros servicios.',
       sections: [
         {
@@ -1177,7 +1177,7 @@ export const legalDocs: Record<LegalKey, Record<Lang, LegalDoc>> = {
     },
     en: {
       title: 'Terms and conditions',
-      description: 'Terms and conditions governing the use of the website and the engagement of Evolve Tax services.',
+      description: 'The terms that govern the use of the Evolve Tax website and the engagement of our international tax advisory services, fees and liability.',
       lead: 'The terms that govern the use of our website and our services.',
       sections: [
         {
@@ -1460,7 +1460,7 @@ export const legalDocs: Record<LegalKey, Record<Lang, LegalDoc>> = {
   cookies: {
     es: {
       title: 'Política de cookies',
-      description: 'Qué cookies utiliza el sitio web de Evolve Tax y cómo puedes gestionarlas.',
+      description: 'Qué cookies utiliza la web de Evolve Tax (ahora mismo ninguna analítica ni publicitaria) y cómo gestionarlas desde tu navegador.',
       lead: 'Conoce qué cookies utilizamos y cómo gestionarlas.',
       sections: [
         {
@@ -1595,7 +1595,7 @@ export const legalDocs: Record<LegalKey, Record<Lang, LegalDoc>> = {
     },
     en: {
       title: 'Cookie policy',
-      description: 'Which cookies the Evolve Tax website uses and how you can manage them.',
+      description: 'Which cookies the Evolve Tax website uses — currently none for analytics or advertising — and how to manage them from your browser.',
       lead: 'Learn which cookies we use and how to manage them.',
       sections: [
         {

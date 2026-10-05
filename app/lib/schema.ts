@@ -1,6 +1,7 @@
 import { dictionaries, homePath, type Lang } from './i18n';
-import { blogPath, legalPaths, postPath, serviceKeys, servicePath, type PostKey, type ServiceKey } from './routes';
+import { aboutPath, blogPath, legalPaths, postPath, serviceKeys, servicePath, type PostKey, type ServiceKey } from './routes';
 import { blogUi, categories, getPost, getPosts } from './blog';
+import { about } from './about';
 import { services, servicesUpdated } from './services';
 import { site } from './site';
 
@@ -25,7 +26,25 @@ function organization(lang: Lang) {
     image: `${site.url}/evolvetaxwhite.jpg`,
     email: site.email,
     description: t.meta.description,
-    address: { '@type': 'PostalAddress', addressLocality: 'Dubai', addressCountry: 'AE' },
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: site.address.street,
+      addressLocality: site.address.city,
+      addressCountry: site.address.country,
+    },
+    ...(site.phone ? { telephone: site.phone } : {}),
+    identifier: `Trade licence ${site.licence}`,
+    availableLanguage: ['en', 'es'],
+    knowsAbout: [
+      'International tax planning',
+      'UAE Corporate Tax',
+      'Business setup in Dubai',
+      'Free zone company formation',
+      'Tax residency',
+      'Spanish personal and corporate tax',
+      'Beckham Law',
+      'VAT for digital businesses',
+    ],
     areaServed: [
       { '@type': 'Country', name: 'United Arab Emirates' },
       { '@type': 'Country', name: 'Spain' },
@@ -241,6 +260,38 @@ export function blogPostSchema(key: PostKey, lang: Lang) {
         ],
       },
       faqPage(url, lang, post.faq),
+    ],
+  };
+}
+
+
+export function aboutSchema(lang: Lang) {
+  const t = about[lang];
+  const url = abs(aboutPath[lang]);
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organization(lang),
+      founder(lang),
+      website,
+      {
+        '@type': 'AboutPage',
+        '@id': `${url}#webpage`,
+        url,
+        name: t.meta.title,
+        description: t.meta.description,
+        inLanguage: lang,
+        isPartOf: { '@id': websiteId },
+        about: { '@id': orgId },
+        mainEntity: { '@id': founderId },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: t.breadcrumb === 'About' ? 'Home' : 'Inicio', item: abs(homePath[lang]) },
+          { '@type': 'ListItem', position: 2, name: t.breadcrumb, item: url },
+        ],
+      },
     ],
   };
 }

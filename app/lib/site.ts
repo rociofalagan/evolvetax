@@ -11,6 +11,14 @@ export const site = {
   founderName: 'Rocío Falagán',
   founderPhoto: '/founder-evolve-tax.jpg',
   bookingUrl: '',
+  // Teléfono de contacto para la ficha de empresa (Google). Si está vacío, no se publica.
+  phone: '',
+  licence: '62485',
+  address: {
+    street: 'Building A1, IFZA Business Park, Dubai Silicon Oasis',
+    city: 'Dubai',
+    country: 'AE',
+  },
   // Diagnóstico inicial (pago con Stripe). Si la URL está vacía, el botón lleva al formulario.
   diagnosis: { url: 'https://buy.stripe.com/9B600icfmfIU9um8dW3Ru0x', price: 397, currency: 'USD' },
 };

@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import AnchorLink from './AnchorLink';
 import { dictionaries, homePath, type Lang } from '../lib/i18n';
-import { legalKeys, legalPaths, serviceKeys, servicePath } from '../lib/routes';
+import { aboutPath, legalKeys, legalPaths, serviceKeys, servicePath } from '../lib/routes';
 import { legalDocs } from '../lib/legal';
+import { about } from '../lib/about';
 import { services } from '../lib/services';
 import { site } from '../lib/site';
 
@@ -37,6 +38,7 @@ export default function Footer({ lang }: { lang: Lang }) {
             {dict.nav.items.map((item) => (
               <FooterLink key={item.name} href={item.href ?? `${base}#${item.id}`}>{item.name}</FooterLink>
             ))}
+            <FooterLink href={aboutPath[lang]}>{about[lang].breadcrumb}</FooterLink>
             <FooterLink href={`${base}#contact`}>{t.contact}</FooterLink>
           </FooterColumn>
 

@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from 'next';
 import { dictionaries, type Lang } from './i18n';
 import { site } from './site';
-import { blogPath, legalPaths, postPath, servicePath, type LegalKey, type PostKey, type ServiceKey } from './routes';
+import { aboutPath, blogPath, legalPaths, postPath, servicePath, type LegalKey, type PostKey, type ServiceKey } from './routes';
 import { legalDocs } from './legal';
 import { blogUi, getPost } from './blog';
+import { about } from './about';
 import { services } from './services';
 
 export const viewport: Viewport = {
@@ -95,7 +96,7 @@ export function blogPostMetadata(key: PostKey, lang: Lang): Metadata {
   const title = `${post.metaTitle}`;
   return {
     title: { absolute: title },
-    description: post.excerpt,
+    description: post.metaDescription ?? post.excerpt,
     authors: [{ name: site.founderName, url: site.linkedinFounder }],
     keywords: post.tags,
     alternates: {
@@ -105,13 +106,25 @@ export function blogPostMetadata(key: PostKey, lang: Lang): Metadata {
     openGraph: {
       type: 'article',
       title,
-      description: post.excerpt,
+      description: post.metaDescription ?? post.excerpt,
       url: postPath(key, lang),
       publishedTime: post.published,
       modifiedTime: post.updated,
       authors: [site.founderName],
       tags: post.tags,
     },
-    twitter: { card: 'summary_large_image', title, description: post.excerpt },
+    twitter: { card: 'summary_large_image', title, description: post.metaDescription ?? post.excerpt },
+  };
+}
+
+// Metadatos de la página "quiénes somos".
+export function aboutMetadata(lang: Lang): Metadata {
+  const t = about[lang].meta;
+  return {
+    title: { absolute: t.title },
+    description: t.description,
+    alternates: { canonical: aboutPath[lang], languages: { en: aboutPath.en, es: aboutPath.es, 'x-default': aboutPath.en } },
+    openGraph: { title: t.title, description: t.description, url: aboutPath[lang] },
+    twitter: { card: 'summary_large_image', title: t.title, description: t.description },
   };
 }

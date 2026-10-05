@@ -7,7 +7,7 @@ import ContactSection from './ContactSection';
 import DiagnosisSection from './DiagnosisSection';
 import { Check, DarkBackdrop, Eyebrow, FaqList, SectionHeading, Title } from './ui';
 import { dictionaries, type Lang } from '../lib/i18n';
-import { servicePath } from '../lib/routes';
+import { aboutPath, servicePath } from '../lib/routes';
 import { homeSchema } from '../lib/schema';
 import { site } from '../lib/site';
 
@@ -28,7 +28,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
     <main className="overflow-x-clip">
       <JsonLd data={homeSchema(lang)} />
       <Hero t={t.hero} />
-      <About t={t.about} />
+      <About t={t.about} lang={lang} />
       <Audience t={t.audience} />
       <Services t={t.services} lang={lang} />
       <Process t={t.process} />
@@ -133,7 +133,7 @@ function Hero({ t }: { t: D['hero'] }) {
   );
 }
 
-function About({ t }: { t: D['about'] }) {
+function About({ t, lang }: { t: D['about']; lang: Lang }) {
   return (
     <section id="about" className="relative bg-paper px-6 py-24 sm:py-32">
       <div className="mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
@@ -166,6 +166,12 @@ function About({ t }: { t: D['about'] }) {
                 {p}
               </p>
             ))}
+          </Reveal>
+
+          <Reveal delay={120}>
+            <Link href={aboutPath[lang]} className="mt-6 inline-block font-semibold text-wine underline decoration-wine/30 underline-offset-4 hover:decoration-wine">
+              {t.moreAbout} →
+            </Link>
           </Reveal>
 
           <ul className="mt-10 overflow-hidden rounded-2xl border border-line bg-white">

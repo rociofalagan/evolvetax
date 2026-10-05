@@ -45,6 +45,9 @@ export const legalPaths: Record<LegalKey, Record<Lang, string>> = {
   cookies: { en: '/cookie-policy', es: '/es/cookies' },
 };
 
+// Página "quiénes somos".
+export const aboutPath: Record<Lang, string> = { en: '/about', es: '/es/sobre-nosotros' };
+
 // Blog: índice y artículos en cada idioma.
 export const blogPath: Record<Lang, string> = { en: '/blog', es: '/es/blog' };
 
@@ -71,6 +74,7 @@ export function findPostKey(slug: string, lang: Lang): PostKey | undefined {
 
 // Página equivalente en el otro idioma (para el selector EN | ES y hreflang).
 export function alternatePath(pathname: string, target: Lang): string {
+  if (pathname === aboutPath.en || pathname === aboutPath.es) return aboutPath[target];
   if (pathname === blogPath.en || pathname === blogPath.es) return blogPath[target];
   for (const key of postKeys) {
     if (pathname === postPath(key, 'en') || pathname === postPath(key, 'es')) {

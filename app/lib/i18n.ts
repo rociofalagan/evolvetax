@@ -15,9 +15,9 @@ export type NavItem = { name: string; id?: string; href?: string };
 
 const en = {
   meta: {
-    title: 'International Tax Advisory for Digital Entrepreneurs | Evolve Tax',
+    title: 'International Tax Advisory for Digital Business | Evolve Tax',
     description:
-      'International tax advisory for digital entrepreneurs: tax structuring, company setup in Dubai, tax management in Spain and the UAE, residency changes and the Beckham Law.',
+      'International tax advisory for digital entrepreneurs: structuring, company setup in Dubai, tax management in Spain and the UAE, and residency changes.',
     ogAlt: 'Evolve Tax — International tax advisory for digital businesses',
     locale: 'en_GB',
   },
@@ -66,6 +66,7 @@ const en = {
       { title: 'Strategy, not paperwork', text: 'We don’t just fill in forms: we design structures that grow with you.' },
       { title: 'At your pace', text: 'No endless meetings or unnecessary bureaucracy. Clear, fast answers.' },
     ],
+    moreAbout: 'More about Rocío and the firm',
     photoAlt: 'Rocío Falagán, founder of Evolve Tax',
     role: 'Founder',
   },
@@ -217,9 +218,9 @@ export type Dictionary = typeof en;
 
 const es: Dictionary = {
   meta: {
-    title: 'Asesoría fiscal internacional para emprendedores digitales | Evolve Tax',
+    title: 'Asesoría fiscal internacional en Dubái y España | Evolve Tax',
     description:
-      'Asesoría fiscal internacional para emprendedores digitales: estructuración, empresas en Dubái, gestión fiscal en España y Emiratos, cambios de residencia y régimen Beckham.',
+      'Asesoría fiscal internacional para emprendedores digitales: estructuración, empresas en Dubái, gestión fiscal en España y Emiratos y residencia fiscal.',
     ogAlt: 'Evolve Tax — Asesoría fiscal internacional para negocios digitales',
     locale: 'es_ES',
   },
@@ -268,6 +269,7 @@ const es: Dictionary = {
       { title: 'Estrategia, no trámites', text: 'No rellenamos formularios: diseñamos estructuras que crecen contigo.' },
       { title: 'A tu ritmo', text: 'Sin reuniones eternas ni burocracia innecesaria. Respuestas claras y rápidas.' },
     ],
+    moreAbout: 'Más sobre Rocío y la asesoría',
     photoAlt: 'Rocío Falagán, fundadora de Evolve Tax',
     role: 'Fundadora',
   },

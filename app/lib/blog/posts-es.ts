@@ -5,7 +5,9 @@ import type { PostContent } from './types';
 export const postsEs: Record<PostKey, PostContent> = {
   /* ------------------------------------------------------------------ */
   uaeTax: {
-    metaTitle: 'Sistema fiscal de Emiratos 2026: Corporate Tax, IVA e impuestos personales',
+    metaTitle: 'Sistema fiscal de Emiratos 2026: Corporate Tax e IVA',
+    metaDescription:
+      'Corporate Tax, IVA, reglas de las free zones y lo que sigue sin tributar en Emiratos en 2026, explicado para quien opera su negocio desde Dubái.',
     title: 'El sistema fiscal de Emiratos en 2026: Corporate Tax, IVA y lo que sigue sin tributar',
     excerpt:
       'Emiratos ya no es una jurisdicción sin impuestos para las empresas. Así funcionan hoy el Corporate Tax, el régimen de las free zones, el IVA y la tributación personal, y qué implica si tienes un negocio digital.',
@@ -81,6 +83,8 @@ export const postsEs: Record<PostKey, PostContent> = {
   /* ------------------------------------------------------------------ */
   beckham: {
     metaTitle: 'Ley Beckham 2026: requisitos, tipos y cómo solicitarla',
+    metaDescription:
+      'Quién puede acogerse a la Ley Beckham tras la reforma de 2023, el tipo fijo del 24 %, qué rentas extranjeras quedan fuera y el plazo de seis meses.',
     title: 'Ley Beckham en España: requisitos, tipos y cómo solicitarla',
     excerpt:
       'La Ley Beckham permite a quien se muda a España tributar a un tipo fijo del 24 % por sus rendimientos del trabajo durante hasta seis años. Te explicamos quién puede acogerse tras la reforma de 2023, cómo tributan las rentas y el plazo que no puedes saltarte.',
@@ -164,7 +168,9 @@ export const postsEs: Record<PostKey, PostContent> = {
 
   /* ------------------------------------------------------------------ */
   llc: {
-    metaTitle: 'LLC en Estados Unidos: transparencia fiscal e impuestos para no residentes',
+    metaTitle: 'LLC en EE. UU.: transparencia fiscal y no residentes',
+    metaDescription:
+      'Una LLC americana suele ser transparente: Estados Unidos puede no gravarla, pero tu país de residencia sí te grava a ti. Qué implica en España.',
     title: 'LLC en Estados Unidos: por qué es fiscalmente transparente y no te libra de pagar impuestos',
     excerpt:
       'Muchos emprendedores abren una LLC americana pensando que así no pagan impuestos. En realidad, la LLC suele ser transparente: Estados Unidos no la grava, pero tu país de residencia te grava a ti. Te explicamos cómo funciona y qué vigilar.',
@@ -225,7 +231,9 @@ export const postsEs: Record<PostKey, PostContent> = {
 
   /* ------------------------------------------------------------------ */
   digitalVat: {
-    metaTitle: 'IVA en productos digitales y cursos online: UE, Reino Unido y Emiratos',
+    metaTitle: 'IVA en productos digitales y cursos online (UE, UK, EAU)',
+    metaDescription:
+      'Dónde se paga el IVA al vender e-books, software o cursos online: reglas de la UE, Reino Unido y Emiratos, el umbral de 10.000 € y la ventanilla única.',
     title: 'IVA en productos digitales y cursos online: cómo funciona en la UE, Reino Unido y Emiratos',
     excerpt:
       'Si vendes e-books, plantillas, software o cursos online, el IVA depende de dónde está tu cliente, no de dónde está tu empresa. Te explicamos las reglas de la UE, Reino Unido y Emiratos, la ventanilla única (OSS) y los errores que más caros salen.',
@@ -308,7 +316,9 @@ export const postsEs: Record<PostKey, PostContent> = {
 
   /* ------------------------------------------------------------------ */
   dubaiInSpain: {
-    metaTitle: '¿Tributa en España una empresa de Dubái? La sede de dirección efectiva',
+    metaTitle: '¿Tributa en España una empresa de Dubái? Guía 2026',
+    metaDescription:
+      'Una empresa de Dubái dirigida desde España puede tributar en España. Cómo funcionan la sede de dirección efectiva, el establecimiento permanente y la TFI.',
     title: '¿Tributa en España una empresa de Dubái? La sede de dirección efectiva explicada',
     excerpt:
       'Montar una empresa en Dubái mientras vives en España es una de las estructuras más habituales, y más arriesgadas, entre emprendedores digitales. Te explicamos cuándo tributa la sociedad en España y cómo saber si tu estructura se sostiene.',
@@ -366,7 +376,9 @@ export const postsEs: Record<PostKey, PostContent> = {
 
   /* ------------------------------------------------------------------ */
   freeZone: {
-    metaTitle: 'Free zone o mainland en Dubái: qué empresa te conviene',
+    metaTitle: 'Free zone o mainland en Dubái: cuál te conviene',
+    metaDescription:
+      'Free zone o mainland en Dubái: dónde puedes operar, cuánto cuesta cada opción, visados, oficina y cómo les afecta el Corporate Tax.',
     title: 'Free zone o mainland en Dubái: qué tipo de empresa te conviene',
     excerpt:
       'Las sociedades de free zone y de mainland se diferencian en dónde pueden operar, cuánto cuestan, cuántos visados permiten y cómo les afecta el Corporate Tax. Así puedes elegir la opción adecuada para un negocio digital o internacional.',
@@ -428,6 +440,8 @@ export const postsEs: Record<PostKey, PostContent> = {
   /* ------------------------------------------------------------------ */
   dubaiCost: {
     metaTitle: 'Cuánto cuesta crear una empresa en Dubái en 2026',
+    metaDescription:
+      'Una sociedad de free zone con un visado suele costar 15.000–20.000 AED el primer año. Qué cubre cada línea y qué dejan fuera casi todos los presupuestos.',
     title: '¿Cuánto cuesta crear una empresa en Dubái?',
     excerpt:
       'Una sociedad de free zone con un visado de residencia suele costar entre 15.000 y 20.000 AED el primer año. Te explicamos qué significa cada línea del presupuesto, qué falta en la mayoría y qué se paga cada año.',

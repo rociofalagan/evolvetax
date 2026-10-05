@@ -88,7 +88,7 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
     en: {
       name: 'International tax structuring',
       meta: {
-        title: 'International Tax Structuring for Digital Businesses | Evolve Tax',
+        title: 'International Tax Structuring for Founders | Evolve Tax',
         description:
           'International tax structuring for digital entrepreneurs and online businesses: tax residency, company structure and jurisdiction comparison with real numbers.',
       },
@@ -175,9 +175,9 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
     es: {
       name: 'Estructuración fiscal internacional',
       meta: {
-        title: 'Estructuración fiscal internacional para negocios digitales | Evolve Tax',
+        title: 'Estructuración fiscal internacional | Evolve Tax',
         description:
-          'Estructuración fiscal internacional para emprendedores y negocios digitales: residencia fiscal, estructura societaria y comparativa de jurisdicciones con números reales.',
+          'Estructuración fiscal internacional para negocios digitales: residencia fiscal, estructura societaria y comparativa de jurisdicciones con números reales.',
       },
       hero: {
         eyebrow: 'Servicio · Estructuración fiscal internacional',
@@ -268,9 +268,9 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
     en: {
       name: 'Business setup in Dubai',
       meta: {
-        title: 'Business Setup in Dubai: Company Formation Services | Evolve Tax',
+        title: 'Business Setup in Dubai: Company Formation | Evolve Tax',
         description:
-          'Business setup in Dubai with a licensed tax adviser: free zone or mainland licence in about 14 days, residence visa, bank account and Corporate Tax registration.',
+          'Business setup in Dubai with a licensed tax adviser: free zone or mainland licence in about 14 days, residence visa, bank account and tax registrations.',
       },
       hero: {
         eyebrow: 'Service · Business setup in Dubai',
@@ -466,9 +466,9 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
     es: {
       name: 'Incorporación de empresas en Dubái',
       meta: {
-        title: 'Crear empresa en Dubái: constitución y licencias | Evolve Tax',
+        title: 'Crear empresa en Dubái: licencia y visado | Evolve Tax',
         description:
-          'Crear empresa en Dubái con una asesora fiscal, no solo con un agente: licencia de free zone o mainland en unos 14 días, visado de residencia, cuenta bancaria y alta en el Corporate Tax.',
+          'Crear empresa en Dubái con asesoría fiscal: licencia de free zone o mainland en unos 14 días, visado de residencia, cuenta bancaria y altas fiscales.',
       },
       hero: {
         eyebrow: 'Servicio · Incorporación de empresas en Dubái',
@@ -755,7 +755,7 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
     es: {
       name: 'Gestión fiscal en Dubái',
       meta: {
-        title: 'Gestión fiscal en Dubái: contabilidad, Corporate Tax e IVA | Evolve Tax',
+        title: 'Gestión fiscal en Dubái: Corporate Tax e IVA | Evolve Tax',
         description:
           'Gestión fiscal para empresas en Dubái y Emiratos: contabilidad, Corporate Tax e IVA, con registros, declaraciones y plazos bajo control.',
       },
@@ -851,7 +851,7 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
       meta: {
         title: 'Tax Advisor in Spain for Digital Entrepreneurs | Evolve Tax',
         description:
-          'Tax advice and management in Spain for freelancers, companies and digital businesses: quarterly and annual returns, international invoicing, Form 720 and tax authority requests.',
+          'Tax advice in Spain for freelancers, companies and online businesses: quarterly and annual returns, international invoicing and Form 720.',
       },
       hero: {
         eyebrow: 'Service · Tax management in Spain',
@@ -937,9 +937,9 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
     es: {
       name: 'Gestión fiscal en España',
       meta: {
-        title: 'Asesoría fiscal en España para negocios digitales | Evolve Tax',
+        title: 'Asesoría fiscal en España para negocios online | Evolve Tax',
         description:
-          'Asesoría y gestión fiscal en España para autónomos, sociedades y negocios digitales: declaraciones trimestrales y anuales, facturación internacional, modelo 720 y requerimientos de Hacienda.',
+          'Asesoría fiscal en España para autónomos, sociedades y negocios digitales: declaraciones trimestrales y anuales, facturación internacional y modelo 720.',
       },
       hero: {
         eyebrow: 'Servicio · Gestión fiscal en España',
@@ -1033,7 +1033,7 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
       meta: {
         title: 'Changing Tax Residency to or from Spain | Evolve Tax',
         description:
-          'Leaving Spain for Dubai or another country, or moving to Spain? We analyse your tax residency, tax treaties, exit tax and the Beckham Law so the change holds up.',
+          'Leaving Spain or moving to it? We analyse your tax residency, tax treaties, exit tax and the Beckham Law so the change holds up.',
       },
       hero: {
         eyebrow: 'Service · Change of tax residency',
@@ -1119,9 +1119,9 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
     es: {
       name: 'Cambio de residencia fiscal',
       meta: {
-        title: 'Cambio de residencia fiscal: salir o llegar a España | Evolve Tax',
+        title: 'Cambio de residencia fiscal España–Dubái | Evolve Tax',
         description:
-          '¿Te vas de España a Dubái u otro país, o te mudas a España? Analizamos tu residencia fiscal, los convenios, el exit tax y el régimen Beckham para que el cambio aguante.',
+          '¿Te vas de España o te mudas a ella? Analizamos tu residencia fiscal, los convenios, el exit tax y el régimen Beckham para que el cambio aguante.',
       },
       hero: {
         eyebrow: 'Servicio · Cambio de residencia fiscal',
@@ -1301,7 +1301,7 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
     es: {
       name: 'Régimen Beckham',
       meta: {
-        title: 'Régimen Beckham: tributar como impatriado en España | Evolve Tax',
+        title: 'Régimen Beckham: asesoría para impatriados | Evolve Tax',
         description:
           '¿Te mudas a España? Comprobamos si puedes acogerte al régimen Beckham, presentamos la solicitud en plazo y llevamos tus declaraciones como impatriado.',
       },

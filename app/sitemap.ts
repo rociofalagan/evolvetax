@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { blogPath, legalKeys, legalPaths, postKeys, postPath, serviceKeys, servicePath } from './lib/routes';
+import { aboutPath, blogPath, legalKeys, legalPaths, postKeys, postPath, serviceKeys, servicePath } from './lib/routes';
 import { getPost } from './lib/blog';
 import { site } from './lib/site';
 
@@ -52,10 +52,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }),
   ];
 
+  const aboutLanguages = { en: url(aboutPath.en), es: url(aboutPath.es) };
+  const aboutPages = (['en', 'es'] as const).map((lang) => ({
+    url: url(aboutPath[lang]),
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+    alternates: { languages: aboutLanguages },
+  }));
+
   return [
     { url: url('/'), lastModified, changeFrequency: 'monthly', priority: 1, alternates: { languages: homeLanguages } },
     { url: url('/es'), lastModified, changeFrequency: 'monthly', priority: 1, alternates: { languages: homeLanguages } },
     ...services,
+    ...aboutPages,
     ...blog,
     ...legal,
   ];

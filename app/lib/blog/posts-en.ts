@@ -5,7 +5,9 @@ import type { PostContent } from './types';
 export const postsEn: Record<PostKey, PostContent> = {
   /* ------------------------------------------------------------------ */
   uaeTax: {
-    metaTitle: 'UAE Tax System 2026: Corporate Tax, VAT & Personal Tax Guide',
+    metaTitle: 'UAE Tax System 2026: Corporate Tax, VAT & Free Zones',
+    metaDescription:
+      'Corporate Tax, VAT, free zone rules and what is still tax-free in the UAE in 2026, explained for founders running a business from Dubai.',
     title: 'The UAE tax landscape in 2026: Corporate Tax, VAT and what is still tax-free',
     excerpt:
       'The UAE is no longer a zero-tax jurisdiction for companies. Here is how Corporate Tax, the free zone regime, VAT and personal taxation work today — and what it means if you run a digital business.',
@@ -80,7 +82,9 @@ export const postsEn: Record<PostKey, PostContent> = {
 
   /* ------------------------------------------------------------------ */
   beckham: {
-    metaTitle: 'Beckham Law Spain 2026: Requirements, Tax Rates & How to Apply',
+    metaTitle: 'Beckham Law Spain 2026: Requirements, Rates & Deadline',
+    metaDescription:
+      'Who qualifies for Spain’s Beckham Law after the 2023 reform, the 24% flat rate, what foreign income stays out and the six-month deadline to apply.',
     title: 'Spain’s Beckham Law: requirements, tax rates and how to apply',
     excerpt:
       'The Beckham Law lets people who move to Spain pay a flat 24% on their employment income for up to six years. We explain who can apply after the 2023 reform, how income is taxed and the deadline you cannot miss.',
@@ -164,7 +168,9 @@ export const postsEn: Record<PostKey, PostContent> = {
 
   /* ------------------------------------------------------------------ */
   llc: {
-    metaTitle: 'US LLC Taxes for Non-Residents: Why LLCs Are Tax-Transparent',
+    metaTitle: 'US LLC Taxes for Non-Residents: Tax Transparency',
+    metaDescription:
+      'A US LLC is usually tax-transparent: the US may not tax it, but your country of residence taxes you. What that means in Spain and elsewhere.',
     title: 'US LLCs are tax-transparent: why an LLC won’t make you tax-free',
     excerpt:
       'Many entrepreneurs set up a US LLC believing it means paying no tax. In reality, an LLC is usually transparent: the US doesn’t tax it, but your country of residence taxes you. Here is how it works and what to watch out for.',
@@ -225,7 +231,9 @@ export const postsEn: Record<PostKey, PostContent> = {
 
   /* ------------------------------------------------------------------ */
   digitalVat: {
-    metaTitle: 'VAT on Digital Products & Online Courses: EU, UK and UAE Guide',
+    metaTitle: 'VAT on Digital Products & Online Courses (EU, UK, UAE)',
+    metaDescription:
+      'Where VAT is due when you sell e-books, software or online courses: EU, UK and UAE rules, the €10,000 threshold and the OSS scheme.',
     title: 'VAT on digital products and online courses: EU, UK and UAE rules explained',
     excerpt:
       'If you sell e-books, templates, software or online courses, VAT depends on where your customer is, not where your company is. We explain the EU, UK and UAE rules, the OSS scheme and the mistakes that cost digital businesses the most.',
@@ -308,7 +316,9 @@ export const postsEn: Record<PostKey, PostContent> = {
 
   /* ------------------------------------------------------------------ */
   dubaiInSpain: {
-    metaTitle: 'Does a Dubai Company Pay Tax in Spain? Effective Management Explained',
+    metaTitle: 'Does a Dubai Company Pay Tax in Spain? (2026 Guide)',
+    metaDescription:
+      'A Dubai company managed from Spain can be taxed in Spain. How place of effective management, permanent establishment and CFC rules actually work.',
     title: 'Does a Dubai company pay tax in Spain? Place of effective management explained',
     excerpt:
       'Setting up a company in Dubai while living in Spain is one of the most common — and riskiest — structures among digital entrepreneurs. We explain when the company is taxed in Spain and how to tell whether your structure holds up.',
@@ -366,7 +376,9 @@ export const postsEn: Record<PostKey, PostContent> = {
 
   /* ------------------------------------------------------------------ */
   freeZone: {
-    metaTitle: 'Free Zone vs Mainland in Dubai: Which Company Should You Choose?',
+    metaTitle: 'Free Zone vs Mainland in Dubai: How to Choose',
+    metaDescription:
+      'Free zone or mainland in Dubai: where you can trade, what each costs, visas, offices and how Corporate Tax applies to both options.',
     title: 'Free zone or mainland in Dubai: which company should you set up?',
     excerpt:
       'Free zone and mainland companies differ in where they can trade, what they cost, how many visas they allow and how Corporate Tax applies. Here is how to choose the right option for a digital or international business.',
@@ -427,7 +439,9 @@ export const postsEn: Record<PostKey, PostContent> = {
 
   /* ------------------------------------------------------------------ */
   dubaiCost: {
-    metaTitle: 'How Much Does It Cost to Set Up a Company in Dubai? (2026)',
+    metaTitle: 'How Much Does It Cost to Set Up a Company in Dubai?',
+    metaDescription:
+      'A free zone company with one visa usually costs AED 15,000–20,000 in year one. What each line of the quote covers and what most quotes leave out.',
     title: 'How much does it cost to set up a company in Dubai?',
     excerpt:
       'A free zone company with one residence visa usually costs between AED 15,000 and AED 20,000 in its first year. Here is what each line of the quote means, what is missing from most of them and what you pay every year.',

@@ -8,10 +8,11 @@ import ShareButtons from './ShareButtons';
 import { toCard } from './BlogIndex';
 import { DarkBackdrop, FaqList } from '../ui';
 import { dictionaries, homePath, type Lang } from '../../lib/i18n';
-import { blogPath, postPath, servicePath, type PostKey } from '../../lib/routes';
+import { aboutPath, blogPath, postPath, servicePath, type PostKey } from '../../lib/routes';
 import { blogUi, categories, formatDate, getPost } from '../../lib/blog';
 import { blogPostSchema } from '../../lib/schema';
 import { services } from '../../lib/services';
+import { about } from '../../lib/about';
 import { site } from '../../lib/site';
 
 export default function BlogPost({ postKey, lang }: { postKey: PostKey; lang: Lang }) {
@@ -149,7 +150,12 @@ export default function BlogPost({ postKey, lang }: { postKey: PostKey; lang: La
                     {site.founderName}
                   </a>
                 </p>
-                <p className="mt-0.5 text-muted">{ui.authorBio}</p>
+                <p className="mt-0.5 text-muted">
+                  {ui.authorBio}{' '}
+                  <Link href={aboutPath[lang]} className="font-semibold text-wine underline decoration-wine/30 underline-offset-4 hover:decoration-wine">
+                    {about[lang].breadcrumb}
+                  </Link>
+                </p>
                 <p className="mt-1.5 text-xs text-muted/80">
                   {ui.published}: <time dateTime={post.published}>{formatDate(post.published, lang)}</time> · {ui.updated}:{' '}
                   <time dateTime={post.updated}>{formatDate(post.updated, lang)}</time>

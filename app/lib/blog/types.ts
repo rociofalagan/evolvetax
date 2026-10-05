@@ -15,6 +15,8 @@ export type CategoryKey = 'uae' | 'spain' | 'structures' | 'vat' | 'residency';
 
 export type PostContent = {
   metaTitle: string;
+  // Descripción para Google (si falta, se usa el resumen del artículo).
+  metaDescription?: string;
   title: string;
   excerpt: string;
   tags: string[];

@@ -60,7 +60,7 @@ export function formatDate(iso: string, lang: Lang) {
 
 export const blogUi = {
   en: {
-    metaTitle: 'Blog: International Tax Guides for Digital Businesses | Evolve Tax',
+    metaTitle: 'Blog: International Tax Guides for Founders | Evolve Tax',
     metaDescription:
       'Practical guides on international taxation for digital entrepreneurs: UAE Corporate Tax, the Beckham Law, US LLCs, VAT on digital products and tax residency.',
     eyebrow: 'Blog',
@@ -95,9 +95,9 @@ export const blogUi = {
     learnMore: 'Learn more',
   },
   es: {
-    metaTitle: 'Blog: guías de fiscalidad internacional para negocios digitales | Evolve Tax',
+    metaTitle: 'Blog de fiscalidad internacional | Evolve Tax',
     metaDescription:
-      'Guías prácticas de fiscalidad internacional para emprendedores digitales: Corporate Tax en Emiratos, Ley Beckham, LLC americanas, IVA en productos digitales y residencia fiscal.',
+      'Guías prácticas de fiscalidad internacional: Corporate Tax en Emiratos, Ley Beckham, LLC, IVA en productos digitales y residencia fiscal.',
     eyebrow: 'Blog',
     title: { lead: 'Fiscalidad internacional,', accent: 'explicada claro.' },
     intro: 'Guías prácticas para emprendedores y negocios digitales: impuestos en Emiratos y España, estructuras internacionales, IVA y residencia fiscal.',
