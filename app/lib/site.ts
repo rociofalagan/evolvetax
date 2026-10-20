@@ -21,5 +21,5 @@ export const site = {
     country: 'AE',
   },
   // Diagnóstico inicial (pago con Stripe). Si la URL está vacía, el botón lleva al formulario.
-  diagnosis: { url: 'https://buy.stripe.com/9B600icfmfIU9um8dW3Ru0x', price: 397, currency: 'USD' },
+  diagnosis: { url: 'https://buy.stripe.com/9B600icfmfIU9um8dW3Ru0x', price: 397, currency: 'EUR' },
 };

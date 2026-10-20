@@ -146,7 +146,7 @@ const en = {
       },
       {
         q: 'How much does it cost?',
-        a: 'We start with an initial diagnosis: a one-hour call for 397 USD. If you then need us to go further, we send you a proposal with clear fees before any work starts.',
+        a: 'We start with an initial diagnosis: a one-hour call for 397 EUR. If you then need us to go further, we send you a proposal with clear fees before any work starts.',
       },
       {
         q: 'What languages do you work in?',
@@ -359,7 +359,7 @@ const es: Dictionary = {
       },
       {
         q: '¿Cuánto cuesta?',
-        a: 'Empezamos con un diagnóstico inicial: una llamada de una hora por 397 USD. Si después necesitas que vayamos más allá, te enviamos una propuesta con honorarios claros antes de empezar nada.',
+        a: 'Empezamos con un diagnóstico inicial: una llamada de una hora por 397 EUR. Si después necesitas que vayamos más allá, te enviamos una propuesta con honorarios claros antes de empezar nada.',
       },
       {
         q: '¿En qué idioma trabajáis?',
