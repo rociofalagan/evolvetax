@@ -45,6 +45,7 @@ function organization(lang: Lang) {
       'Beckham Law',
       'VAT for digital businesses',
       'US LLC formation for non-residents',
+      'Moving tax residency from Spain to the UAE',
       'Company incorporation abroad',
     ],
     areaServed: [

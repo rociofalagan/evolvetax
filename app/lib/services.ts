@@ -1505,6 +1505,370 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
   /* ----------------------------------------------------------------
      Régimen Beckham (impatriados)
      ---------------------------------------------------------------- */
+  /* ----------------------------------------------------------------
+     Cambio de residencia fiscal España → Dubái (sub-landing de residency)
+     ---------------------------------------------------------------- */
+  spainDubai: {
+    en: {
+      name: 'Spain to Dubai tax residency',
+      meta: {
+        title: 'Moving Tax Residency from Spain to Dubai | Evolve Tax',
+        description:
+          'Leaving Spain for Dubai? We plan the move: the 183-day test, form 030, the exit tax and your UAE tax residency certificate, so the change holds up.',
+      },
+      hero: {
+        eyebrow: 'Service · Spain → Dubai',
+        title: { lead: 'Moving from Spain to Dubai', accent: 'without leaving a tax trail behind.' },
+        intro:
+          'Getting a residence visa in the UAE does not make you a non-resident in Spain. We plan the whole move: when you actually stop being tax resident, what you file in your last Spanish year, how you get your UAE tax residency certificate and what evidence you need if the Spanish tax authority looks into it years later.',
+        facts: [
+          { label: 'Spanish test', value: '183 days + economic ties' },
+          { label: 'Tax year', value: 'Spain has no split year' },
+          { label: 'UAE certificate', value: 'Usually 183 days in the UAE' },
+          { label: 'Treaty', value: 'Spain–UAE, in force since 2007' },
+        ],
+      },
+      included: {
+        title: { lead: 'What we', accent: 'take care of.' },
+        intro: 'The whole move, from the year you should leave to the file that proves it.',
+        items: [
+          { title: 'When to leave', text: 'We work out which year the change really takes effect, because in Spain you are resident for the full tax year or not at all.' },
+          { title: 'Your ties with Spain', text: 'Days, family, home, companies, clients and assets: what has to change and what you can keep.' },
+          { title: 'Exit tax', text: 'Whether the exit tax on shareholdings applies to you, how much it would be and what options you have before leaving.' },
+          { title: 'Your last Spanish return', text: 'The final resident income tax return, form 030 and the reporting obligations of your last year as a resident.' },
+          { title: 'Setting up in the UAE', text: 'Residence visa, Emirates ID, housing and the tax residency certificate from the Federal Tax Authority.' },
+          { title: 'Evidence file', text: 'The documents that prove the change if Spain asks about it three or four years from now.' },
+        ],
+      },
+      forWho: [
+        'Entrepreneurs and digital businesses moving from Spain to Dubai.',
+        'People who already moved and are not sure Spain no longer considers them resident.',
+        'Founders with a Spanish company who want to keep it, sell it or wind it down before leaving.',
+        'Families where one partner moves first and the rest follow later.',
+      ],
+      process: [
+        { title: 'Diagnosis', text: 'We review your ties with Spain and the UAE and tell you which year the change can realistically take effect.' },
+        { title: 'Move plan', text: 'Timing, formalities and what to do with your home, accounts, company and assets.' },
+        { title: 'Implementation', text: 'We handle the Spanish side and coordinate the UAE side: licence, visa and tax residency certificate.' },
+        { title: 'Follow-up', text: 'Your non-resident obligations in Spain and the UAE filings for the first years, which is when it matters most.' },
+      ],
+      guide: {
+        title: { lead: 'What really decides', accent: 'where you pay tax.' },
+        intro: 'Not the visa. Not the plane ticket. These three things.',
+        blocks: [
+          {
+            heading: 'The 183 days are only the first test',
+            paragraphs: [
+              'Spain treats you as tax resident if you spend more than 183 days there in a calendar year, but also if your main centre of economic interests is in Spain, regardless of the days. The second test is the one that catches people: you can live in Dubai all year and still be considered Spanish resident if your income, your company and your assets are still essentially Spanish.',
+              'There is also a presumption: if your spouse and dependent children live in Spain, you are presumed resident there unless you prove otherwise.',
+            ],
+          },
+          {
+            heading: 'Spain has no split year',
+            paragraphs: [
+              'In most countries you can be resident for part of the year. Spain does not work that way: you are either tax resident for the whole calendar year or you are not. That makes the date you leave decisive, and it is why moving in July or in November can change your entire tax bill for that year.',
+              'In practice this means the move has to be planned before it happens, not explained afterwards.',
+            ],
+          },
+          {
+            heading: 'Dubai has to give you a certificate',
+            paragraphs: [
+              'Having a residence visa is not the same as being tax resident in the UAE. Since 2023 the UAE has its own definition of tax residency and the Federal Tax Authority issues a tax residency certificate, which is what lets you rely on the Spain–UAE double taxation treaty if both countries claim you.',
+              'For treaty purposes that certificate usually requires real presence in the country — as a rule, 183 days — plus a home and documentation. Getting the visa and spending three months a year there is not enough.',
+            ],
+          },
+        ],
+      },
+      deepDive: {
+        title: { lead: 'Complete guide:', accent: 'from Spain to Dubai.' },
+        intro: 'When you stop being resident, what you file in your last Spanish year, what the exit tax is, how the UAE certificate works and what evidence to keep.',
+        blocks: [
+          { h2: 'When you stop being tax resident in Spain', id: 'when' },
+          { p: 'Spanish law gives three tests, and **any one of them** is enough to make you resident:' },
+          {
+            list: [
+              ['More than 183 days', 'Days spent in Spain during the calendar year, including sporadic absences unless you prove tax residency elsewhere.'],
+              ['Centre of economic interests', 'Spain is where the core of your activities or economic interests sits, directly or indirectly. No day count involved.'],
+              ['Family presumption', 'If your spouse and minor children habitually live in Spain, you are presumed resident unless you prove otherwise.'],
+            ],
+          },
+          { p: 'The first test is arithmetic. The second is a judgement call, and it is where most disputes happen: if you keep your Spanish company, your Spanish clients and your Spanish property while you live in Dubai, the tax authority has an argument.' },
+          {
+            callout: {
+              title: 'Sporadic absences',
+              text: 'Leaving the country is not enough on its own. To stop days abroad from counting as Spanish days, you generally need a tax residency certificate from the other country — in this case, from the UAE Federal Tax Authority.',
+            },
+          },
+
+          { h2: 'The year you leave', id: 'year' },
+          { p: 'Spain does not split the tax year. You are resident for the whole calendar year or for none of it, so the year of the move is either a full resident year or a full non-resident year. There is no proportion.' },
+          { p: 'That single rule drives the timing of everything else: when to sell, when to take a dividend, when to close a company, when to actually fly.' },
+          {
+            table: {
+              head: ['If you are still resident that year', 'If you are already non-resident'],
+              rows: [
+                ['Worldwide income taxed in Spain (IRPF)', 'Only Spanish-source income (IRNR)'],
+                ['Form 720 / 721 on assets abroad, if thresholds are met', 'No form 720'],
+                ['Wealth tax or solidarity tax on worldwide assets, where applicable', 'Only on assets located in Spain'],
+                ['Beckham regime possible in some cases', 'Not applicable'],
+              ],
+            },
+          },
+
+          { h2: 'Exit tax: who it actually affects', id: 'exit-tax' },
+          { p: 'The exit tax taxes the unrealised gains on your shareholdings when you stop being resident. It does **not** apply to everyone. In broad terms it applies when you have been resident in Spain for at least 10 of the last 15 tax years and either:' },
+          {
+            list: [
+              'The market value of your shareholdings exceeds 4 million euros, or',
+              'You hold more than 25% of an entity whose shareholding is worth more than 1 million euros.',
+            ],
+          },
+          { p: 'There are deferral rules for moves within the EU/EEA and specific rules for temporary relocations. Dubai is neither, so if you are above the thresholds this needs to be on the table well before you move, not after.' },
+
+          { h2: 'What you file in Spain after leaving', id: 'spain-after' },
+          { p: 'Changing residency does not always mean cutting every tie with Spain. If you keep property, shares or any Spanish-source income, you move from IRPF to **IRNR**, non-resident income tax, which has its own forms and deadlines:' },
+          {
+            list: [
+              ['Form 030', 'To notify the change of address and your new tax status.'],
+              ['Form 210', 'Non-resident income tax on Spanish-source income: rental income, capital gains, deemed income on a property you keep for your own use.'],
+              ['Final resident return', 'Your last IRPF covering the whole of your last resident year.'],
+              ['Wealth tax', 'If you keep assets in Spain above the thresholds, by real obligation.'],
+            ],
+          },
+          { p: 'If you keep a Spanish company and run it from Dubai, there is a further question: where the company is actually managed. We cover it in the guide on [a Dubai company that ends up taxed in Spain](/blog/dubai-company-taxed-in-spain).' },
+
+          { h2: 'Becoming tax resident in the UAE', id: 'uae-side' },
+          { p: 'The UAE route normally runs through a company and a residence visa. We handle that part too — see [business setup in Dubai](/services/dubai-company-setup) — but for residency purposes, what matters is what comes after the visa:' },
+          {
+            list: [
+              ['Emirates ID and residence visa', 'The legal basis for living there, usually through your own company or an employer.'],
+              ['A real home', 'A lease or property in your name, with utilities in your name.'],
+              ['Physical presence', 'Days actually spent in the country, with entry and exit records to back them up.'],
+              ['Tax residency certificate', 'Issued by the Federal Tax Authority; the treaty version is what you show Spain.'],
+            ],
+          },
+          { p: 'Add the UAE obligations that come with the company: Corporate Tax registration and filing, VAT if you cross the threshold, and proper books. We deal with those in [tax management in Dubai](/services/dubai-tax-management).' },
+
+          { h2: 'The evidence file', id: 'evidence' },
+          { p: 'A residency review in Spain usually arrives three or four years after the move, when nobody remembers where anything is. The file you want to have ready:' },
+          {
+            list: [
+              'UAE tax residency certificates for each year.',
+              'Residence visa, Emirates ID and your lease or title deed.',
+              'Boarding passes and passport stamps for the year of the move and the following ones.',
+              'Utility bills, UAE bank statements and local card spending.',
+              'Proof that your work is run from the UAE: contracts, invoices, office or coworking.',
+              'Form 030 and your final Spanish resident return.',
+            ],
+          },
+          {
+            callout: {
+              title: 'The mistake that costs the most',
+              text: 'Moving first and asking afterwards. Almost everything on this page is decided by the date you leave and by what you do in the months before it. Once the year has closed, the options shrink.',
+            },
+          },
+        ],
+      },
+      mistakes: [
+        { title: 'Thinking the visa is enough', text: 'A residence visa proves you can live there. It does not prove you stopped being tax resident in Spain.' },
+        { title: 'Moving in the middle of the year without planning it', text: 'Spain has no split year, so the date of the move decides how your whole year is taxed.' },
+        { title: 'Keeping everything in Spain', text: 'Company, clients, home and family in Spain while you live in Dubai is the clearest way to be considered resident anyway.' },
+        { title: 'Not asking for the UAE certificate', text: 'Without it, it is very hard to rely on the treaty or to neutralise sporadic absences.' },
+      ],
+      faq: [
+        { q: 'Is it enough to spend less than 183 days in Spain?', a: 'No. Days are only one of the tests. If your main centre of economic interests stays in Spain, you can be considered resident even with very few days there.' },
+        { q: 'When does the change take effect?', a: 'Spain does not split the tax year: you are resident for the whole calendar year or not at all. That is why the date you leave, and the year you choose, matter so much.' },
+        { q: 'Does the exit tax apply to me?', a: 'Only if you have been resident for at least 10 of the last 15 years and your shareholdings exceed the legal thresholds — broadly 4 million euros, or 1 million with a holding above 25%. We check it before you move.' },
+        { q: 'Can I keep my company in Spain?', a: 'You can, but then we have to look at where it is actually managed and how dividends are taxed once you are a non-resident. It is part of the analysis.' },
+        { q: 'How long does it take to get the UAE tax residency certificate?', a: 'You first need the visa, a home and real presence in the country. The certificate is requested afterwards from the Federal Tax Authority, normally once you can show enough days in the UAE.' },
+        { q: 'I already moved and did not plan any of this. Can you help?', a: 'Yes. We review what you did, see how exposed you are and put together the evidence and the filings you are missing. It is harder than planning it in advance, but it is fixable.' },
+      ],
+      cta: {
+        title: { lead: 'Tell us when you', accent: 'plan to leave.' },
+        text: 'With your dates, your business and your assets we can tell you which year the change works, what it costs and what you need to prepare.',
+      },
+    },
+    es: {
+      name: 'Residencia fiscal España → Dubái',
+      meta: {
+        title: 'Cambiar la residencia fiscal de España a Dubái | Evolve Tax',
+        description:
+          '¿Te vas de España a Dubái? Planificamos la salida: los 183 días, el modelo 030, el exit tax y el certificado de residencia fiscal de Emiratos.',
+      },
+      hero: {
+        eyebrow: 'Servicio · España → Dubái',
+        title: { lead: 'Irte de España a Dubái', accent: 'sin dejarte la residencia fiscal aquí.' },
+        intro:
+          'Tener el visado de residencia en Emiratos no te convierte en no residente en España. Planificamos todo el traslado: cuándo dejas de ser residente de verdad, qué presentas en tu último año español, cómo consigues el certificado de residencia fiscal emiratí y qué pruebas necesitas si Hacienda te lo mira dentro de tres años.',
+        facts: [
+          { label: 'Criterio español', value: '183 días + intereses económicos' },
+          { label: 'Ejercicio', value: 'España no parte el año' },
+          { label: 'Certificado EAU', value: 'Por norma, 183 días allí' },
+          { label: 'Convenio', value: 'España–EAU, en vigor desde 2007' },
+        ],
+      },
+      included: {
+        title: { lead: 'De qué nos', accent: 'encargamos.' },
+        intro: 'Todo el traslado: desde el año en el que te conviene salir hasta el expediente que lo demuestra.',
+        items: [
+          { title: 'Cuándo salir', text: 'Calculamos en qué ejercicio surte efecto el cambio, porque en España eres residente el año entero o no lo eres.' },
+          { title: 'Tus vínculos con España', text: 'Días, familia, vivienda, sociedades, clientes y patrimonio: qué tiene que cambiar y qué puedes mantener.' },
+          { title: 'Exit tax', text: 'Si te aplica el impuesto de salida por tus participaciones, cuánto sería y qué alternativas tienes antes de irte.' },
+          { title: 'Tu última declaración', text: 'La última renta como residente, el modelo 030 y las obligaciones informativas de ese ejercicio.' },
+          { title: 'Instalarte en Emiratos', text: 'Visado de residencia, Emirates ID, vivienda y el certificado de residencia fiscal de la Federal Tax Authority.' },
+          { title: 'Expediente de prueba', text: 'La documentación que acredita el cambio si España pregunta dentro de tres o cuatro años.' },
+        ],
+      },
+      forWho: [
+        'Emprendedores y negocios digitales que se mudan de España a Dubái.',
+        'Quien ya se ha ido y no tiene claro que España haya dejado de considerarle residente.',
+        'Socios de una empresa española que quieren mantenerla, venderla o cerrarla antes de salir.',
+        'Familias en las que uno se va primero y el resto va después.',
+      ],
+      process: [
+        { title: 'Diagnóstico', text: 'Revisamos tus vínculos con España y con Emiratos y te decimos en qué ejercicio puede surtir efecto el cambio.' },
+        { title: 'Plan de salida', text: 'Fechas, trámites y qué hacer con la vivienda, las cuentas, la sociedad y el patrimonio.' },
+        { title: 'Ejecución', text: 'Llevamos la parte española y coordinamos la emiratí: licencia, visado y certificado de residencia fiscal.' },
+        { title: 'Seguimiento', text: 'Tus obligaciones como no residente en España y las declaraciones en Emiratos los primeros años, que es cuando más se mira.' },
+      ],
+      guide: {
+        title: { lead: 'Lo que de verdad decide', accent: 'dónde pagas impuestos.' },
+        intro: 'No es el visado. Ni el billete de avión. Son estas tres cosas.',
+        blocks: [
+          {
+            heading: 'Los 183 días son solo el primer criterio',
+            paragraphs: [
+              'España te considera residente fiscal si pasas más de 183 días aquí en el año natural, pero también si el núcleo principal de tus intereses económicos está en España, con independencia de los días. El segundo criterio es el que pilla a casi todo el mundo: puedes vivir en Dubái todo el año y seguir siendo residente español si tus ingresos, tu sociedad y tu patrimonio siguen siendo esencialmente españoles.',
+              'Además hay una presunción: si tu cónyuge y tus hijos menores residen habitualmente en España, se presume que tú también, salvo prueba en contrario.',
+            ],
+          },
+          {
+            heading: 'España no parte el año',
+            paragraphs: [
+              'En la mayoría de los países puedes ser residente una parte del año. En España no: o eres residente fiscal todo el año natural o no lo eres. Eso convierte la fecha de salida en algo decisivo, y por eso irte en julio o en noviembre puede cambiar por completo la factura fiscal de ese ejercicio.',
+              'En la práctica significa que el traslado se planifica antes, no se explica después.',
+            ],
+          },
+          {
+            heading: 'Dubái te tiene que dar un certificado',
+            paragraphs: [
+              'Tener el visado de residencia no es lo mismo que ser residente fiscal en Emiratos. Desde 2023 Emiratos tiene su propia definición de residencia fiscal y la Federal Tax Authority emite un certificado de residencia fiscal, que es lo que te permite acudir al convenio de doble imposición España–Emiratos si los dos países te reclaman.',
+              'Para el convenio, ese certificado exige presencia real en el país (por norma, 183 días), además de vivienda y documentación. Sacarte el visado y pasar allí tres meses al año no sirve.',
+            ],
+          },
+        ],
+      },
+      deepDive: {
+        title: { lead: 'Guía completa:', accent: 'de España a Dubái.' },
+        intro: 'Cuándo dejas de ser residente, qué presentas en tu último año, qué es el exit tax, cómo funciona el certificado emiratí y qué pruebas tienes que guardar.',
+        blocks: [
+          { h2: 'Cuándo dejas de ser residente fiscal en España', id: 'cuando' },
+          { p: 'La ley española da tres criterios y basta con que se cumpla **uno solo** para que seas residente:' },
+          {
+            list: [
+              ['Más de 183 días', 'Días en territorio español durante el año natural, computando las ausencias esporádicas salvo que acredites residencia fiscal en otro país.'],
+              ['Núcleo de intereses económicos', 'Que en España esté el núcleo principal o la base de tus actividades o intereses económicos, de forma directa o indirecta. Aquí no se cuentan días.'],
+              ['Presunción familiar', 'Si tu cónyuge no separado y tus hijos menores residen habitualmente en España, se presume que tú también, salvo prueba en contrario.'],
+            ],
+          },
+          { p: 'El primero es aritmética. El segundo es valoración, y es donde se concentran las discusiones: si mantienes tu sociedad española, tus clientes españoles y tu vivienda mientras vives en Dubái, Hacienda tiene argumentos.' },
+          {
+            callout: {
+              title: 'Las ausencias esporádicas',
+              text: 'Irse del país no basta por sí solo. Para que los días fuera no se computen como días en España normalmente hace falta un certificado de residencia fiscal del otro país; en este caso, el de la Federal Tax Authority emiratí.',
+            },
+          },
+
+          { h2: 'El año en el que te vas', id: 'ejercicio' },
+          { p: 'España no fracciona el período impositivo. Eres residente todo el año natural o ninguno, así que el ejercicio de la mudanza será un año entero de residente o un año entero de no residente. No hay proporción.' },
+          { p: 'Esa única regla ordena todo lo demás: cuándo vender, cuándo repartir un dividendo, cuándo cerrar una sociedad y cuándo coger el avión.' },
+          {
+            table: {
+              head: ['Si ese año aún eres residente', 'Si ya eres no residente'],
+              rows: [
+                ['Tributas en IRPF por tu renta mundial', 'Solo por las rentas de fuente española (IRNR)'],
+                ['Modelo 720 / 721 sobre bienes en el extranjero, si superas los límites', 'Sin modelo 720'],
+                ['Patrimonio o solidaridad sobre el patrimonio mundial, cuando proceda', 'Solo por los bienes situados en España'],
+                ['El régimen Beckham puede entrar en juego en algunos casos', 'No aplica'],
+              ],
+            },
+          },
+
+          { h2: 'Exit tax: a quién afecta de verdad', id: 'exit-tax' },
+          { p: 'El impuesto de salida grava las plusvalías latentes de tus participaciones cuando dejas de ser residente. **No** le aplica a todo el mundo. A grandes rasgos, se activa si has sido residente en España al menos 10 de los últimos 15 períodos impositivos y además:' },
+          {
+            list: [
+              'El valor de mercado de tus participaciones supera los 4 millones de euros, o',
+              'Tienes más de un 25 % de una entidad y esa participación vale más de 1 millón de euros.',
+            ],
+          },
+          { p: 'Existen reglas de aplazamiento para traslados dentro de la UE y el Espacio Económico Europeo, y reglas propias para desplazamientos temporales. Dubái no es ninguno de los dos, así que si estás por encima de los umbrales esto hay que ponerlo sobre la mesa mucho antes de irte, no después.' },
+
+          { h2: 'Qué presentas en España después de irte', id: 'despues' },
+          { p: 'Cambiar de residencia no siempre significa cortar todos los lazos con España. Si mantienes inmuebles, participaciones o cualquier renta de fuente española, pasas de IRPF a **IRNR**, con sus propios modelos y plazos:' },
+          {
+            list: [
+              ['Modelo 030', 'Para comunicar el cambio de domicilio y tu nueva situación.'],
+              ['Modelo 210', 'IRNR por rentas de fuente española: alquileres, ganancias patrimoniales e imputación de rentas del inmueble que conservas.'],
+              ['Última renta como residente', 'El IRPF del último ejercicio completo en el que fuiste residente.'],
+              ['Impuesto sobre el Patrimonio', 'Por obligación real, si mantienes bienes en España por encima de los límites.'],
+            ],
+          },
+          { p: 'Si conservas una sociedad española y la diriges desde Dubái, aparece otra cuestión: dónde se dirige realmente esa sociedad. Lo explicamos en la guía sobre [la empresa de Dubái que acaba tributando en España](/es/blog/empresa-dubai-tributa-en-espana).' },
+
+          { h2: 'Hacerte residente fiscal en Emiratos', id: 'emiratos' },
+          { p: 'La vía habitual pasa por una sociedad y un visado de residencia. De esa parte también nos ocupamos nosotros (ver [crear una empresa en Dubái](/es/servicios/crear-empresa-en-dubai)), pero a efectos de residencia lo que cuenta es lo que viene después del visado:' },
+          {
+            list: [
+              ['Emirates ID y visado de residencia', 'La base legal para vivir allí, normalmente a través de tu propia sociedad o de un empleador.'],
+              ['Una vivienda real', 'Contrato de alquiler o propiedad a tu nombre, con los suministros también a tu nombre.'],
+              ['Presencia física', 'Días efectivamente pasados en el país, con los registros de entradas y salidas que lo respalden.'],
+              ['Certificado de residencia fiscal', 'Lo emite la Federal Tax Authority; la versión a efectos del convenio es la que le enseñas a España.'],
+            ],
+          },
+          { p: 'A eso se suman las obligaciones emiratíes de la sociedad: registro y declaración de Corporate Tax, IVA si superas el umbral y contabilidad en condiciones. De eso hablamos en [gestión fiscal en Dubái](/es/servicios/gestion-fiscal-en-dubai).' },
+
+          { h2: 'El expediente de prueba', id: 'pruebas' },
+          { p: 'Una comprobación de residencia suele llegar tres o cuatro años después del traslado, cuando ya nadie recuerda dónde está nada. El expediente que conviene tener montado:' },
+          {
+            list: [
+              'Certificados de residencia fiscal emiratíes de cada año.',
+              'Visado de residencia, Emirates ID y contrato de alquiler o escritura.',
+              'Tarjetas de embarque y sellos del pasaporte del año de la mudanza y de los siguientes.',
+              'Facturas de suministros, extractos bancarios emiratíes y gasto con tarjeta local.',
+              'Prueba de que trabajas desde Emiratos: contratos, facturas, oficina o coworking.',
+              'Modelo 030 y tu última declaración como residente.',
+            ],
+          },
+          {
+            callout: {
+              title: 'El error que más caro sale',
+              text: 'Mudarse primero y preguntar después. Casi todo lo de esta página se decide con la fecha de salida y con lo que hagas en los meses anteriores. Una vez cerrado el ejercicio, las opciones se reducen.',
+            },
+          },
+        ],
+      },
+      mistakes: [
+        { title: 'Creer que con el visado basta', text: 'El visado acredita que puedes vivir allí. No acredita que hayas dejado de ser residente fiscal en España.' },
+        { title: 'Irse a mitad de año sin planificarlo', text: 'España no parte el ejercicio, así que la fecha de salida decide cómo tributa todo ese año.' },
+        { title: 'Dejarlo todo en España', text: 'Sociedad, clientes, vivienda y familia aquí mientras vives en Dubái es la forma más clara de que te sigan considerando residente.' },
+        { title: 'No pedir el certificado emiratí', text: 'Sin él es muy difícil acudir al convenio o neutralizar las ausencias esporádicas.' },
+      ],
+      faq: [
+        { q: '¿Basta con pasar menos de 183 días en España?', a: 'No. Los días son solo uno de los criterios. Si el núcleo principal de tus intereses económicos sigue en España, pueden considerarte residente aunque pases aquí muy pocos días.' },
+        { q: '¿Desde cuándo surte efecto el cambio?', a: 'España no fracciona el período impositivo: eres residente todo el año natural o ninguno. Por eso importan tanto la fecha de salida y el ejercicio que elijas.' },
+        { q: '¿Me aplica el exit tax?', a: 'Solo si has sido residente al menos 10 de los últimos 15 ejercicios y tus participaciones superan los umbrales legales: a grandes rasgos, 4 millones de euros, o 1 millón con una participación superior al 25 %. Lo comprobamos antes de que te vayas.' },
+        { q: '¿Puedo mantener mi sociedad en España?', a: 'Puedes, pero entonces hay que mirar desde dónde se dirige de verdad y cómo tributan los dividendos cuando ya eres no residente. Forma parte del análisis.' },
+        { q: '¿Cuánto se tarda en tener el certificado de residencia fiscal emiratí?', a: 'Primero necesitas el visado, una vivienda y presencia real en el país. El certificado se pide después a la Federal Tax Authority, normalmente cuando puedes acreditar días suficientes en Emiratos.' },
+        { q: 'Ya me mudé y no planifiqué nada de esto, ¿podéis ayudarme?', a: 'Sí. Revisamos lo que hiciste, vemos cuánto riesgo tienes y montamos las pruebas y las declaraciones que falten. Es más difícil que planificarlo antes, pero tiene arreglo.' },
+      ],
+      cta: {
+        title: { lead: 'Cuéntanos cuándo', accent: 'piensas irte.' },
+        text: 'Con tus fechas, tu negocio y tu patrimonio te decimos en qué ejercicio funciona el cambio, qué cuesta y qué tienes que preparar.',
+      },
+    },
+  },
+
   beckham: {
     en: {
       name: 'Beckham Law',

@@ -84,7 +84,7 @@ const en = {
   services: {
     eyebrow: 'Services',
     title: { lead: 'What we do,', accent: 'exactly.' } as Accent,
-    text: 'Seven services you can hire separately or combine, depending on where you are and where you’re going.',
+    text: 'Eight services you can hire separately or combine, depending on where you are and where you’re going.',
     items: [
       { key: 'structuring' as ServiceKey, title: 'International tax structuring', text: 'Before you incorporate anything or move anywhere, you need a strategy. We analyse your situation and compare options with real numbers.', tags: ['Tax residency', 'Company structure', 'Jurisdictions'] },
       { key: 'dubai' as ServiceKey, title: 'Business setup in Dubai', text: 'Company formation in any free zone in around 14 days, with residence visa, corporate bank account and tax registrations.', tags: ['Free zone', 'Visa', 'Banking'] },
@@ -92,6 +92,7 @@ const en = {
       { key: 'usLlc' as ServiceKey, title: 'LLC in the United States', text: 'We open your LLC, apply for the EIN and keep the annual filings in order — and we incorporate in other countries through local partners.', tags: ['Any state', 'EIN', 'Form 5472'] },
       { key: 'spainTax' as ServiceKey, title: 'Tax management in Spain', text: 'Tax advice and returns in Spain for freelancers and companies, with international invoicing in mind.', tags: ['Freelancers & companies', 'International VAT', 'Form 720'] },
       { key: 'residency' as ServiceKey, title: 'Change of tax residency', text: 'Leaving Spain or moving to it: we plan the change with you and help you prove it.', tags: ['183 days', 'Tax treaties', 'Exit tax'] },
+      { key: 'spainDubai' as ServiceKey, title: 'Spain → Dubai tax residency', text: 'Moving from Spain to Dubai: when you actually stop being resident, the exit tax and the UAE certificate that proves it.', tags: ['183 days', 'Exit tax', 'UAE certificate'] },
       { key: 'beckham' as ServiceKey, title: 'Beckham Law', text: 'The special tax regime for people moving to Spain: eligibility, application and annual returns.', tags: ['24% flat rate', 'Form 149', 'Up to 6 years'] },
     ],
     learnMore: 'Learn more',
@@ -199,6 +200,7 @@ const en = {
         'Opening an LLC in the United States',
         'Tax management in Spain',
         'Changing my tax residency',
+        'Moving from Spain to Dubai',
         'Beckham Law',
         'A one-off consultation',
         'Other / not sure yet',
@@ -297,7 +299,7 @@ const es: Dictionary = {
   services: {
     eyebrow: 'Servicios',
     title: { lead: 'Qué hacemos,', accent: 'exactamente.' },
-    text: 'Siete servicios que puedes contratar por separado o combinar, según dónde estás y a dónde vas.',
+    text: 'Ocho servicios que puedes contratar por separado o combinar, según dónde estás y a dónde vas.',
     items: [
       { key: 'structuring', title: 'Estructuración fiscal internacional', text: 'Antes de constituir nada o mudarte a ningún sitio, necesitas una estrategia. Analizamos tu situación y comparamos opciones con números reales.', tags: ['Residencia fiscal', 'Estructura societaria', 'Jurisdicciones'] },
       { key: 'dubai', title: 'Incorporación de empresas en Dubái', text: 'Constitución en cualquier free zone en unos 14 días, con visado de residencia, cuenta bancaria y altas fiscales.', tags: ['Free zone', 'Visado', 'Banca'] },
@@ -305,6 +307,7 @@ const es: Dictionary = {
       { key: 'usLlc', title: 'LLC en Estados Unidos', text: 'Abrimos tu LLC, solicitamos el EIN y mantenemos al día las declaraciones anuales. Y constituimos en otros países con colaboradores locales.', tags: ['Cualquier estado', 'EIN', 'Form 5472'] },
       { key: 'spainTax', title: 'Gestión fiscal en España', text: 'Asesoría y declaraciones en España para autónomos y sociedades, con la facturación internacional en mente.', tags: ['Autónomos y sociedades', 'IVA internacional', 'Modelo 720'] },
       { key: 'residency', title: 'Cambio de residencia fiscal', text: 'Salir de España o llegar a ella: planificamos el cambio contigo y te ayudamos a acreditarlo.', tags: ['183 días', 'Convenios', 'Exit tax'] },
+      { key: 'spainDubai', title: 'Residencia fiscal España → Dubái', text: 'Irte de España a Dubái: cuándo dejas de ser residente de verdad, el exit tax y el certificado emiratí que lo acredita.', tags: ['183 días', 'Exit tax', 'Certificado EAU'] },
       { key: 'beckham', title: 'Régimen Beckham', text: 'El régimen fiscal especial para quien se traslada a España: requisitos, solicitud y declaraciones anuales.', tags: ['Tipo fijo del 24 %', 'Modelo 149', 'Hasta 6 años'] },
     ],
     learnMore: 'Saber más',
@@ -412,6 +415,7 @@ const es: Dictionary = {
         'Abrir una LLC en Estados Unidos',
         'Gestión fiscal en España',
         'Cambiar mi residencia fiscal',
+        'Irme de España a Dubái',
         'Régimen Beckham',
         'Una consulta puntual',
         'Otro / aún no lo sé',

@@ -62,7 +62,7 @@ export const about: Record<Lang, AboutContent> = {
       ],
     },
     servicesTitle: { lead: 'What we', accent: 'do.' },
-    servicesIntro: 'Seven services you can hire separately or combine, from the first analysis to the day-to-day compliance.',
+    servicesIntro: 'Eight services you can hire separately or combine, from the first analysis to the day-to-day compliance.',
     cta: {
       title: { lead: 'Shall we look at', accent: 'your case?' },
       text: 'Start with an initial diagnosis: a one-hour call where you tell us your situation and we review it together.',
@@ -112,7 +112,7 @@ export const about: Record<Lang, AboutContent> = {
       ],
     },
     servicesTitle: { lead: 'Qué', accent: 'hacemos.' },
-    servicesIntro: 'Siete servicios que puedes contratar por separado o combinar, desde el primer análisis hasta el día a día.',
+    servicesIntro: 'Ocho servicios que puedes contratar por separado o combinar, desde el primer análisis hasta el día a día.',
     cta: {
       title: { lead: '¿Vemos', accent: 'tu caso?' },
       text: 'Empieza por un diagnóstico inicial: una llamada de una hora en la que nos cuentas tu situación y la analizamos juntos.',

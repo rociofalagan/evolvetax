@@ -17,7 +17,7 @@ import { toCard } from './blog/BlogIndex';
 import { blogUi, getPosts } from '../lib/blog';
 
 // Opción del formulario que se preselecciona en cada landing.
-const needIndex: Record<ServiceKey, number> = { structuring: 0, dubai: 1, uaeTax: 2, usLlc: 3, spainTax: 4, residency: 5, beckham: 6 };
+const needIndex: Record<ServiceKey, number> = { structuring: 0, dubai: 1, uaeTax: 2, usLlc: 3, spainTax: 4, residency: 5, spainDubai: 6, beckham: 7 };
 
 export default function ServicePage({ serviceKey, lang }: { serviceKey: ServiceKey; lang: Lang }) {
   const s = services[serviceKey][lang];
