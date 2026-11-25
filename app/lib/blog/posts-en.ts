@@ -427,7 +427,7 @@ export const postsEn: Record<PostKey, PostContent> = {
       { p: `Almost any free zone can work for a digital business: the right one depends on the licensed activities you need, the number of visas and your budget.` },
 
       { h2: `Before you decide`, id: 'before-deciding' },
-      { p: `The choice between free zone and mainland is not only a legal one: it affects your taxes, your visa and how you will operate for years. And remember that setting up a company in Dubai does not, by itself, change your personal tax residency. If you want the setup handled end to end, see our [business setup in Dubai](/services/dubai-company-setup) service.` },
+      { p: `The choice between free zone and mainland is not only a legal one: it affects your taxes, your visa and how you will operate for years. And remember that setting up a company in Dubai does not, by itself, change your personal tax residency. If you want the setup handled end to end, see our [business setup in Dubai](/services/dubai-company-setup) service, and if you are doing it from Europe read [setting up a Dubai company from Spain](/blog/set-up-a-dubai-company-from-spain) first.` },
     ],
     faq: [
       { q: 'Can a free zone company work with clients in Dubai?', a: 'It can work freely with other free zone companies and with international clients. Selling directly to the UAE mainland market is more limited and may require additional permits or structures.' },
@@ -441,7 +441,7 @@ export const postsEn: Record<PostKey, PostContent> = {
   dubaiCost: {
     metaTitle: 'How Much Does It Cost to Set Up a Company in Dubai?',
     metaDescription:
-      'A free zone company with one visa usually costs AED 15,000–20,000 in year one. What each line of the quote covers and what most quotes leave out.',
+      'A free zone company with one visa costs AED 15,000–20,000, around EUR 3,900–5,200, in year one. What each line of the quote covers and what most quotes leave out.',
     title: 'How much does it cost to set up a company in Dubai?',
     excerpt:
       'A free zone company with one residence visa usually costs between AED 15,000 and AED 20,000 in its first year. Here is what each line of the quote means, what is missing from most of them and what you pay every year.',
@@ -459,6 +459,37 @@ export const postsEn: Record<PostKey, PostContent> = {
       { h2: `The short answer`, id: 'short-answer' },
       { callout: { title: 'AED 15,000 – 20,000 for a typical first year', text: 'A free zone company with one residence visa usually lands in that range, including the trade licence, the establishment card and the visa. A licence without visas costs less; a mainland company costs more because it requires a physical office lease.' } },
       { p: `Free zones compete on price and on what they include, so two quotes for “the same” company can look very different. Cheaper packages tend to limit the number of activities, the visa quota or the type of office. A licence that does not cover what you actually sell is the most expensive kind of saving.` },
+
+      { h2: `What that is in euros and dollars`, id: 'currency' },
+      { p: `Quotes almost always arrive in dirhams, which makes them hard to judge. The dirham is pegged to the US dollar, so the conversion is stable enough to use as a reference:` },
+      {
+        table: {
+          head: ['In dirhams', 'Roughly'],
+          rows: [
+            ['AED 15,000', '≈ USD 4,100 · EUR 3,900'],
+            ['AED 20,000', '≈ USD 5,400 · EUR 5,200'],
+            ['AED 25,000', '≈ USD 6,800 · EUR 6,500'],
+            ['AED 50,000', '≈ USD 13,600 · EUR 13,000'],
+          ],
+        },
+      },
+      { p: `Indicative conversion at the pegged rate of 3.6725 dirhams per dollar and about EUR 0.26 per dirham. Check it on the day you pay, since the exact figure depends on the rate at that moment and on your bank's margin.` },
+
+      { h2: `What makes the price go up or down`, id: 'what-changes' },
+      { p: `Two very different quotes usually come down to these six decisions. None of them is a matter of taste: each one changes what the company is allowed to do.` },
+      {
+        table: {
+          head: ['Decision', 'Effect on price'],
+          rows: [
+            ['Licence without visas', 'The cheapest route: the visa is a large share of the first-year cost'],
+            ['Each additional visa', 'Adds per person and, past a certain number, forces a larger office'],
+            ['More activities on the licence', 'Several free zones charge per activity or per activity group'],
+            ['Mainland instead of free zone', 'More expensive: it requires a physical office lease registered with Ejari'],
+            ['A physical office instead of a flexi-desk', 'Rent becomes the largest line in the budget'],
+            ['A corporate shareholder', 'Adds attestation and translation of the corporate documents'],
+          ],
+        },
+      },
 
       { h2: `Setup fees you pay once`, id: 'one-off' },
       {
@@ -498,6 +529,22 @@ export const postsEn: Record<PostKey, PostContent> = {
           `Decide the structure before paying for it: moving a company later costs far more than setting it up right.`,
         ],
       },
+
+      { h2: `What to ask for in writing before you pay`, id: 'before-you-pay' },
+      { p: `A serious quote answers these six questions without you having to push. Whichever one goes unanswered is where the surprise will show up.` },
+      {
+        olist: [
+          `The total first-year cost, not just the licence price.`,
+          `Exactly which activities the proposed licence covers.`,
+          `How many visa quotas the package includes and what each extra visa costs.`,
+          `The second-year renewal cost, line by line.`,
+          `Which fees go straight to the authority and which are the adviser's own.`,
+          `What is not included: bank, accounting, Corporate Tax, VAT and health insurance.`,
+        ],
+      },
+
+      { h2: `What if you are setting it up from Spain or the EU?`, id: 'from-abroad' },
+      { p: `The licence costs the same wherever you live, but the real budget changes: add apostille and sworn translation if a European company is the shareholder, plus at least one trip to close the visa and the bank. And, above all, check what you still have to report at home. We cover it in [setting up a Dubai company from Spain](/blog/set-up-a-dubai-company-from-spain).` },
       { p: `If you want a written quote for your case — the right free zone, the activities and the total first-year cost — see our [business setup in Dubai](/services/dubai-company-setup) service, or read [free zone or mainland](/blog/dubai-free-zone-vs-mainland) first if you are still deciding on the route.` },
     ],
     faq: [
@@ -505,6 +552,106 @@ export const postsEn: Record<PostKey, PostContent> = {
       { q: 'How much does a Dubai company cost per year?', a: 'Budget for the licence renewal, the establishment card, visa renewals when they fall due, and accounting and Corporate Tax filings. For a small free zone company, the recurring cost is usually similar to the first-year licence plus the compliance work.' },
       { q: 'Is there a minimum share capital?', a: 'Most free zones state a share capital in the licence but do not require it to be deposited in a bank account. It varies by free zone and by activity.' },
       { q: 'Does the price include the bank account?', a: 'No. Opening a corporate bank account is a separate process with its own requirements, and some banks ask for a minimum balance that has nothing to do with the setup fee.' },
+      { q: 'How much does a Dubai company cost in euros?', a: 'The AED 15,000–20,000 reference range is roughly EUR 3,900 to EUR 5,200, at about EUR 0.26 per dirham. Because the dirham is pegged to the dollar, that reference moves very little, but check the rate on the day you pay.' },
+      { q: 'Can I set the company up without travelling to Dubai?', a: 'Incorporation and the licence can be handled remotely. The residence visa requires you to be in the UAE for the medical test and the Emirates ID, and most banks still ask for an in-person meeting to open the account.' },
+      { q: 'How much more expensive is a mainland company?', a: 'Mostly it comes down to the office: mainland requires a physical lease registered with Ejari, and that rent usually becomes the largest line in the budget. Free zones solve that with flexi-desk packages included in the licence.' },
+      { q: 'Does the price include accounting and Corporate Tax?', a: 'No. The setup quote covers the licence, the establishment card and the visa. Accounting, Corporate Tax registration and filings, and VAT where it applies, are a separate recurring service and should be budgeted from day one.' },
+    ],
+  },
+  /* ------------------------------------------------------------------ */
+  dubaiFromSpain: {
+    metaTitle: 'Setting Up a Dubai Company from Spain: 2026 Guide',
+    metaDescription:
+      'What you can do from Spain to open a Dubai company, which documents you need, how long it takes and why your tax residency decides whether it works at all.',
+    title: 'Setting up a Dubai company from Spain: what nobody tells you before you sign',
+    excerpt:
+      'Incorporating is the easy part, and almost all of it can be done remotely. The hard part, and the part that decides whether the structure holds, is the order you do things in and what you still owe the Spanish tax authority meanwhile.',
+    tags: ['Dubai', 'Spain', 'Company setup', 'Tax residency'],
+    takeaways: [
+      'You can own a UAE company while living in Spain: no relocation is needed to incorporate.',
+      'If you remain a Spanish tax resident, that company saves you nothing and may complicate your position.',
+      'The right order is to settle your tax residency first and incorporate second, not the other way round.',
+      'Almost the whole process is remote, but the residence visa and most banks still require a trip.',
+    ],
+    body: [
+      { p: `Most weeks we speak to someone who lives in Spain, invoices clients abroad and has read that a Dubai company will cut their tax bill. The technical part is simple: yes, you can incorporate a UAE company without leaving Madrid or Valencia. The real question is a different one: what actually changes, and in what order things have to happen.` },
+      { p: `This guide walks through the process from the Spanish side: what you can do remotely, what you will be asked for, how long it takes and what you still have to report at home while the company sits abroad.` },
+
+      { h2: `Yes, you can incorporate without relocating`, id: 'no-relocation' },
+      { p: `There is no residency requirement to be a shareholder in a UAE company. Free zones allow 100% foreign ownership and process non-resident applications every day. Name reservation, initial approval, signing the incorporation documents and issuing the licence can all be handled remotely, with powers of attorney and digitised paperwork.` },
+      { p: `What cannot be done remotely is the UAE residence visa, which requires you to be physically in the country for the medical test and the Emirates ID biometrics, and the bank account, which at most banks still involves an in-person meeting.` },
+
+      { h2: `The ordering mistake that ruins it`, id: 'order' },
+      { callout: { title: 'Residency first, company second', text: 'A Dubai company does not, on its own, change where you pay tax. If you remain a Spanish tax resident, Spain still taxes your worldwide income, and the UAE company may end up taxable in Spain too. Settling your tax residency before incorporating costs one consultation; finding out three years later costs an audit.' } },
+      { p: `The underlying problem is that most formation agents sell licences, not tax advice. They set the company up in fourteen days, invoice you and move on. Nobody asks where you live, where the company's decisions are actually taken or where your clients are — which is precisely what determines where it is taxed.` },
+      { p: `If your plan does involve a genuine move, that has its own route and its own evidence requirements: see [moving your tax residency from Spain to Dubai](/services/spain-to-dubai-tax-residency).` },
+
+      { h2: `What you can do from Spain and what needs a trip`, id: 'remote' },
+      {
+        table: {
+          head: ['Step', 'Remote?'],
+          rows: [
+            ['Choosing free zone, activities and legal form', 'Yes'],
+            ['Name reservation and initial approval', 'Yes'],
+            ['Signing the incorporation documents', 'Yes, with a power of attorney and digital or notarised signature'],
+            ['Trade licence issuance', 'Yes'],
+            ['Establishment card', 'Yes'],
+            ['Residence visa: medical, Emirates ID and stamping', 'No: you must be in the UAE'],
+            ['Corporate bank account', 'Usually not: most banks require an in-person meeting'],
+            ['Corporate Tax and VAT registration', 'Yes'],
+          ],
+        },
+      },
+      { p: `In practice, the usual approach is to incorporate remotely and plan a single trip of a few days to close out the visa and the bank. If you do not need a residence visa because you are not relocating, you can stop at the licence — but then it is worth checking first what the company is really doing for you.` },
+
+      { h2: `Documents you will be asked for`, id: 'documents' },
+      {
+        list: [
+          `A Spanish passport with at least six months of validity`,
+          `A recent passport-style photograph with a white background`,
+          `Proof of address in Spain: a utility bill or a certificado de empadronamiento`,
+          `A short CV or company profile, which some free zones ask for depending on the activity`,
+          `Corporate documents legalised with the Hague Apostille, if a Spanish company is the shareholder`,
+          `A power of attorney, if you would rather not travel to sign`,
+        ],
+      },
+      { p: `Legalisation is what delays Spanish files most: an apostille and its sworn translation can add a couple of weeks if they are not requested early. If you are the shareholder personally, you skip it entirely.` },
+
+      { h2: `How long it takes and what it costs`, id: 'timing' },
+      { p: `The licence is usually issued within about fourteen days of the file being complete. The visa adds one to three weeks, and the bank account depends on the bank and on how well prepared the compliance file is.` },
+      { p: `On cost, a free zone company with one residence visa sits between AED 15,000 and AED 20,000 in the first year, roughly EUR 3,900 to EUR 5,200. We break down every line in [how much it costs to set up a company in Dubai](/blog/cost-to-set-up-a-company-in-dubai).` },
+
+      { h2: `What you still have to report in Spain`, id: 'spanish-filings' },
+      { p: `While you are a Spanish tax resident, owning a UAE company does not take you out of the Spanish system — it adds reporting obligations. The most common ones:` },
+      {
+        list: [
+          [`Foreign assets return`, `Modelo 720 requires you to report securities, accounts and property abroad once each category exceeds EUR 50,000.`],
+          [`Outbound investment`, `a resident incorporating a foreign company must file with the Spanish foreign investment register.`],
+          [`Cross-border transactions`, `the Bank of Spain's ETE return, depending on the volume of transactions and balances abroad.`],
+          [`Controlled foreign company rules`, `if the company earns certain passive income and lacks its own staff and assets, its profits can be attributed to you personally even if no dividend is paid.`],
+        ],
+      },
+      { p: `And above all, the company's own residence: if it is effectively managed from Spain, the Spanish tax authority can treat it as Spanish and tax its worldwide profit. We cover that in [is a Dubai company taxed in Spain?](/blog/dubai-company-taxed-in-spain).` },
+
+      { h2: `When it makes sense and when it does not`, id: 'when' },
+      { p: `It makes sense when there is a genuine business reason behind it and the personal plan matches:` },
+      {
+        olist: [
+          `You are genuinely relocating to the UAE and want the structure in place before you arrive.`,
+          `You have clients or suppliers in the Middle East and need a local entity to operate.`,
+          `You already have an international structure and the UAE piece fits into it.`,
+        ],
+      },
+      { p: `It does not make sense if you still live in Spain, run the business from there and your clients are there: in that scenario the UAE company does not cut the tax bill, it adds running costs and it creates a risk you did not have before.` },
+      { p: `If you are not sure which of the two you are in, that is exactly what the [initial diagnosis](/#contact) is for — and if you already know, see how we handle [business setup in Dubai](/services/dubai-company-setup).` },
+    ],
+    faq: [
+      { q: 'Can I set up a Dubai company from Spain without travelling?', a: 'Yes. Incorporation and the licence can be handled remotely with a power of attorney and digitised documents. The residence visa and, at most banks, opening the account do require you to be in the UAE, so the usual approach is to incorporate remotely and make a single trip to close those two.' },
+      { q: 'Do I have to deregister in Spain to open a Dubai company?', a: 'No. You can be a shareholder in a UAE company while remaining a Spanish tax resident. Whether it suits you is another matter: if you remain resident, your worldwide income is taxed in Spain and the company may be taxed there too.' },
+      { q: 'Does a Dubai company have to be reported in Spain?', a: 'Yes, while you are a Spanish tax resident. Depending on the case this means Modelo 720, the foreign investment filing, the Bank of Spain ETE return and, where the conditions are met, the controlled foreign company rules.' },
+      { q: 'How long does the whole process take from Spain?', a: 'The licence is usually ready within about fourteen days of a complete file. Adding the visa and the bank account, four to eight weeks in total is realistic, and longer if documents need an apostille.' },
+      { q: 'Do I need one adviser in Spain and another in Dubai?', a: 'Not necessarily. What you do need is someone looking at both sides at once. If each adviser only sees their own half, the mistakes land exactly on the seam.' },
+      { q: 'Can my Spanish company be the shareholder?', a: 'Yes, free zones accept corporate shareholders. It adds apostille and translation of the corporate documents, and it is worth checking first what holding a UAE subsidiary means on the Spanish side.' },
     ],
   },
 };

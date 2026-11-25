@@ -10,7 +10,7 @@ import Block from './blog/Block';
 import { dictionaries, homePath, type Lang } from '../lib/i18n';
 import { relatedServices, servicePath, type ServiceKey } from '../lib/routes';
 import { serviceSchema } from '../lib/schema';
-import { serviceUi, services, servicesUpdated } from '../lib/services';
+import { serviceUi, serviceUpdated, serviceUpdatedLabel, services } from '../lib/services';
 import { site } from '../lib/site';
 import PostCard from './blog/PostCard';
 import { toCard } from './blog/BlogIndex';
@@ -191,7 +191,7 @@ export default function ServicePage({ serviceKey, lang }: { serviceKey: ServiceK
                 </p>
                 <p className="mt-0.5 text-muted">{ui.authorBio}</p>
                 <p className="mt-1.5 text-xs text-muted/80">
-                  {ui.updated}: <time dateTime={servicesUpdated.iso}>{servicesUpdated[lang]}</time>
+                  {ui.updated}: <time dateTime={serviceUpdated[serviceKey]}>{serviceUpdatedLabel(serviceKey, lang)}</time>
                 </p>
               </div>
             </Reveal>

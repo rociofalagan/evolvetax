@@ -55,7 +55,7 @@ export const aboutPath: Record<Lang, string> = { en: '/about', es: '/es/sobre-no
 // Blog: índice y artículos en cada idioma.
 export const blogPath: Record<Lang, string> = { en: '/blog', es: '/es/blog' };
 
-export const postKeys = ['uaeTax', 'beckham', 'llc', 'digitalVat', 'dubaiInSpain', 'freeZone', 'dubaiCost'] as const;
+export const postKeys = ['uaeTax', 'beckham', 'llc', 'digitalVat', 'dubaiInSpain', 'freeZone', 'dubaiCost', 'dubaiFromSpain'] as const;
 export type PostKey = (typeof postKeys)[number];
 
 export const postSlugs: Record<PostKey, Record<Lang, string>> = {
@@ -66,6 +66,7 @@ export const postSlugs: Record<PostKey, Record<Lang, string>> = {
   dubaiInSpain: { en: 'dubai-company-taxed-in-spain', es: 'empresa-dubai-tributa-en-espana' },
   freeZone: { en: 'dubai-free-zone-vs-mainland', es: 'free-zone-o-mainland-dubai' },
   dubaiCost: { en: 'cost-to-set-up-a-company-in-dubai', es: 'cuanto-cuesta-crear-una-empresa-en-dubai' },
+  dubaiFromSpain: { en: 'set-up-a-dubai-company-from-spain', es: 'crear-empresa-en-dubai-desde-espana' },
 };
 
 export function postPath(key: PostKey, lang: Lang) {

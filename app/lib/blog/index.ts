@@ -13,12 +13,13 @@ const meta: Record<PostKey, Omit<PostMeta, 'key'>> = {
   llc: { category: 'structures', published: '2026-09-15', updated: '2026-09-15', relatedServices: ['usLlc', 'structuring', 'spainTax'], relatedPosts: ['dubaiInSpain', 'digitalVat', 'uaeTax'] },
   digitalVat: { category: 'vat', published: '2026-09-15', updated: '2026-09-15', relatedServices: ['spainTax', 'uaeTax'], relatedPosts: ['uaeTax', 'llc', 'freeZone'] },
   dubaiInSpain: { category: 'residency', published: '2026-09-15', updated: '2026-09-15', relatedServices: ['spainDubai', 'structuring', 'residency'], relatedPosts: ['uaeTax', 'llc', 'beckham'] },
-  dubaiCost: { category: 'uae', published: '2026-09-29', updated: '2026-09-29', relatedServices: ['dubai', 'uaeTax'], relatedPosts: ['freeZone', 'uaeTax', 'dubaiInSpain'] },
+  dubaiCost: { category: 'uae', published: '2026-09-29', updated: '2026-11-25', relatedServices: ['dubai', 'uaeTax'], relatedPosts: ['dubaiFromSpain', 'freeZone', 'dubaiInSpain'] },
+  dubaiFromSpain: { category: 'uae', published: '2026-11-25', updated: '2026-11-25', relatedServices: ['dubai', 'spainDubai', 'uaeTax'], relatedPosts: ['dubaiCost', 'dubaiInSpain', 'freeZone'] },
   freeZone: { category: 'uae', published: '2026-09-15', updated: '2026-09-15', relatedServices: ['dubai', 'uaeTax'], relatedPosts: ['uaeTax', 'dubaiInSpain', 'digitalVat'] },
 };
 
 // Orden en el listado (el primero es el destacado).
-const order: PostKey[] = ['dubaiCost', 'dubaiInSpain', 'uaeTax', 'beckham', 'llc', 'digitalVat', 'freeZone'];
+const order: PostKey[] = ['dubaiCost', 'dubaiFromSpain', 'dubaiInSpain', 'uaeTax', 'beckham', 'llc', 'digitalVat', 'freeZone'];
 
 const content: Record<Lang, Record<PostKey, PostContent>> = { en: postsEn, es: postsEs };
 

@@ -22,8 +22,25 @@ export type ServiceContent = {
   cta: { title: Accent; text: string };
 };
 
-// Fecha de última revisión que se muestra en cada landing (y en los datos estructurados).
-export const servicesUpdated = { iso: '2026-09-29', en: 'September 2026', es: 'septiembre de 2026' };
+// Fecha de última revisión de cada landing (se muestra en la página y en los datos estructurados).
+export const serviceUpdated: Record<ServiceKey, string> = {
+  structuring: '2026-10-05',
+  dubai: '2026-11-25',
+  uaeTax: '2026-10-05',
+  usLlc: '2026-10-05',
+  spainTax: '2026-10-05',
+  residency: '2026-10-05',
+  spainDubai: '2026-11-25',
+  beckham: '2026-10-05',
+};
+
+// La más reciente de todas, para el sitemap.
+export const servicesUpdatedIso = Object.values(serviceUpdated).sort().at(-1)!;
+
+export function serviceUpdatedLabel(key: ServiceKey, lang: Lang) {
+  return new Intl.DateTimeFormat(lang === 'es' ? 'es-ES' : 'en-GB', { month: 'long', year: 'numeric' })
+    .format(new Date(serviceUpdated[key]));
+}
 
 export const serviceUi = {
   en: {
@@ -268,9 +285,9 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
     en: {
       name: 'Business setup in Dubai',
       meta: {
-        title: 'Business Setup in Dubai: Company Formation | Evolve Tax',
+        title: 'Business Setup in Dubai: Cost and Licence | Evolve Tax',
         description:
-          'Business setup in Dubai with a licensed tax adviser: free zone or mainland licence in about 14 days, residence visa, bank account and tax registrations.',
+          'Business setup in Dubai with a licensed tax adviser: free zone or mainland licence from AED 15,000 in about 14 days, plus visa, bank and tax registrations.',
       },
       hero: {
         eyebrow: 'Service · Business setup in Dubai',
@@ -352,7 +369,7 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
           },
           { p: 'The activities on your licence matter more than people expect: invoicing for something your licence does not cover is one of the most common problems we see, and adding activities later means an amendment and extra fees. We map your real revenue streams to the activity list before filing anything.' },
 
-          { h2: 'Mainland, free zone or offshore', id: 'routes' },
+          { h2: 'Where to set up: mainland, free zone or offshore', id: 'routes' },
           {
             table: {
               head: ['', 'Free zone', 'Mainland', 'Offshore'],
@@ -367,7 +384,7 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
           },
           { p: 'For a digital business selling to clients outside the UAE, a free zone company is usually the right answer. We compare both in detail in [Free zone or mainland in Dubai](/blog/dubai-free-zone-vs-mainland).' },
 
-          { h2: 'What business setup in Dubai costs', id: 'cost' },
+          { h2: 'How much it costs to open a company in Dubai', id: 'cost' },
           { p: 'There is no single price: the cost depends on the free zone, the number of activities on your licence, how many residence visas you need and whether you need a physical office.' },
           { callout: { title: 'As a guide: AED 15,000 – 20,000', text: 'A free zone company with one residence visa usually falls in that range for the first year, including the trade licence, the establishment card and the visa. Mainland companies cost more because they require a physical office lease. We always send a written quote with the exact figures for your case.' } },
           { p: 'These are the components behind that number:' },
@@ -400,7 +417,7 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
             ],
           },
 
-          { h2: 'Step by step, and how long it takes', id: 'steps' },
+          { h2: 'How to set up a company in Dubai, step by step', id: 'steps' },
           {
             olist: [
               'Choose the activity, the legal form and the free zone or mainland route.',
@@ -436,9 +453,10 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
           },
           { p: 'This is the part most formation agents do not cover. We do: see [tax management in Dubai](/services/dubai-tax-management).' },
 
-          { h2: 'If you are moving from Spain or the EU', id: 'from-europe' },
+          { h2: 'Opening a Dubai company from Spain or the EU', id: 'from-spain' },
           { p: 'Opening a company in Dubai does not, by itself, change where you pay tax. If you keep living in Spain, or you manage the company from there, the Spanish tax authorities can treat the company as Spanish and tax its worldwide profits. Your own tax residency has to change first, and it has to be provable.' },
           { p: 'We analyse both sides before you incorporate: read [Does a Dubai company pay tax in Spain?](/blog/dubai-company-taxed-in-spain) or start with a [change of tax residency](/services/tax-residency-change) analysis.' },
+          { p: 'If you are based in Spain and want to know what can be done remotely, which documents you will be asked for and what you still report at home, we walk through it in [setting up a Dubai company from Spain](/blog/set-up-a-dubai-company-from-spain).' },
         ],
       },
       mistakes: [
@@ -448,6 +466,8 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
         { title: 'Running it from another country', text: 'Setting up in Dubai while you keep living in and managing the business from Spain can make the company taxable in Spain.' },
       ],
       faq: [
+        { q: 'What do I need to open a company in Dubai?', a: 'A passport with at least six months of validity, a passport-style photograph, proof of address and, depending on the free zone and the activity, a short CV or company profile. If a company is the shareholder, you also need attested corporate documents. You do not need to be a resident or to have a local partner.' },
+        { q: 'Can I open a company in Dubai from abroad?', a: 'Yes. Incorporation and the licence are handled remotely with a power of attorney and digitised documents; the residence visa and most bank account openings do require a trip. What has to be checked first is your tax residency, because if you remain resident elsewhere the company may end up taxable there.' },
         { q: 'How long does business setup in Dubai take?', a: 'The trade licence usually takes around 14 days once we have your documentation. The residence visa comes afterwards, normally one to three weeks, and the bank account depends on the bank and the profile of the business.' },
         { q: 'How much does it cost to set up a company in Dubai?', a: 'As a guide, a free zone company with one residence visa usually costs between AED 15,000 and AED 20,000 for the first year, including licence, establishment card and visa. Mainland companies cost more because of the office lease. We send a written quote with the exact figures for your case.' },
         { q: 'Which free zone is best for my business?', a: 'There is no single best free zone. Almost any can work for a digital business; the right one depends on your licensed activities, how many visas you need and your budget.' },
@@ -466,9 +486,9 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
     es: {
       name: 'Incorporación de empresas en Dubái',
       meta: {
-        title: 'Crear empresa en Dubái: licencia y visado | Evolve Tax',
+        title: 'Abrir empresa en Dubái: costes y licencia | Evolve Tax',
         description:
-          'Crear empresa en Dubái con asesoría fiscal: licencia de free zone o mainland en unos 14 días, visado de residencia, cuenta bancaria y altas fiscales.',
+          'Abrir una empresa en Dubái con asesoría fiscal: licencia de free zone o mainland desde 15.000 AED en unos 14 días, visado, cuenta bancaria y altas fiscales.',
       },
       hero: {
         eyebrow: 'Servicio · Incorporación de empresas en Dubái',
@@ -550,7 +570,7 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
           },
           { p: 'Las actividades de la licencia importan más de lo que parece: facturar algo que tu licencia no cubre es uno de los problemas más frecuentes que vemos, y añadir actividades después implica una modificación y tasas extra. Antes de presentar nada, cruzamos tus fuentes de ingresos reales con la lista de actividades.' },
 
-          { h2: 'Mainland, free zone u offshore', id: 'rutas' },
+          { h2: 'Dónde constituir la empresa: mainland, free zone u offshore', id: 'rutas' },
           {
             table: {
               head: ['', 'Free zone', 'Mainland', 'Offshore'],
@@ -565,7 +585,7 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
           },
           { p: 'Para un negocio digital que vende a clientes de fuera de Emiratos, la free zone suele ser la respuesta. Las comparamos en detalle en [Free zone o mainland en Dubái](/es/blog/free-zone-o-mainland-dubai).' },
 
-          { h2: 'Cuánto cuesta crear una empresa en Dubái', id: 'coste' },
+          { h2: 'Cuánto cuesta abrir una empresa en Dubái', id: 'coste' },
           { p: 'No hay un precio único: depende de la free zone, del número de actividades de la licencia, de cuántos visados de residencia necesitas y de si necesitas oficina física.' },
           { callout: { title: 'Como referencia: 15.000 – 20.000 AED', text: 'Una sociedad de free zone con un visado de residencia suele moverse en esa horquilla el primer año, incluyendo la licencia comercial, la establishment card y el visado. Las de mainland cuestan más porque exigen alquiler de oficina física. Siempre enviamos un presupuesto por escrito con las cifras exactas de tu caso.' } },
           { p: 'Estos son los conceptos que hay detrás de esa cifra:' },
@@ -598,7 +618,7 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
             ],
           },
 
-          { h2: 'Paso a paso y cuánto tarda', id: 'pasos' },
+          { h2: 'Cómo crear una empresa en Dubái, paso a paso', id: 'pasos' },
           {
             olist: [
               'Elegir la actividad, la forma jurídica y la vía: free zone o mainland.',
@@ -634,9 +654,10 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
           },
           { p: 'Esta es la parte que no cubren la mayoría de agentes de constitución. Nosotros sí: mira [gestión fiscal en Dubái](/es/servicios/gestion-fiscal-en-dubai).' },
 
-          { h2: 'Si te mudas desde España o la UE', id: 'desde-europa' },
+          { h2: 'Abrir una empresa en Dubái desde España', id: 'desde-espana' },
           { p: 'Abrir una empresa en Dubái no cambia, por sí solo, dónde pagas impuestos. Si sigues viviendo en España, o diriges la sociedad desde allí, Hacienda puede considerarla española y gravar su beneficio mundial. Tu residencia fiscal tiene que cambiar primero, y tiene que poder demostrarse.' },
           { p: 'Analizamos las dos partes antes de constituir: lee [¿Tributa en España una empresa de Dubái?](/es/blog/empresa-dubai-tributa-en-espana) o empieza por un análisis de [cambio de residencia fiscal](/es/servicios/cambio-de-residencia-fiscal).' },
+          { p: 'Si vives en España y quieres saber qué puedes hacer en remoto, qué documentos te van a pedir y qué sigues declarando aquí, lo contamos paso a paso en [crear una empresa en Dubái desde España](/es/blog/crear-empresa-en-dubai-desde-espana).' },
         ],
       },
       mistakes: [
@@ -646,6 +667,8 @@ export const services: Record<ServiceKey, Record<Lang, ServiceContent>> = {
         { title: 'Dirigirla desde otro país', text: 'Montar en Dubái mientras sigues viviendo y gestionando el negocio desde España puede hacer que la sociedad tribute en España.' },
       ],
       faq: [
+        { q: '¿Qué necesito para abrir una empresa en Dubái?', a: 'El pasaporte con al menos seis meses de validez, una foto tipo carné, un justificante de domicilio y, según la free zone y la actividad, un CV breve o perfil de empresa. Si el socio va a ser otra sociedad, hace falta documentación societaria legalizada. No necesitas ser residente ni tener un socio local.' },
+        { q: '¿Se puede abrir una empresa en Dubái desde España?', a: 'Sí. La constitución y la licencia se gestionan en remoto con poderes y documentación digitalizada; el visado de residencia y la mayoría de aperturas de cuenta sí exigen viajar. Lo que hay que revisar antes es tu residencia fiscal: si sigues siendo residente en España, la empresa puede acabar tributando aquí.' },
         { q: '¿Cuánto se tarda en crear una empresa en Dubái?', a: 'La licencia comercial suele tardar unos 14 días desde que tenemos tu documentación. El visado de residencia viene después, normalmente de una a tres semanas, y la cuenta bancaria depende del banco y del perfil del negocio.' },
         { q: '¿Cuánto cuesta crear una empresa en Dubái?', a: 'Como referencia, una sociedad de free zone con un visado de residencia suele costar entre 15.000 y 20.000 AED el primer año, incluyendo licencia, establishment card y visado. Las de mainland cuestan más por el alquiler de oficina. Te enviamos un presupuesto por escrito con las cifras exactas de tu caso.' },
         { q: '¿Qué free zone es la mejor para mi negocio?', a: 'No hay una única mejor free zone. Prácticamente cualquiera puede servir para un negocio digital; la adecuada depende de las actividades de tu licencia, de cuántos visados necesitas y de tu presupuesto.' },

@@ -2,7 +2,7 @@ import { dictionaries, homePath, type Lang } from './i18n';
 import { aboutPath, blogPath, legalPaths, postPath, serviceKeys, servicePath, type PostKey, type ServiceKey } from './routes';
 import { blogUi, categories, getPost, getPosts } from './blog';
 import { about } from './about';
-import { services, servicesUpdated } from './services';
+import { serviceUpdated, services } from './services';
 import { site } from './site';
 
 // Datos estructurados (schema.org) para que Google entienda quién es Evolve Tax,
@@ -164,7 +164,7 @@ export function serviceSchema(key: ServiceKey, lang: Lang) {
         isPartOf: { '@id': websiteId },
         about: { '@id': `${url}#service` },
         reviewedBy: { '@id': founderId },
-        dateModified: servicesUpdated.iso,
+        dateModified: serviceUpdated[key],
         breadcrumb: { '@id': `${url}#breadcrumb` },
       },
       {

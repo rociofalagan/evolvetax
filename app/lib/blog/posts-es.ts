@@ -427,7 +427,7 @@ export const postsEs: Record<PostKey, PostContent> = {
       { p: `Prácticamente cualquier free zone puede servir para un negocio digital: la adecuada depende de las actividades de la licencia que necesitas, del número de visados y de tu presupuesto.` },
 
       { h2: `Antes de decidir`, id: 'antes-de-decidir' },
-      { p: `Elegir entre free zone y mainland no es solo una cuestión jurídica: afecta a tus impuestos, a tu visado y a cómo vas a operar durante años. Y recuerda que montar una empresa en Dubái no cambia, por sí solo, tu residencia fiscal personal. Si quieres que nos encarguemos de todo el proceso, consulta nuestra [incorporación de empresas en Dubái](/es/servicios/crear-empresa-en-dubai).` },
+      { p: `Elegir entre free zone y mainland no es solo una cuestión jurídica: afecta a tus impuestos, a tu visado y a cómo vas a operar durante años. Y recuerda que montar una empresa en Dubái no cambia, por sí solo, tu residencia fiscal personal. Si quieres que nos encarguemos de todo el proceso, consulta nuestra [incorporación de empresas en Dubái](/es/servicios/crear-empresa-en-dubai), y si vas a hacerlo desde España lee antes [crear una empresa en Dubái desde España](/es/blog/crear-empresa-en-dubai-desde-espana).` },
     ],
     faq: [
       { q: '¿Una sociedad de free zone puede trabajar con clientes en Dubái?', a: 'Puede trabajar libremente con otras sociedades de free zone y con clientes internacionales. Vender directamente al mercado del mainland emiratí es más limitado y puede requerir permisos o estructuras adicionales.' },
@@ -441,7 +441,7 @@ export const postsEs: Record<PostKey, PostContent> = {
   dubaiCost: {
     metaTitle: 'Cuánto cuesta crear una empresa en Dubái en 2026',
     metaDescription:
-      'Una sociedad de free zone con un visado suele costar 15.000–20.000 AED el primer año. Qué cubre cada línea y qué dejan fuera casi todos los presupuestos.',
+      'Una sociedad de free zone con un visado cuesta 15.000–20.000 AED, unos 3.900–5.200 €, el primer año. Qué cubre cada línea y qué dejan fuera los presupuestos.',
     title: '¿Cuánto cuesta crear una empresa en Dubái?',
     excerpt:
       'Una sociedad de free zone con un visado de residencia suele costar entre 15.000 y 20.000 AED el primer año. Te explicamos qué significa cada línea del presupuesto, qué falta en la mayoría y qué se paga cada año.',
@@ -459,6 +459,37 @@ export const postsEs: Record<PostKey, PostContent> = {
       { h2: `La respuesta corta`, id: 'respuesta-corta' },
       { callout: { title: '15.000 – 20.000 AED en un primer año típico', text: 'Una sociedad de free zone con un visado de residencia suele quedar en esa horquilla, incluyendo la licencia comercial, la establishment card y el visado. Una licencia sin visados cuesta menos; una sociedad de mainland cuesta más porque exige alquiler de oficina física.' } },
       { p: `Las free zones compiten en precio y en lo que incluyen, así que dos presupuestos por “la misma” empresa pueden parecer muy distintos. Los paquetes más baratos suelen limitar el número de actividades, la cuota de visados o el tipo de oficina. Una licencia que no cubre lo que vendes de verdad es el ahorro más caro que existe.` },
+
+      { h2: `Cuánto es eso en euros`, id: 'euros' },
+      { p: `Casi todos los presupuestos llegan en dírhams y cuesta hacerse una idea. El dírham está anclado al dólar, así que el cambio con el euro se mueve poco y sirve una referencia estable:` },
+      {
+        table: {
+          head: ['En dírhams', 'Aproximadamente'],
+          rows: [
+            ['15.000 AED', '≈ 3.900 €'],
+            ['20.000 AED', '≈ 5.200 €'],
+            ['25.000 AED', '≈ 6.500 €'],
+            ['50.000 AED', '≈ 13.000 €'],
+          ],
+        },
+      },
+      { p: `Cálculo orientativo a 0,26 € por dírham. Compruébalo el día que vayas a pagar, porque la cifra exacta depende del cambio de ese momento y de la comisión de tu banco.` },
+
+      { h2: `Qué hace que el precio suba o baje`, id: 'que-cambia' },
+      { p: `Dos presupuestos muy distintos suelen explicarse por estas seis decisiones. Ninguna es cuestión de gusto: cada una cambia lo que la empresa puede hacer.` },
+      {
+        table: {
+          head: ['Decisión', 'Efecto en el precio'],
+          rows: [
+            ['Licencia sin visados', 'La vía más barata: el visado es buena parte del coste del primer año'],
+            ['Cada visado adicional', 'Suma por persona y, pasado cierto número, obliga a una oficina mayor'],
+            ['Más actividades en la licencia', 'Varias free zones cobran por actividad o por grupo de actividades'],
+            ['Mainland en vez de free zone', 'Más caro: exige contrato de oficina física registrado con Ejari'],
+            ['Oficina física en vez de flexi-desk', 'El alquiler pasa a ser la partida más grande del presupuesto'],
+            ['Socio persona jurídica', 'Añade legalización y traducción de la documentación societaria'],
+          ],
+        },
+      },
 
       { h2: `Gastos de constitución que se pagan una vez`, id: 'unicos' },
       {
@@ -498,6 +529,22 @@ export const postsEs: Record<PostKey, PostContent> = {
           `Decide la estructura antes de pagarla: mover una sociedad después cuesta mucho más que montarla bien.`,
         ],
       },
+
+      { h2: `Qué pedir por escrito antes de pagar`, id: 'antes-de-pagar' },
+      { p: `Un presupuesto serio responde a estas seis preguntas sin que tengas que insistir. Si alguna se queda sin contestar, ya sabes dónde va a aparecer la sorpresa.` },
+      {
+        olist: [
+          `El coste total del primer año, no solo el precio de la licencia.`,
+          `Qué actividades concretas quedan cubiertas por la licencia que te proponen.`,
+          `Cuántas cuotas de visado incluye el paquete y qué cuesta cada visado extra.`,
+          `El coste de renovación del segundo año, línea a línea.`,
+          `Qué tasas se pagan directamente a la autoridad y cuáles son honorarios del asesor.`,
+          `Qué no está incluido: banco, contabilidad, Corporate Tax, IVA y seguro médico.`,
+        ],
+      },
+
+      { h2: `¿Y si lo montas desde España?`, id: 'desde-espana' },
+      { p: `El coste de la licencia es el mismo vivas donde vivas, pero el presupuesto real cambia: hay que contar la apostilla y la traducción jurada si el socio es una sociedad española, y al menos un viaje para cerrar visado y banco. Y, sobre todo, hay que mirar qué sigues debiendo declarar aquí. Lo contamos en [crear una empresa en Dubái desde España](/es/blog/crear-empresa-en-dubai-desde-espana).` },
       { p: `Si quieres un presupuesto por escrito para tu caso, con la free zone adecuada, las actividades y el coste total del primer año, mira nuestro servicio de [incorporación de empresas en Dubái](/es/servicios/crear-empresa-en-dubai), o lee antes [free zone o mainland](/es/blog/free-zone-o-mainland-dubai) si todavía estás decidiendo la vía.` },
     ],
     faq: [
@@ -505,6 +552,106 @@ export const postsEs: Record<PostKey, PostContent> = {
       { q: '¿Cuánto cuesta mantener una empresa en Dubái al año?', a: 'Hay que contar la renovación de la licencia, la establishment card, la renovación de visados cuando toque y la contabilidad y el Corporate Tax. En una sociedad pequeña de free zone, el coste recurrente suele ser parecido al de la licencia del primer año más el trabajo de cumplimiento.' },
       { q: '¿Hay capital social mínimo?', a: 'La mayoría de free zones indican un capital social en la licencia, pero no exigen desembolsarlo en una cuenta bancaria. Varía según la free zone y la actividad.' },
       { q: '¿El precio incluye la cuenta bancaria?', a: 'No. Abrir la cuenta es un proceso aparte, con sus propios requisitos, y algunos bancos piden un saldo mínimo que no tiene nada que ver con el coste de constitución.' },
+      { q: '¿Cuánto cuesta crear una empresa en Dubái en euros?', a: 'La horquilla de referencia de 15.000 a 20.000 AED equivale a unos 3.900 a 5.200 euros, con un cambio orientativo de 0,26 € por dírham. Como el dírham está anclado al dólar, esa referencia se mueve poco, pero conviene comprobar el cambio el día del pago.' },
+      { q: '¿Puedo crear la empresa sin viajar a Dubái?', a: 'La constitución y la licencia sí se gestionan en remoto. El visado de residencia exige estar en Emiratos para la prueba médica y el Emirates ID, y la mayoría de bancos siguen pidiendo una reunión presencial para abrir la cuenta.' },
+      { q: '¿Cuánto más cara es una empresa de mainland?', a: 'Depende sobre todo de la oficina: el mainland exige un contrato de alquiler físico registrado con Ejari, y ese alquiler suele convertirse en la partida más grande del presupuesto. Las free zones resuelven ese punto con paquetes flexi-desk incluidos en la licencia.' },
+      { q: '¿El precio incluye la contabilidad y el Corporate Tax?', a: 'No. El presupuesto de constitución cubre licencia, establishment card y visado. La contabilidad, el alta y las declaraciones de Corporate Tax y, si corresponde, el IVA son un servicio recurrente aparte, y conviene presupuestarlo desde el primer día.' },
+    ],
+  },
+  /* ------------------------------------------------------------------ */
+  dubaiFromSpain: {
+    metaTitle: 'Crear una empresa en Dubái desde España: guía 2026',
+    metaDescription:
+      'Qué pasos puedes dar desde España para abrir una empresa en Dubái, qué documentos te piden, cuánto tarda y por qué tu residencia fiscal decide si funciona.',
+    title: 'Crear una empresa en Dubái desde España: lo que nadie te cuenta antes de firmar',
+    excerpt:
+      'Constituir la sociedad es la parte fácil y se puede hacer casi entera desde España. Lo difícil, y lo que decide si la estructura aguanta, es el orden en que haces las cosas y qué sigues debiendo a Hacienda mientras tanto.',
+    tags: ['Dubái', 'España', 'Crear empresa', 'Residencia fiscal'],
+    takeaways: [
+      'Puedes ser propietario de una sociedad emiratí viviendo en España: no hace falta mudarse para constituirla.',
+      'Si sigues siendo residente fiscal en España, esa empresa no te ahorra impuestos; puede incluso complicártelos.',
+      'El orden correcto es decidir la residencia fiscal primero y constituir después, no al revés.',
+      'Casi todo el trámite se hace en remoto, pero el visado y la mayoría de bancos siguen exigiendo viajar.',
+    ],
+    body: [
+      { p: `Casi todas las semanas hablamos con alguien que vive en España, factura a clientes de fuera y ha leído que montar una empresa en Dubái le va a bajar los impuestos. La parte técnica es sencilla: sí, puedes constituir una sociedad emiratí sin moverte de Madrid o de Valencia. La pregunta correcta es otra: qué te cambia realmente, y en qué orden hay que hacer las cosas.` },
+      { p: `Esta guía recorre el proceso desde el lado español: qué puedes hacer en remoto, qué te van a pedir, cuánto tarda y qué sigues debiendo declarar aquí mientras la empresa está allí.` },
+
+      { h2: `Sí, puedes constituirla sin mudarte`, id: 'sin-mudarte' },
+      { p: `No existe ningún requisito de residencia para ser socio de una sociedad emiratí. Las free zones admiten el 100 % de propiedad extranjera y tramitan expedientes de no residentes todos los días. La reserva de nombre, la aprobación inicial, la firma de la documentación y la emisión de la licencia se pueden gestionar en remoto, con poderes y documentación digitalizada.` },
+      { p: `Lo que no se resuelve en remoto es el visado de residencia emiratí, que exige estar físicamente en el país para la prueba médica y la biometría del Emirates ID, y la cuenta bancaria, que en la mayoría de bancos sigue pasando por una entrevista presencial.` },
+
+      { h2: `El error de orden que lo estropea todo`, id: 'orden' },
+      { callout: { title: 'Primero la residencia, después la empresa', text: 'Una sociedad en Dubái no cambia por sí sola dónde pagas tus impuestos. Si tú sigues siendo residente fiscal en España, Hacienda sigue gravando tu renta mundial, y la empresa emiratí puede acabar tributando también aquí. Decidir la residencia fiscal antes de constituir cuesta una consulta; descubrirlo tres años después cuesta una inspección.' } },
+      { p: `El problema de fondo es que la mayoría de agentes de constitución venden licencias, no asesoramiento fiscal. Te montan la sociedad en catorce días, te cobran y se van. Nadie te pregunta dónde vives, dónde tomas las decisiones de la empresa ni dónde están tus clientes, que es justo lo que determina dónde tributa.` },
+      { p: `Si tu plan incluye mudarte de verdad, el proceso tiene su propio recorrido y sus propias pruebas: lo explicamos en [cambiar la residencia fiscal de España a Dubái](/es/servicios/cambiar-residencia-fiscal-espana-dubai).` },
+
+      { h2: `Qué puedes hacer desde España y qué exige viajar`, id: 'remoto' },
+      {
+        table: {
+          head: ['Trámite', '¿En remoto?'],
+          rows: [
+            ['Elegir free zone, actividades y forma jurídica', 'Sí'],
+            ['Reserva de nombre y aprobación inicial', 'Sí'],
+            ['Firma de la documentación de constitución', 'Sí, con poderes y firma digital o legalizada'],
+            ['Emisión de la licencia comercial', 'Sí'],
+            ['Establishment card', 'Sí'],
+            ['Visado de residencia: médico, Emirates ID y sellado', 'No: hay que estar en Emiratos'],
+            ['Cuenta bancaria de empresa', 'Casi siempre no: la mayoría de bancos piden reunión presencial'],
+            ['Alta en Corporate Tax e IVA', 'Sí'],
+          ],
+        },
+      },
+      { p: `En la práctica, lo habitual es constituir en remoto y organizar un único viaje de unos días para cerrar visado y banco. Si no necesitas el visado de residencia porque no vas a mudarte, puedes quedarte solo con la licencia, pero entonces conviene revisar antes para qué te sirve realmente la sociedad.` },
+
+      { h2: `Documentación que te van a pedir desde España`, id: 'documentacion' },
+      {
+        list: [
+          `Pasaporte español con al menos seis meses de validez`,
+          `Fotografía reciente tipo carné con fondo blanco`,
+          `Justificante de domicilio en España: un recibo de suministros o un certificado de empadronamiento`,
+          `Un CV breve o perfil de la empresa, que piden algunas free zones según la actividad`,
+          `Escrituras y documentación societaria legalizadas con la Apostilla de La Haya, si el socio es una sociedad española`,
+          `Poder notarial, si prefieres no desplazarte para firmar`,
+        ],
+      },
+      { p: `La legalización es el paso que más retrasa los expedientes españoles: una apostilla y su traducción jurada pueden sumar un par de semanas si no se piden con tiempo. Si el socio eres tú como persona física, te lo ahorras.` },
+
+      { h2: `Cuánto tarda y cuánto cuesta`, id: 'plazos' },
+      { p: `La licencia suele emitirse en unos catorce días desde que el expediente está completo. El visado añade de una a tres semanas más, y la cuenta bancaria depende del banco y de lo bien preparado que vaya el expediente de compliance.` },
+      { p: `En coste, una sociedad de free zone con un visado de residencia se mueve en una horquilla de 15.000 a 20.000 AED el primer año, unos 3.900 a 5.200 euros. Desglosamos cada línea en [cuánto cuesta crear una empresa en Dubái](/es/blog/cuanto-cuesta-crear-una-empresa-en-dubai).` },
+
+      { h2: `Lo que sigues debiendo declarar en España`, id: 'obligaciones-espana' },
+      { p: `Mientras seas residente fiscal en España, tener una sociedad en Emiratos no te saca del sistema español: te añade obligaciones informativas. Las más habituales:` },
+      {
+        list: [
+          [`Declaración de bienes en el extranjero`, `el modelo 720 obliga a informar de valores, cuentas e inmuebles fuera de España cuando cada bloque supera los 50.000 euros.`],
+          [`Inversión en el exterior`, `la constitución de una sociedad extranjera por un residente se declara ante el Registro de Inversiones Exteriores.`],
+          [`Transacciones con el exterior`, `la declaración ETE del Banco de España, según el volumen de operaciones y saldos con el extranjero.`],
+          [`Transparencia fiscal internacional`, `si la sociedad obtiene determinadas rentas pasivas y no tiene medios materiales y humanos propios, sus beneficios pueden imputarse directamente en tu IRPF aunque no repartas dividendos.`],
+        ],
+      },
+      { p: `Y, por encima de todo, la residencia de la propia sociedad: si se dirige efectivamente desde España, Hacienda puede considerarla residente aquí y gravar su beneficio mundial. Lo desarrollamos en [¿tributa en España una empresa de Dubái?](/es/blog/empresa-dubai-tributa-en-espana).` },
+
+      { h2: `Cuándo tiene sentido y cuándo no`, id: 'cuando' },
+      { p: `Tiene sentido cuando hay una razón de negocio real detrás y cuando el plan personal acompaña:` },
+      {
+        olist: [
+          `Te vas a mudar de verdad a Emiratos y quieres que la estructura esté montada antes de llegar.`,
+          `Tienes clientes o proveedores en Oriente Medio y necesitas una entidad local para operar.`,
+          `Formas parte de una estructura internacional ya existente y la pieza emiratí encaja en ella.`,
+        ],
+      },
+      { p: `No tiene sentido si sigues viviendo en España, diriges el negocio desde aquí y tus clientes están aquí: en ese escenario la sociedad emiratí no reduce la factura fiscal, añade coste de mantenimiento y crea un riesgo que antes no tenías.` },
+      { p: `Si no estás seguro de en cuál de los dos casos estás, eso es exactamente lo que resolvemos en el [diagnóstico inicial](/es#contact), y si ya lo tienes claro puedes ver cómo trabajamos la [constitución de empresas en Dubái](/es/servicios/crear-empresa-en-dubai).` },
+    ],
+    faq: [
+      { q: '¿Puedo crear una empresa en Dubái desde España sin viajar?', a: 'Sí. La constitución y la licencia se pueden gestionar en remoto con poderes y documentación digitalizada. El visado de residencia y, en la mayoría de bancos, la apertura de cuenta sí exigen estar en Emiratos, así que lo habitual es constituir en remoto y hacer un único viaje para cerrar esas dos cosas.' },
+      { q: '¿Tengo que darme de baja en España para abrir una empresa en Dubái?', a: 'No. Puedes ser socio de una sociedad emiratí siendo residente fiscal en España. Otra cosa es que te convenga: si sigues siendo residente aquí, tu renta mundial tributa en España y la sociedad puede acabar tributando también.' },
+      { q: '¿Hay que declarar en España una empresa en Dubái?', a: 'Sí, mientras seas residente fiscal español. Según el caso aplican el modelo 720, la declaración de inversión exterior, la declaración ETE del Banco de España y, si se dan los requisitos, la transparencia fiscal internacional.' },
+      { q: '¿Cuánto tarda el proceso completo desde España?', a: 'La licencia suele estar en unos catorce días desde que el expediente está completo. Sumando visado y cuenta bancaria, lo razonable es contar entre cuatro y ocho semanas en total, y algo más si hay documentos que apostillar.' },
+      { q: '¿Necesito una gestoría en España y otra en Dubái?', a: 'No necesariamente. Lo que sí necesitas es que alguien mire las dos partes a la vez: la emiratí y la española. Si cada asesor solo ve su lado, los errores aparecen justo en la costura.' },
+      { q: '¿Puede ser socia mi sociedad española?', a: 'Sí, las free zones admiten socios persona jurídica. Añade legalización con Apostilla y traducción de la documentación societaria, y conviene revisar antes qué efectos tiene en España tener una filial emiratí.' },
     ],
   },
 };

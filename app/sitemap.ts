@@ -1,12 +1,12 @@
 import type { MetadataRoute } from 'next';
 import { aboutPath, blogPath, legalKeys, legalPaths, postKeys, postPath, serviceKeys, servicePath } from './lib/routes';
 import { getPost, getPosts } from './lib/blog';
-import { servicesUpdated } from './lib/services';
+import { serviceUpdated, servicesUpdatedIso } from './lib/services';
 import { site } from './lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
-  const servicesDate = new Date(servicesUpdated.iso);
+  const servicesDate = new Date(servicesUpdatedIso);
   // La home se actualiza cuando lo hace el contenido más reciente.
   const newestPost = getPosts('en').map((p) => new Date(p.updated)).sort((a, b) => b.getTime() - a.getTime())[0] ?? servicesDate;
   const url = (path: string) => `${site.url}${path}`;
@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const languages = { en: url(servicePath(key, 'en')), es: url(servicePath(key, 'es')) };
     return (['en', 'es'] as const).map((lang) => ({
       url: url(servicePath(key, lang)),
-      lastModified: servicesDate,
+      lastModified: new Date(serviceUpdated[key]),
       changeFrequency: 'monthly' as const,
       priority: 0.9,
       alternates: { languages },
